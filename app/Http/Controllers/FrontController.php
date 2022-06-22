@@ -247,8 +247,10 @@ class FrontController extends Controller
             $request->session()->forget('patient');
             $request->session()->put('patient', $request->all());
         }
-
+        
+        
         return redirect('/print-pendaftaran')->with('success', 'Berhasil ditambahkan');
+
     }
 
 

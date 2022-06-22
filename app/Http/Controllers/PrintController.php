@@ -28,6 +28,13 @@ class PrintController extends Controller
     }
 
     //   print reservation
+
+    public function printReservation()
+    {
+        $reservation = Reservation::all();
+        return view('print.print-pendaftaran', compact('reservation'));
+    }
+
     public function printPendaftaran(Reservation $reservation)
     {
         $session= session()->get('patient');

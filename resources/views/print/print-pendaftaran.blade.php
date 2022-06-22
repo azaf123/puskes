@@ -3,6 +3,7 @@
     <h1>Pendaftaran</h1>
     <br>
     <br>
+    
 <table class="table">
   <thead>
   
@@ -17,12 +18,7 @@
   <tbody>
 
     <tr>
-     
-        <td>{{ $reservation->treatment->no_berobat}}</td>
-        <td>{{ $reservation->patient->nama_pasien }}</td>
-        <td>{{ $reservation->category->nama_kategori }}</td>
-        <td>{{ $reservation->antrean->no_antrean}}</td>
-      
+       
     </tr>
 
   </tbody>

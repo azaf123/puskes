@@ -14,6 +14,7 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PrintController;
+use App\Http\Controllers\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ use App\Http\Controllers\PrintController;
 */
 Route::get('/print',[PrintController::class,'index']);
 Route::get('/print/generatepdf',[PrintController::class,'generatepdf']);
+Route::get('/print-reservation',[PrintController::class,'printReservation']);
 
 Route::get('/print-pendaftaran/{reservation}',[PrintController::class,'printPendaftaran']);
 Route::get('/print-pendaftaran/generatepdf/{reservation}',[PrintController::class,'generatepdfPendaftaran']);
@@ -74,4 +76,11 @@ Route::resource('galery', GaleryController::class);
 Route::resource('header', HeaderController::class);
 Route::resource('layanan', LayananController::class);
 
+
+
+Route::get('report/', [ReportController::class, 'index']);
+Route::get('cetakpertanggal/{tglawal}/{tglakhir}', [ReportController::class, 'cetakPertanggalWithoutFungsi']);
+Route::get('cetak-data/laporan', [ReportController::class, 'generatepdf']);
 });
+Route::get('cetakpertanggal', [ReportController::class, 'cetakError']);
+Route::get('cetakpertanggal/{tglawal}/{tglakhir}/{fungsi}', [ReportController::class, 'cetakPertanggal']);

@@ -72,11 +72,7 @@
                                                 <i class="ti-trash"></i>
                                             </button>
                                         </form>
-                                        <a href="{{url('/master-data/doctor/'.$item->id)}}">
-                                            <button type="button" class="btn btn-social-icon btn-inverse-success btn-rounded">
-                                                Show
-                                            </button>
-                                        </a>
+                                    
 
                                     </td>
                                 </tr>
