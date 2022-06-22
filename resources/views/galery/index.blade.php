@@ -26,7 +26,7 @@
                     <a href="{{url('master-data/galery/create')}}" type="button" class="btn btn-inverse-primary btn-rounded btn-icon">Tambah
                         Dokter</a>
                     <div class="table-responsive">
-                        <table class="table table-striped">
+                        <table class="table table-striped" id="table1">
                             <thead>
                                 <tr>
                                     <th>No</th>

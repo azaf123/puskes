@@ -33,4 +33,14 @@
     <script src="{{asset('dinda/js/file-upload.js')}}"></script>
     <script src="{{asset('dinda/js/typeahead.js')}}"></script>
     <script src="{{asset('dinda/js/select2.js')}}"></script>
+    
+    <script src="{{asset('assets/vendors/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/jquery-datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/jquery-datatables/custom.jquery.dataTables.bootstrap5.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/fontawesome/all.min.js')}}"></script>
+    <script>
+        // Jquery Datatable
+        let jquery_datatable = $("#table1").DataTable()
+    </script>
+    </script>
     <!-- End custom js for this page-->

@@ -1,4 +1,3 @@
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -20,5 +19,18 @@
     <link rel="stylesheet" href="{{asset('dinda/css/vertical-layout-light/style.css')}}">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{asset('dinda/images/favicon.png')}}" />
-    
+    <link rel="stylesheet" href="{{asset('assets/vendors/jquery-datatables/jquery.dataTables.bootstrap5.min.css')}}">
+    <style>
+        table.dataTable td {
+            padding: 15px 8px;
+        }
+
+        .fontawesome-icons .the-icon svg {
+            font-size: 24px;
+        }
+    </style>
+
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"> -->
+
+   
 </head>

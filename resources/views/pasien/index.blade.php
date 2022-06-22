@@ -13,7 +13,7 @@
                     </p>
                     <a href="{{url('master-data/pasien/create')}}" type="button" class="btn btn-inverse-primary btn-rounded btn-icon">Tambah Identitas Pasien</a>
                     <div class="table-responsive">
-                        <table class="table table-striped">
+                        <table class="table table-striped" id="table1">
 
                             <thead>
                                 <tr>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Doctor;  
+use App\Models\Doctor;
 use App\Models\Patient;
 use App\Models\Category;
 use App\Models\Antrean;
@@ -24,7 +24,7 @@ class FrontController extends Controller
         $galery = Galery::all();
         $layanan = Layanan::all();
         $header = Header::all();
-        return view('front.tampilan.index' , compact('doctor', 'article', 'galery','layanan','header'));
+        return view('front.tampilan.index', compact('doctor', 'article', 'galery', 'layanan', 'header'));
     }
     public function pendaftaran()
     {
@@ -33,13 +33,13 @@ class FrontController extends Controller
     public function pendaftaranPasienBaru()
     {
         $treatment = Treatment::all();
-        return view('front.tampilan.pendaftaran-pasienbaru' , compact('treatment'));
+        return view('front.tampilan.pendaftaran-pasienbaru', compact('treatment'));
     }
 
     public function pendaftaranPasienLama()
     {
         $treatment = Treatment::all();
-        return view('front.tampilan.pendaftaran-pasienlama' , compact('treatment'));
+        return view('front.tampilan.pendaftaran-pasienlama', compact('treatment'));
     }
 
 
@@ -85,7 +85,7 @@ class FrontController extends Controller
             ]
         );
 
-        Patient ::create(
+        Patient::create(
             [
                 'treatment_id' => $request->noberobat,
                 'nama_pasien' => $request->nama,
@@ -103,21 +103,20 @@ class FrontController extends Controller
                 'goldar' => $request->goldar,
                 'bahasa' => $request->bahasa,
             ]
-            
+
         );
-      
 
 
 
-        if(empty($request->session()->get('patient'))) {
+
+        if (empty($request->session()->get('patient'))) {
             $request->session()->put('patient', $request->all());
         } else {
             $request->session()->forget('patient');
             $request->session()->put('patient', $request->all());
-          
         }
 
-        
+
         return redirect('/reservasi/create')->with('success', 'Pendaftaran berhasil');
     }
     public function storependaftaranPasienLama(Request $request)
@@ -130,7 +129,7 @@ class FrontController extends Controller
                 'nama' => 'required',
                 'jeniskelamin' => 'required',
                 'ttl' => 'required',
-               
+
 
             ],
             [
@@ -139,21 +138,18 @@ class FrontController extends Controller
                 'nama.required' => 'Nama harus diisi',
                 'nik.required' => 'NIK harus diisi',
                 'ttl.required' => 'TTL harus diisi',
-                
+
             ]
         );
 
-        if(empty($request->session()->get('patient'))) {
+        if (empty($request->session()->get('patient'))) {
             $request->session()->put('patient', $request->all());
         } else {
             $request->session()->forget('patient');
             $request->session()->put('patient', $request->all());
-          
         }
 
         return redirect('/reservasi-lama/create');
-
-        
     }
 
     public function reservasiLama()
@@ -163,9 +159,9 @@ class FrontController extends Controller
         $patient = Patient::where('id', $session['nama'])->get();
         $category = Category::all();
         $antrean = Antrean::all();
-    $treatment =Treatment::where('id', $session['noberobat'])->get();
-        $antrean = Antrean::where('status','inaktif')->get();
-        return view('front.tampilan.reservasi-lama', compact('patient', 'category', 'antrean','treatment', 'antrean', 'treatment'));
+        $treatment = Treatment::where('id', $session['noberobat'])->get();
+        $antrean = Antrean::where('status', 'inaktif')->get();
+        return view('front.tampilan.reservasi-lama', compact('patient', 'category', 'antrean', 'treatment', 'antrean', 'treatment'));
     }
     public function reservasi()
     {
@@ -173,7 +169,7 @@ class FrontController extends Controller
         // dd($session);
         $patient = Patient::where('nama_pasien', '=', $session['nama'])->get();
         $category = Category::all();
-        $antrean = Antrean::where('status','inaktif')->get();
+        $antrean = Antrean::where('status', 'inaktif')->get();
         return view('front.tampilan.reservasi', compact('patient', 'category', 'antrean'));
     }
 
@@ -182,69 +178,79 @@ class FrontController extends Controller
         $request->validate(
             [
                 'noberobat' => 'required',
-                'nama'=>'required',
-                'poli'=>'required',
-                'antrean'=>'required',
+                'nama' => 'required',
+                'poli' => 'required',
+                'antrean' => 'required',
 
             ],
             [
                 'noberobat' => 'Nama harus diisi',
-                'nama.required'=>'Nama harus diisi',
-                'poli.required'=>'Poli harus diisi',
-                'antrean.required'=>'Antrean harus diisi',
+                'nama.required' => 'Nama harus diisi',
+                'poli.required' => 'Poli harus diisi',
+                'antrean.required' => 'Antrean harus diisi',
             ]
         );
 
-             Reservation::create(
+        Reservation::create(
             [
                 'treatment_id' => $request->noberobat,
-                'patient_id'=>$request->nama,
-                'category_id'=>$request->poli,
-                'antrean_id'=>$request->antrean,               
-                
+                'patient_id' => $request->nama,
+                'category_id' => $request->poli,
+                'antrean_id' => $request->antrean,
+
             ]
         );
-        Antrean::where('id',$request->antrean)->update([
-            'status'=>'aktif',
+        if (empty($request->session()->get('patient'))) {
+            $request->session()->put('patient', $request->all());
+        } else {
+            $request->session()->forget('patient');
+            $request->session()->put('patient', $request->all());
+        }
+        Antrean::where('id', $request->antrean)->update([
+            'status' => 'aktif',
         ]);
 
-        
-
-        return redirect('/' )->with('success', 'Berhasil ditambahkan');
+        return redirect('/print-pendaftaran')->with('success', 'Berhasil ditambahkan');
     }
     public function reservasiStore(Request $request)
     {
         $request->validate(
             [
                 'noberobat' => 'required',
-                'nama'=>'required',
-                'poli'=>'required',
-                'antrean'=>'required',
+                'nama' => 'required',
+                'poli' => 'required',
+                'antrean' => 'required',
             ],
             [
-                'nama.required'=>'Nama harus diisi',
-                'poli.required'=>'Poli harus diisi',
-                'antrean.required'=>'Antrean harus diisi',
+                'nama.required' => 'Nama harus diisi',
+                'poli.required' => 'Poli harus diisi',
+                'antrean.required' => 'Antrean harus diisi',
             ]
         );
 
-             Reservation::create(
+        Reservation::create(
             [
                 'treatment_id' => $request->noberobat,
-                'patient_id'=>$request->nama,
-                'category_id'=>$request->poli,
-                'antrean_id'=>$request->antrean,               
-                
+                'patient_id' => $request->nama,
+                'category_id' => $request->poli,
+                'antrean_id' => $request->antrean,
+
             ]
         );
-        Antrean::where('id',$request->antrean)->update([
-            'status'=>'aktif',
+        Antrean::where('id', $request->antrean)->update([
+            'status' => 'aktif',
         ]);
 
+        if (empty($request->session()->get('patient'))) {
+            $request->session()->put('patient', $request->all());
+        } else {
+            $request->session()->forget('patient');
+            $request->session()->put('patient', $request->all());
+        }
 
-        return redirect('/' )->with('success', 'Berhasil ditambahkan');
+        return redirect('/print-pendaftaran')->with('success', 'Berhasil ditambahkan');
     }
-    
+
 
     public function profil()
     {
@@ -253,19 +259,19 @@ class FrontController extends Controller
     public function article()
     {
         $article = Article::all();
-        return view('front.tampilan.artikel' ,compact('article'));
+        return view('front.tampilan.artikel', compact('article'));
     }
     public function galery()
     {
         $galery = Galery::all();
-        return view('front.tampilan.galery' ,compact('galery'));
+        return view('front.tampilan.galery', compact('galery'));
     }
 
-    public function pasienReservasi($id){
+    public function pasienReservasi($id)
+    {
 
-        
-        $patient = Patient::where('treatment_id',$id)->get();
+
+        $patient = Patient::where('treatment_id', $id)->get();
         return response()->json($patient);
     }
 }
-

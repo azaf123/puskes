@@ -28,7 +28,7 @@
                         Artikel</a>
                     <div class="table-responsive">
 
-                        <table id="order-listing" class="table table-striped">
+                        <table id="order-listing" class="table table-striped" id="table1">
 
                             <thead>
                                 <tr>

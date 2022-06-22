@@ -28,7 +28,7 @@
                         Antrian</a>
 
                     <div class="table-responsive">
-                        <table class="table table-striped">
+                        <table class="table table-striped" id="table1">
                             <thead>
                                 <tr>
                                     <th>

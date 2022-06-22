@@ -28,6 +28,9 @@ use App\Http\Controllers\PrintController;
 Route::get('/print',[PrintController::class,'index']);
 Route::get('/print/generatepdf',[PrintController::class,'generatepdf']);
 
+Route::get('/print-pendaftaran/{reservation}',[PrintController::class,'printPendaftaran']);
+Route::get('/print-pendaftaran/generatepdf/{reservation}',[PrintController::class,'generatepdfPendaftaran']);
+
 Route::get('/antrean/{id}', [ReservationController::class, 'antreanToPoli']);
 Route::get('/treatment/{id}', [PatientController::class, 'getDataPatient']);
 Route::get('/pasien-treatment/{id}', [ReservationController::class, 'treatmentToPasien']);
