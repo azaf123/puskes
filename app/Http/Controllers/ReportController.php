@@ -18,14 +18,18 @@ class ReportController extends Controller
         // dd($tglawal, $tglakhir);
         $tglpengunjung = Reservation::all()->whereBetween('created_at',[$tglawal,$tglakhir]);
         if($tglpengunjung->count() > 0){
-            $pdf = PDF::loadView('report.cetak', compact('tglpengunjung'));
-            return $pdf->download('pengunjung.pdf');
+            return view('report.cetak2',compact('tglpengunjung'));
+           
         }else{
             return redirect()->back();
         }
         
        
     }
+    // public function generatePdf(){
+    //     $pdf = PDF::loadView('report.cetak2', compact('tglpengunjung'));
+    //     return $pdf->download('pengunjung.pdf');
+    // }
 
 
 }

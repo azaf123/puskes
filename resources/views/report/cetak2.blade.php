@@ -17,30 +17,29 @@
         <div class="container-fluid page-body-wrapper">
             <div class="card-body mt-5">
                 <div class="text-center">
-                    <h4 class="card-title">Cetak Data Surat Masuk Jianbang BPPD Palembang</h4>
+                    <h4 class="card-title">Cetak Data Puskesmas</h4>
                     <h6>Jl. Merdeka No.21, 19 Ilir, Kec. Bukit Kecil, Kota Palembang, Sumatera Selatan 30113</h6>
                 </div>
-                <table class="table table-striped mt-5">
+                <table class="table table-striped" id="table2">
                     <thead>
                         <tr>
-                            <th> No. </th>
-                            <th> Nomor Surat </th>
-                            <th> Perihal </th>
-                            <th> Asal Surat </th>
-                            <th> Tanggal </th>
-                            <th> Keterangan </th>
+                            <th>No</th>
+                            <th>No RM</th>
+                            <th>Nama Pasien</th>
+                            <th>Poli</th>
+                            <th>No Antrean</th>
+                          
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($smasuk as $item)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->nomasuk }} </td>
-                                <td>{{ $item->perihal }} </td>
-                                <td>{{ $item->asal }} </td>
-                                <td>{{ $item->tanggal }} </td>
-                                <td>{{ $item->ket }} </td>
-                            </tr>
+                        @foreach ($tglpengunjung as $item)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $item->treatment->no_berobat}}</td>
+                            <td>{{ $item->patient->nama_pasien}}</td>
+                            <td>{{ $item->category->nama_kategori }}</td>
+                            <td>{{ $item->antrean->no_antrean }}</td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>
