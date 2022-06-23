@@ -86,7 +86,15 @@
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label for="exampleInputName1">Pendidikan</label>
-                                        <input id="pendidikan" name="pendidikan" type="text" class="form-control @error('pendidikan') is-invalid @enderror" id="exampleInputName1" placeholder="Pendidikan">
+                                        <select name="pendidikan" class="form-control" id="exampleFormControlSelect1">
+                                            <option>SD</option>
+                                            <option>SMP</option>
+                                            <option>SMA</option>
+                                            <option>S1</option>
+                                            <option>S2</option>
+                                            <option>S3</option>
+                                            <option>-</option>
+                                        </select>
                                         @error('pendidikan')
                                         <div class="invalid-feedback">
                                             {{$message}}
