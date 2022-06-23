@@ -90,23 +90,12 @@
     </li>
     <!-- end pasien -->
 
-    <li class="nav-item nav-category">Landing Page</li>
-    <li class="nav-item">
-      <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
+    <li class="nav-item nav-category">Laporan</li>
+    <li class="nav-item sidebar-item @if(Request::segment(2)=='report') active @endif">
+      <a class="nav-link" href="{{url('/master-data/report/')}}">
         <i class="menu-icon mdi mdi-file-document"></i>
-        <span class="menu-title">Artikel</span>
+        <span class="menu-title">Laporan</span>
       </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
-        <i class="menu-icon mdi mdi-file-document"></i>
-        <span class="menu-title">Galeri</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
-        <i class="menu-icon mdi mdi-file-document"></i>
-        <span class="menu-title">Poli</span>
-      </a>
-    </li>
+   
 </nav>
