@@ -16,11 +16,22 @@
             <div class="box">
                 <div class="inputBox">
                     <span><b>No RM</b></span>
-                    <select name="noberobat" class="form-control" id="noberobat">
+                    <input list="datalistOptions" type="text" class="form-control @error('noberobat') is-invalid @enderror" placeholder="No Berobat" id="noberobat" name="noberobat">
+                    <datalist id="datalistOptions">
+                        @foreach ($treatment as $item)
+                        <option data-value="{{$item->id}}">{{$item->no_berobat}}</option>
+                        @endforeach
+                    </datalist>
+                    @error('noberobat')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
+                    <!-- <select name="noberobat" class="form-control" id="noberobat">
                     @foreach($treatment as $item)
                     <option value="{{$item->id}}">{{$item->no_berobat}}</option>
                     @endforeach
-                   </select>
+                   </select> -->
 
                 </div>
                 <div class="inputBox">
