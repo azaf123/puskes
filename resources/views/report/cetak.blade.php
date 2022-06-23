@@ -44,13 +44,11 @@
                     <tbody>
                         @foreach ($tglpengunjung as $item)
                         <tr>
-  
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->treatment->no_berobat}}</td>
                             <td>{{ $item->patient->nama_pasien}}</td>
                             <td>{{ $item->category->nama_kategori }}</td>
                             <td>{{ $item->antrean->no_antrean }}</td>
-                           
                         </tr>
                         @endforeach
                     </tbody>

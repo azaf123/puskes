@@ -15,26 +15,26 @@
                     <form action="{{url('/master-data/pasienbaru')}}" method="POST" class="forms-sample">
                         @csrf
                         <div class="col-md-6">
+                            <div class="form-group">
                                 <div class="form-group">
-                                    <div class="form-group">
-                                        <label for="exampleInputName1">No Berobat</label>
-                                  
-                                        <input readonly list="datalistOptions" type="text" class="form-control @error('noberobat') is-invalid @enderror" placeholder="DIKOSONGKAN" id="noberobat" name="noberobat">
-                                            <datalist id="datalistOptions">
-                                                @foreach ($treatment as $item)
-                                                <option data-value="{{$item->id}}">{{$item->no_berobat}}</option>
-                                                @endforeach
-                             
-                                            </datalist>
-                                            @error('noberobat')
-                                            <div class="invalid-feedback">
-                                                {{$message}}
-                                            </div>
-                                            @enderror
+                                    <label for="exampleInputName1">No Berobat</label>
 
+                                    <input readonly list="datalistOptions" type="text" class="form-control @error('noberobat') is-invalid @enderror" placeholder="DIKOSONGKAN" id="noberobat" name="noberobat">
+                                    <datalist id="datalistOptions">
+                                        @foreach ($treatment as $item)
+                                        <option data-value="{{$item->id}}">{{$item->no_berobat}}</option>
+                                        @endforeach
+
+                                    </datalist>
+                                    @error('noberobat')
+                                    <div class="invalid-feedback">
+                                        {{$message}}
                                     </div>
+                                    @enderror
+
                                 </div>
                             </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -93,7 +93,15 @@
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label for="exampleInputName1">Pendidikan</label>
-                                        <input name="pendidikan" type="text" class="form-control @error('pendidikan') is-invalid @enderror" id="exampleInputName1" placeholder="Pendidikan">
+                                        <select name="pendidikan" class="form-control" id="exampleFormControlSelect1">
+                                            <option>SD</option>
+                                            <option>SMP</option>
+                                            <option>SMA</option>
+                                            <option>S1</option>
+                                            <option>S2</option>
+                                            <option>S3</option>
+                                            <option>-</option>
+                                        </select>
                                         @error('pendidikan')
                                         <div class="invalid-feedback">
                                             {{$message}}
@@ -226,8 +234,8 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        
+
+
                         <button type="submit" class="btn btn-primary me-2">Simpan</button>
                         <button class="btn btn-light">Batal</button>
                     </form>

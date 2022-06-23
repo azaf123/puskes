@@ -121,9 +121,6 @@
             <button type="button" class="btn">Baca Yuk!</button>
          </div>
          @endforeach
-
-
-
       </div>
 
       <div class="swiper-pagination"></div>
