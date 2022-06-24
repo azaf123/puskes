@@ -37,10 +37,10 @@
                                         Foto
                                     </th>
                                     <th>
-                                        Alamat
+                                        Spesialisasi
                                     </th>
                                     <th>
-                                        Spesialisasi
+                                        Alamat
                                     </th>
                                     <th>
                                         No HP

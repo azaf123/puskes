@@ -12,13 +12,13 @@
                         Tambah Identitas Pasien
                     </p>
                     <a href="{{url('master-data/pasien/create')}}" type="button" class="btn btn-inverse-primary btn-rounded btn-icon">Tambah Identitas Pasien</a>
-                    <div class="table-responsive">
+                    <div class="table-responsive mt-3">
                         <table class="table table-striped" id="table1">
 
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>No Berobat</th>
+                                    <th>No. RM</th>
                                     <th>Nama Pasien</th>
                                     <th>NIK</th>
                                     <th>Jenis Kelamin</th>

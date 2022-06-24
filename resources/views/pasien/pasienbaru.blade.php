@@ -9,10 +9,10 @@
                 <div class="card-body">
                     <h4 class="card-title">Identitas Pasien Baru</h4>
                     <p class="card-description">
-                        Tambah Identitas Pasien
+                        Data Identitas Pasien Baru. Harap Tambahkan No.RM!
                     </p>
-                    <a href="{{url('master-data/pasien/create')}}" type="button" class="btn btn-inverse-primary btn-rounded btn-icon">Tambah Identitas Pasien</a>
-                    <div class="table-responsive">
+                    <a href="{{url('master-data/pasien/create')}}" type="button" class="btn btn-inverse-primary btn-rounded btn-icon md-3">Tambah Identitas Pasien</a>
+                    <div class="table-responsive mt-3">
                         <table class="table table-striped" id="table1">
 
                             <thead>
@@ -34,8 +34,6 @@
                                     <th>Goldar</th>
                                     <th>Bahasa</th>
                                     <!-- <th>Keluhan</th> -->
-                                   
-
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -59,7 +57,7 @@
                                     <td>{{ $item->goldar }}</td>
                                     <td>{{ $item->bahasa }}</td>
                                     <!-- <td>{{ $item->keluhan }}</td> -->
-                                 
+                                    
                                     <td>
                                         <a href="{{url('/master-data/pasien/'.$item->id).'/edit'}}">
                                             <button type="button" class="btn btn-social-icon btn-inverse-success btn-rounded">

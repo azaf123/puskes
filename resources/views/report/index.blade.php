@@ -7,8 +7,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Laporan Data Reservasi</h3>
-                <p class="text-subtitle text-muted">Puskesmas</p>
+                <h3>Laporan Data Pendaftaran Pasien</h3>
+                <p class="text-subtitle text-muted">Puskesmas 5 Ilir Palembang</p>
 
             </div>
 
