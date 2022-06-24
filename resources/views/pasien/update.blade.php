@@ -44,7 +44,8 @@
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label for="exampleInputName1">NIK</label>
-                                        <input id="nik" name="nik" type="text" class="form-control @error('nik') is-invalid @enderror" id="exampleInputName1" placeholder="NIK" value="{{$patient->nik}}">
+                                        <input id="nik" name="nik" type="text" class="form-control @error('nik') is-invalid @enderror" id="exampleInputName1" 
+                                        placeholder="NIK" value="{{$patient->nik}}">
                                         @error('nik')
                                         <div class="invalid-feedback">
                                             {{$message}}

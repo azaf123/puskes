@@ -17,10 +17,10 @@
         <div class="container-fluid page-body-wrapper">
             <div class="card-body mt-5">
                 <div class="text-center">
-                    <h4 class="card-title">Cetak Data Puskesmas</h4>
+                    <h4 class="card-title">Cetak Data Pendaftaran Pasien</h4>
                     <h6>Jl. Merdeka No.21, 19 Ilir, Kec. Bukit Kecil, Kota Palembang, Sumatera Selatan 30113</h6>
                 </div>
-                <table class="table table-striped" id="table2">
+                <table class="table table-bordered" id="table2">
                     <thead>
                         <tr>
                             <th>No</th>

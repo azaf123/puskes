@@ -5,10 +5,10 @@
 
 <nav class="navbar">
    <a href="{{url('/')}}">home</a>
-   <a href="{{url('/profil')}}">profil</a>
    <a href="#doctor">dokter</a>
-   <a href="{{url('/artikel')}}">artikel</a>
    <a href="#layanan">layanan</a>
+   <a href="{{url('/profil')}}">profil</a>
+   <a href="{{url('/artikel')}}">artikel</a>
    <a href="{{url('/galery')}}">gallery</a>
    <a href="{{url('/pendaftaran')}}">pendaftaran</a>
 </nav>
