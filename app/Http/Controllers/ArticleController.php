@@ -14,7 +14,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $article = Article::all();
+        $article = Article::all()->sortByDesc('id');
         return view('article.index', compact('article'));
     }
 

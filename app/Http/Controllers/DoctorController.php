@@ -14,7 +14,7 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        $doctor = Doctor::all();
+        $doctor = Doctor::all()->sortByDesc('id');
         return view('doctor.index', compact('doctor'));
     }
 

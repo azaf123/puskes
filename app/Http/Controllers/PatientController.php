@@ -17,13 +17,13 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $patient = Patient::where('treatment_id', '!=', '3')->get();
+        $patient = Patient::where('treatment_id', '!=', '3')->get()->sortBydesc('id');
         return view('pasien.index', compact('patient'));
     }
     public function pasienbaru()
     {
        
-        $patient = Patient::all();
+        $patient = Patient::where('treatment_id', '3')->get()->sortByDesc('id');
 
         return view('pasien.pasienbaru', compact('patient'));
     }
@@ -98,6 +98,7 @@ class PatientController extends Controller
         } else {
             $request->session()->forget('patient');
             $request->session()->put('patient', $request->all());
+          
         }
  
         
@@ -243,8 +244,7 @@ class PatientController extends Controller
      */
     public function show(Patient $patient)
     {
-        $treatment = Treatment::all();
-        return view('pasien.show', compact('patient' ,'treatment'));
+        return view('pasien.detail', compact('patient'));
     }
 
     /**
@@ -255,6 +255,7 @@ class PatientController extends Controller
      */
     public function edit(Patient $patient)
     {
+    //    dd($patient);
         $category = Category::all();
         $treatment = Treatment::all();
         $antrean = Antrean::all();
@@ -348,7 +349,7 @@ class PatientController extends Controller
      */
     public function destroy(Patient $patient)
     {
-        dd($patient);
+        
         Patient::where('id', $patient->id)->delete();
         return redirect('master-data/pasien')->with('status', 'Data berhasil dihapus');
     }
