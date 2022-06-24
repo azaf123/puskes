@@ -17,7 +17,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="form-group">
-                                    <label for="exampleInputName1">No Berobat</label>
+                                    <label for="exampleInputName1">No RM</label>
 
                                     <select name="no_berobat" class="form-control" id="noberobat">
                                         @foreach($treatment as $item)
