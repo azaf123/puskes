@@ -14,6 +14,7 @@
                     </p>
                     <form action="{{url('/master-data/pasien')}}" method="POST" class="forms-sample">
                         @csrf
+                        @method('PATCH')
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="form-group">

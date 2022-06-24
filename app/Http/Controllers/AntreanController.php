@@ -42,12 +42,15 @@ class AntreanController extends Controller
         // return $request;
         $request->validate(
             [
-                'noantrean'=>'required',
+                'noantrean'=>'required | unique:antrean ',
                 'poli'=>'required',
 
             ],
             [
+                
+
                 'noantrean.required'=>'No Antrean harus diisi',
+                'noantrean.unique'=>'No Antrean sudah ada',
                 'poli.required'=>'Poli harus diisi',
 
             ]
