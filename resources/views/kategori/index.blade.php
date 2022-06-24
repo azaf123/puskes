@@ -20,13 +20,10 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Data Poli</h4>
-                    <p class="card-description">
-                        Data Poli
-                    </p>
-                    <a href="{{url('master-data/category/create')}}" type="button" class="btn btn-inverse-primary btn-rounded btn-icon">Tambah Nomor
-                        Poli</a>
+                    <a href="{{url('master-data/category/create')}}" type="button" class="btn btn-inverse-primary btn-rounded btn-icon">Tambah Poli
+                        </a>
 
-                    <div class="table-responsive">
+                    <div class="table-responsive mt-3">
                         <table class="table table-striped" id="table1">
                             <thead>
                                 <tr>
@@ -56,7 +53,8 @@
                                                 <i class="ti-pencil-alt"></i>
                                             </button>
                                         </a>
-                                        <form method="POST" action="{{url('/master-data/category/' . $item->id)}}" enctype="multipart/form-data">
+                                        <form method="POST" action="{{url('/master-data/category/' . $item->id)}}" enctype="multipart/form-data"
+                                            class='d-inline'>
                                             @csrf
                                             @method("DELETE")
                                             <button type="submit" class="btn btn-social-icon btn-inverse-danger btn-rounded">
