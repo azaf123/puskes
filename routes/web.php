@@ -73,6 +73,8 @@ Route::resource('article', ArticleController::class);
 
 Route::resource('doctor', DoctorController::class);
 Route::resource('reservation', ReservationController::class);
+Route::get('/reservation-baru/create' , [ReservationController::class, 'reservationBaru']);
+Route::post('/reservation-baru' , [ReservationController::class, 'storeBaru']);
 Route::resource('galery', GaleryController::class);
 Route::resource('header', HeaderController::class);
 Route::resource('layanan', LayananController::class);

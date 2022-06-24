@@ -23,10 +23,15 @@
                     <p class="card-description">
                         Data Pendaftaran Pasien
                     </p>
+<<<<<<< HEAD
                      <a href="{{url('master-data/pasienbaru/create/')}}" type="button"
                     class="btn btn-inverse-primary btn-rounded btn-icon">Daftar Pasien Baru</a>
                   <a href="{{url('master-data/pasien/create/')}}" type="button"
                     class="btn btn-inverse-primary btn-rounded btn-icon">Daftar Pasien Lama</a>
+=======
+                    <!-- <a href="{{url('master-data/reservation/create')}}" type="button" class="btn btn-inverse-primary btn-rounded btn-icon">Tambah Nomor
+                        Reservasi</a> -->
+>>>>>>> 8e6a31a7ff5b310ec8057a83e7fc8acf8a579e6e
 
                     <div class="table-responsive mt-3">
                         <table class="table table-striped" id="table1">
@@ -48,6 +53,9 @@
                                         No Antrean
                                     </th>
                                     <th>
+                                        Keluhan
+                                    </th>
+                                    <th>
                                         Aksi
                                     </th>
                                 </tr>
@@ -60,6 +68,7 @@
                                     <td>{{ $item->patient->nama_pasien }}</td>
                                     <td>{{ $item->category->nama_kategori }}</td>
                                     <td>{{ $item->antrean->no_antrean}}</td>
+                                    <td>{{ $item->keluhan}}</td>
                                     <td>
                                         <a href="{{url('/master-data/reservation/'.$item->id).'/edit'}}">
                                             <button type="button" class="btn btn-social-icon btn-inverse-success btn-rounded">

@@ -15,11 +15,18 @@
     
     </tr>
   </thead>
-  <tbody>
 
+  <tbody>
+  @foreach ($reservation as $item)
     <tr>
-       
+
+      <td>{{ $item->treatment->no_berobat}}</td>
+      <td>{{ $item->treatment->nama_pasien}}</td>
+      <td>{{ $item->treatment->poli}}</td>
+      <td>{{ $item->treatment->no_antrean}}</td>
+
     </tr>
+  @endforeach
 
   </tbody>
 </table>

@@ -10,15 +10,10 @@
                 <div class="card-body">
                     <h4 class="card-title">Tambah reservasi</h4>
                     <p class="card-description">
-                        Isi reservasi
+                        Isi reservasi baru
                     </p>
-                    <form action="{{url('/master-data/reservation')}}" method="POST" class="forms-sample">
+                    <form action="{{url('/master-data/reservation-baru')}}" method="POST" class="forms-sample">
                         @csrf
-                        <select name="noberobat" class="form-control" id="noberobat">
-                            @foreach($treatment as $item)
-                            <option value="{{$item->id}}">{{$item->no_berobat}}</option>
-                            @endforeach
-                        </select>
                         <div class="form-group">
                             <label for="exampleSelectGender">Nama Pasien</label>
                             <select name="nama" class="form-control" id="exampleSelectGender">
@@ -47,7 +42,6 @@
                               
                             </input>
                         </div>
-                        
                         <button type="submit" class="btn btn-primary me-2">Simpan</button>
                         <button class="btn btn-light">Batal</button>
                     </form>

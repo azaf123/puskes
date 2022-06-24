@@ -73,6 +73,7 @@ class PatientController extends Controller
             [
                 'noberobat' => 'required',
                 'nama' => 'required',
+<<<<<<< HEAD
                 // 'nik' => 'required',
                 'jeniskelamin' => 'required',
                 'ttl' => 'required',
@@ -86,12 +87,18 @@ class PatientController extends Controller
                 // 'nohp' => 'required',
                 // 'goldar' => 'required',
                 // 'bahasa' => 'required',
+=======
+                'jeniskelamin' => 'required',
+                'ttl' => 'required',
+               
+>>>>>>> 8e6a31a7ff5b310ec8057a83e7fc8acf8a579e6e
 
 
             ],
             [
                 'noberobat.required' => 'No. Obat harus diisi',
                 'nama.required' => 'Nama harus diisi',
+<<<<<<< HEAD
                 // 'nik.required' => 'NIK harus diisi',
                 'jeniskelamin.required' => 'Jenis Kelamin harus diisi',
                 'ttl.required' => 'TTL harus diisi',
@@ -105,6 +112,14 @@ class PatientController extends Controller
                 // 'nohp.required' => 'No HP harus diisi',
                 // 'goldar.required' => 'Goldar harus diisi',
                 // 'bahasa.required' => 'Bahasa harus diisi',
+=======
+               
+                'jeniskelamin.required' => 'Jenis Kelamin harus diisi',
+                'ttl.required' => 'TTL harus diisi',
+
+
+
+>>>>>>> 8e6a31a7ff5b310ec8057a83e7fc8acf8a579e6e
             ]
         );
         
@@ -194,7 +209,7 @@ class PatientController extends Controller
 
 
 
-        return redirect('master-data/reservation/create');
+        return redirect('master-data/reservation-baru/create');
     }
 
     public function storenextpasienbaru(Request $request)

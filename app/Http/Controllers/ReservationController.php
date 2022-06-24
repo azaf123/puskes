@@ -19,8 +19,9 @@ class ReservationController extends Controller
     public function index()
     {
         $reservation = Reservation::all();
-        return view('reservasi.index',compact('reservation'));
+        return view('reservasi.index', compact('reservation'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -29,15 +30,24 @@ class ReservationController extends Controller
      */
     public function create()
     {
-      $session = session()->get('patient');
-    //   dd($session);
-    $patient = Patient::where('id', $session['nama'])->get();
-    $category = Category::all();
-    $antrean = Antrean::all();
-    $treatment = Treatment::where('id', $session['noberobat'])->get();
-    $antrean = Antrean::where('status', 'inaktif')->get();
-    return view ('reservasi.create',compact('category','antrean','patient' ,'treatment'));
-        
+        $session = session()->get('patient');
+        //   dd($session);
+        $patient = Patient::where('id', $session['nama'])->get();
+        $category = Category::all();
+        $antrean = Antrean::all();
+        $treatment = Treatment::where('id', $session['noberobat'])->get();
+        $antrean = Antrean::where('status', 'inaktif')->get();
+        return view('reservasi.create', compact('category', 'antrean', 'patient', 'treatment'));
+    }
+    public function reservationBaru()
+    {
+        $session = session()->get('patient');
+        // dd($session);
+        $patient = Patient::where('nama_pasien', $session['nama'])->get();
+        $category = Category::all();
+        $antrean = Antrean::all();
+        $treatment = Treatment::all();
+        return view('reservasi.reservasi-baru', compact('patient', 'category', 'antrean', 'treatment'));
     }
 
     /**
@@ -51,6 +61,7 @@ class ReservationController extends Controller
         // return $request;
         $request->validate(
             [
+                'keluhan' => 'required',
                 'noberobat' => 'required',
                 'nama' => 'required',
                 'poli' => 'required',
@@ -58,6 +69,7 @@ class ReservationController extends Controller
 
             ],
             [
+                'keluhan.required' => 'Keluhan harus diisi',
                 'noberobat' => 'Nama harus diisi',
                 'nama.required' => 'Nama harus diisi',
                 'poli.required' => 'Poli harus diisi',
@@ -65,12 +77,14 @@ class ReservationController extends Controller
             ]
         );
 
-             Reservation::create(
-            [  'treatment_id' => $request->noberobat,
-            'patient_id' => $request->nama,
-            'category_id' => $request->poli,
-            'antrean_id' => $request->antrean,               
-                
+        Reservation::create(
+            [
+                'keluhan' => $request->keluhan,
+                'treatment_id' => $request->noberobat,
+                'patient_id' => $request->nama,
+                'category_id' => $request->poli,
+                'antrean_id' => $request->antrean,
+
             ]
         );
         if (empty($request->session()->get('patient'))) {
@@ -83,7 +97,50 @@ class ReservationController extends Controller
             'status' => 'aktif',
         ]);
 
-        return redirect('master-data/reservation' )->with('success', 'Berhasil ditambahkan');
+        return redirect('master-data/reservation')->with('success', 'Berhasil ditambahkan');
+    }
+    public function storeBaru(Request $request)
+    {
+        // return $request;
+        $request->validate(
+            [
+                
+                'keluhan' => 'required',
+                'nama' => 'required',
+                'poli' => 'required',
+                'antrean' => 'required',
+
+            ],
+            [
+               
+                'keluhan.required' => 'Keluhan harus diisi',
+                'nama.required' => 'Nama harus diisi',
+                'poli.required' => 'Poli harus diisi',
+                'antrean.required' => 'Antrean harus diisi',
+            ]
+        );
+
+        Reservation::create(
+            [
+                'keluhan' => $request->keluhan,
+                'treatment_id' => 3,
+                'patient_id' => $request->nama,
+                'category_id' => $request->poli,
+                'antrean_id' => $request->antrean,
+
+            ]
+        );
+        if (empty($request->session()->get('patient'))) {
+            $request->session()->put('patient', $request->all());
+        } else {
+            $request->session()->forget('patient');
+            $request->session()->put('patient', $request->all());
+        }
+        Antrean::where('id', $request->antrean)->update([
+            'status' => 'aktif',
+        ]);
+
+        return redirect('master-data/reservation')->with('success', 'Berhasil ditambahkan');
     }
 
     /**
@@ -135,19 +192,20 @@ class ReservationController extends Controller
         return redirect('/master-data/reservation')->with('status', ' Data berhasil dihapus');
     }
 
-    public function antreanToPoli($id){
-        
-        $antrean = Antrean::where('category_id',$id)->where('status', 'inaktif')->get();
-        
+    public function antreanToPoli($id)
+    {
+
+        $antrean = Antrean::where('category_id', $id)->where('status', 'inaktif')->get();
+
         return response()->json($antrean);
     }
-    
-    
-    public function treatmentToPasien($id){
-        
-        $patient = Patient::where('treatment_id',$id)->get();
-        
+
+
+    public function treatmentToPasien($id)
+    {
+
+        $patient = Patient::where('treatment_id', $id)->get();
+
         return response()->json($patient);
     }
-  
 }
