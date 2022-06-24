@@ -23,7 +23,8 @@ class PatientController extends Controller
     public function pasienbaru()
     {
        
-        $patient = Patient::where('treatment_id', 3)->get();
+        $patient = Patient::all();
+
         return view('pasien.pasienbaru', compact('patient'));
     }
 
