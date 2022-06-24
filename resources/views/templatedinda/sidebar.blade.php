@@ -29,7 +29,7 @@
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item sidebar-item @if (Request::segment(1) == 'pasien') active @endif">
-                        <a class="nav-link" href="{{ url('/master-data/pasien/') }}">Pasien Lama</a>
+                        <a class="nav-link" href="{{ url('/master-data/patient/') }}">Pasien Lama</a>
                     </li>
                     <li class="nav-item sidebar-item @if (Request::segment(1) == 'datapasienbaru') active @endif">
                         <a class="nav-link" href="{{ url('/master-data/pasienbaru/') }}">Pasien Baru</a>
@@ -41,7 +41,7 @@
 
 
         {{-- <li class="nav-item sidebar-item @if (Request::segment(1) == 'pasien') active @endif">
-      <a class="nav-link" href="{{url('/master-data/pasien/')}}">
+      <a class="nav-link" href="{{url('/master-data/patient/')}}">
         <i class="menu-icon mdi mdi-file-document"></i>
         <span class="menu-title">Data Pasien Lama</span>
       </a>

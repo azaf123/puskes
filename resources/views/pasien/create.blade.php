@@ -12,7 +12,7 @@
                     <p class="card-description">
                         Isi Data Form!
                     </p>
-                    <form action="{{url('/master-data/pasien')}}" method="POST" class="forms-sample">
+                    <form action="{{url('/master-data/patient')}}" method="POST" class="forms-sample">
                         @csrf
                         <div class="col-md-6">
                             <div class="form-group">

@@ -11,7 +11,7 @@
                         <p class="card-description">
                             Tambah Identitas Pasien
                         </p>
-                        <a href="{{ url('master-data/pasien/create') }}" type="button"
+                        <a href="{{ url('master-data/patient/create') }}" type="button"
                             class="btn btn-inverse-primary btn-rounded btn-icon">Tambah Identitas Pasien</a>
                         <div class="table-responsive mt-3">
                             <table class="table table-striped" id="table1">
@@ -60,21 +60,21 @@
                                             <td>{{ $item->bahasa }}</td>
                                             <td>
                                                 {{-- ini untuk liat detail, karno kan alamatnyo idak full--}}
-                                                <a href="{{ url('/master-data/pasien/' . $item->id) }}">
+                                                <a href="{{ url('/master-data/patient/' . $item->id) }}">
                                                     <button type="submit"
                                                         class="btn btn-social-icon btn-inverse-info btn-rounded">
                                                         <i class="ti-eye" role="button"></i>
                                                     </button>
                                                 </a>
                                                 {{-- . --}}
-                                                <a href="{{ url('/master-data/pasien/' . $item->id) . '/edit' }}">
+                                                <a href="{{ url('/master-data/patient/' . $item->id) . '/edit' }}">
                                                     <button type="button"
                                                         class="btn btn-social-icon btn-inverse-success btn-rounded">
                                                         <i class="ti-pencil-alt"></i>
                                                     </button>
                                                 </a>
                                                 <form method="POST"
-                                                    action="{{ url('/master-data/pasien/' . $item->id) }}"
+                                                    action="{{ url('/master-data/patient/' . $item->id) }}"
                                                     enctype="multipart/form-data" class='d-inline'>
                                                     @csrf
                                                     @method('DELETE')

@@ -271,6 +271,7 @@ class PatientController extends Controller
      */
     public function update(Request $request, Patient $patient)
     {
+        // return $request;
         $request->validate(
             [
                 'noberobat' => 'required',
@@ -288,9 +289,8 @@ class PatientController extends Controller
                 'nohp' => 'required',
                 'goldar' => 'required',
                 'bahasa' => 'required',
-                'keluhan' => 'required',
-                'poli' => 'required',
-                'antrean' => 'required',
+              
+              
             ],
             [
                 'noberobat.required' => 'No. Obat harus diisi',
@@ -308,9 +308,7 @@ class PatientController extends Controller
                 'nohp.required' => 'No HP harus diisi',
                 'goldar.required' => 'Goldar harus diisi',
                 'bahasa.required' => 'Bahasa harus diisi',
-                'keluhan.required' => 'Keluhan harus diisi',
-                'poli.required' => 'Poli harus diisi',
-                'antrean.required' => 'Antrean harus diisi',
+               
 
             ]
         );
@@ -320,7 +318,7 @@ class PatientController extends Controller
                 'treatment_id' => $request->noberobat,
                 'nama_pasien' => $request->nama,
                 'nik' => $request->nik,
-                'jeniskelamin' => $request->jeniskelamin,
+                'jenis_kelamin' => $request->jeniskelamin,
                 'ttl' => $request->ttl,
                 'pendidikan' => $request->pendidikan,
                 'pekerjaan' => $request->pekerjaan,
@@ -332,13 +330,11 @@ class PatientController extends Controller
                 'no_hp' => $request->nohp,
                 'goldar' => $request->goldar,
                 'bahasa' => $request->bahasa,
-                'keluhan' => $request->keluhan,
-                'category_id' => $request->poli,
-                'antrean_id' => $request->antrean,
+               
             ]
         );
 
-        return redirect('master-data/patient')->with('status', 'Data berhasil diubah');
+        return redirect('master-data/pasienbaru')->with('status', 'Data berhasil diubah');
     }
 
     /**
@@ -351,14 +347,14 @@ class PatientController extends Controller
     {
         // dd($patient);
         Patient::where('id', $patient->id)->delete();
-        return redirect('master-data/pasien')->with('status', 'Data berhasil dihapus');
+        return redirect('master-data/patient')->with('status', 'Data berhasil dihapus');
     }
 
-    public function destroyPasienBaru(Patient $patient)
-    {
-        Patient::where('id', $patient->id)->delete();
-        return redirect('master-data/pasienbaru')->with('status', 'Data berhasil dihapus');
-    }
+    // public function destroyPasienBaru(Patient $patient)
+    // {
+    //     Patient::where('id', $patient->id)->delete();
+    //     return redirect('master-data/pasienbaru')->with('status', 'Data berhasil dihapus');
+    // }
 
     public function getDataPatient($id)
     {

@@ -54,7 +54,7 @@ Route::get('/pendaftaran-pasien-lama/create', [FrontController::class, 'pendafta
 Route::post('/pendaftaran-pasien-lama', [FrontController::class, 'storependaftaranPasienLama']);
 
 Route::prefix('master-data')->group(function () {
-Route::resource('pasien', PatientController::class);
+Route::resource('patient', PatientController::class);
 Route::get('pasienbaru/', [PatientController::class, 'pasienbaru']);
 Route::get('pasienbaru/create', [PatientController::class, 'createPasienBaru']);
 Route::get('pasienbaru/createReservation', [PatientController::class, 'nextpasienbaru']);

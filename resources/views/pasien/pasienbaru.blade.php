@@ -11,7 +11,7 @@
                     <p class="card-description">
                         Data Identitas Pasien Baru. Harap Tambahkan No.RM!
                     </p>
-                    <a href="{{url('master-data/pasien/create')}}" type="button" class="btn btn-inverse-primary btn-rounded btn-icon md-3">Tambah Identitas Pasien</a>
+                    <a href="{{url('master-data/pasienbaru/create')}}" type="button" class="btn btn-inverse-primary btn-rounded btn-icon md-3">Tambah Identitas Pasien</a>
                     <div class="table-responsive mt-3">
                         <table class="table table-striped" id="table1">
 
@@ -59,12 +59,18 @@
                                     <!-- <td>{{ $item->keluhan }}</td> -->
                                     
                                     <td>
-                                        <a href="{{url('/master-data/pasien/'.$item->id).'/edit'}}">
+                                    <a href="{{ url('/master-data/patient/' . $item->id) }}">
+                                                    <button type="submit"
+                                                        class="btn btn-social-icon btn-inverse-info btn-rounded">
+                                                        <i class="ti-eye" role="button"></i>
+                                                    </button>
+                                                </a>
+                                        <a href="{{url('/master-data/patient/'.$item->id).'/edit'}}">
                                             <button type="button" class="btn btn-social-icon btn-inverse-success btn-rounded">
                                                 <i class="ti-pencil-alt"></i>
                                             </button>
                                         </a>
-                                        <form method="POST" action="{{url('/master-data/pasienbaru/' . $item->id)}}" enctype="multipart/form-data"
+                                        <form method="POST" action="{{url('/master-data/patient/' . $item->id)}}" enctype="multipart/form-data"
                                             class='d-inline'>
                                             @csrf
                                             @method("DELETE")
