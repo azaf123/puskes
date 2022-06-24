@@ -348,7 +348,7 @@ class PatientController extends Controller
      */
     public function destroy(Patient $patient)
     {
-        dd($patient);
+        // dd($patient);
         Patient::where('id', $patient->id)->delete();
         return redirect('master-data/pasien')->with('status', 'Data berhasil dihapus');
     }
