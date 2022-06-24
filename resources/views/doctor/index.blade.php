@@ -58,7 +58,7 @@
                                     <td>{{ $item->no_hp }}</td>
                                     <td>
                                         {{-- ini untuk liat detail, karno kan alamatnyo idak full--}}
-                                        <a href="{{ url('/master-data/pasien/' . $item->id) }}">
+                                        <a href="{{ url('/master-data/doctor/' . $item->id) }}">
                                             <button type="submit"
                                                 class="btn btn-social-icon btn-inverse-info btn-rounded">
                                                 <i class="ti-eye" role="button"></i>
