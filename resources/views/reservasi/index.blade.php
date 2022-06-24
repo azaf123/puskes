@@ -23,8 +23,8 @@
                     <p class="card-description">
                         Data Reservation
                     </p>
-                    <a href="{{url('master-data/reservation/create')}}" type="button" class="btn btn-inverse-primary btn-rounded btn-icon">Tambah Nomor
-                        Reservasi</a>
+                    <!-- <a href="{{url('master-data/reservation/create')}}" type="button" class="btn btn-inverse-primary btn-rounded btn-icon">Tambah Nomor
+                        Reservasi</a> -->
 
                     <div class="table-responsive">
                         <table class="table table-striped" id="table1">
