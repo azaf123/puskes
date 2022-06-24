@@ -334,7 +334,14 @@ class PatientController extends Controller
             ]
         );
 
-        return redirect('master-data/pasienbaru')->with('status', 'Data berhasil diubah');
+    //    if treatment_id == 3 return pasienbaru
+        if ($request->noberobat == 3) {
+            return redirect('master-data/pasienbaru/');
+        } else {
+            return redirect('master-data/patient/');
+        }
+        
+        // return redirect('master-data/pasienbaru')->with('status', 'Data berhasil diubah');
     }
 
     /**
@@ -347,7 +354,14 @@ class PatientController extends Controller
     {
         // dd($patient);
         Patient::where('id', $patient->id)->delete();
-        return redirect('master-data/patient')->with('status', 'Data berhasil dihapus');
+            //    if treatment_id == 3 return pasienbaru
+            if ($patient->treatment_id == 3) {
+                return redirect('master-data/pasienbaru/');
+            } else {
+                return redirect('master-data/patient/');
+            }
+        // return redirect('master-data/patient')->with('status', 'Data berhasil dihapus');
+        
     }
 
     // public function destroyPasienBaru(Patient $patient)
