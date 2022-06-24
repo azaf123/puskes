@@ -7,16 +7,16 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Detail Artikel</h4>
+                    <h4 class="card-title">Detail Layanan</h4>
                     <p class="card-description">
-                        {{$header->judul}}
+                        {{$layanan->judul}}
                     </p>
                     <div class="row">
                         <div class="col-6">
-                            <img src="{{asset('img/'.$header->gambar)}}" alt="" width="500px" height="auto">
+                            <img src="{{asset('img/'.$layanan->gambar)}}" alt="" width="500px" height="auto">
                         </div>
                         <div class="col-6">
-                        {{ $header->konten }}
+                        {{ $layanan->konten }}
                         </div>
                     </div>
                 </div>
