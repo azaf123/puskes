@@ -57,7 +57,7 @@
                                     <td><img src="{{asset('img/'.$item->foto)}}" alt=""></td>
                                     <td>{{ $item->nama }}</td>
                                     <td>{{ $item->spesialisasi }}</td>
-                                    <td>{{ $item->alamat }}</td>
+                                    <td>{{ (strlen($item->alamat)>10) ? substr($item -> alamat, 0,20) . '...': $item->alamat }}</td>
                                     <td>{{ $item->no_hp }}</td>
                                     <td>
                                         <a href="{{url('/master-data/doctor/'.$item->id).'/edit'}}">

@@ -71,73 +71,49 @@ class PatientController extends Controller
         // return $request;
          $request->validate(
             [
-                'no_berobat' => 'required',
+                'noberobat' => 'required',
                 'nama' => 'required',
-                'nik' => 'required',
+                // 'nik' => 'required',
                 'jeniskelamin' => 'required',
                 'ttl' => 'required',
-                'pendidikan' => 'required',
-                'pekerjaan' => 'required',
-                'nama_as' => 'required',
-                'nama_ii' => 'required',
-                'sukubangsa' => 'required',
-                'agama' => 'required',
-                'alamat' => 'required',
-                'nohp' => 'required',
-                'goldar' => 'required',
-                'bahasa' => 'required',
+                // 'pendidikan' => 'required',
+                // 'pekerjaan' => 'required',
+                // 'nama_as' => 'required',
+                // 'nama_ii' => 'required',
+                // 'sukubangsa' => 'required',
+                // 'agama' => 'required',
+                // 'alamat' => 'required',
+                // 'nohp' => 'required',
+                // 'goldar' => 'required',
+                // 'bahasa' => 'required',
 
 
             ],
             [
-                'no_berobat.required' => 'No. Obat harus diisi',
+                'noberobat.required' => 'No. Obat harus diisi',
                 'nama.required' => 'Nama harus diisi',
-                'nik.required' => 'NIK harus diisi',
+                // 'nik.required' => 'NIK harus diisi',
                 'jeniskelamin.required' => 'Jenis Kelamin harus diisi',
                 'ttl.required' => 'TTL harus diisi',
-                'pendidikan.required' => 'Pendidikan harus diisi',
-                'pekerjaan.required' => 'Pekerjaan harus diisi',
-                'nama_as.required' => 'Nama AS harus diisi',
-                'nama_ii.required' => 'Nama II harus diisi',
-                'sukubangsa.required' => 'Suku Bangsa harus diisi',
-                'agama.required' => 'Agama harus diisi',
-                'alamat.required' => 'Alamat harus diisi',
-                'nohp.required' => 'No HP harus diisi',
-                'goldar.required' => 'Goldar harus diisi',
-                'bahasa.required' => 'Bahasa harus diisi',
-
-
-
+                // 'pendidikan.required' => 'Pendidikan harus diisi',
+                // 'pekerjaan.required' => 'Pekerjaan harus diisi',
+                // 'nama_as.required' => 'Nama AS harus diisi',
+                // 'nama_ii.required' => 'Nama II harus diisi',
+                // 'sukubangsa.required' => 'Suku Bangsa harus diisi',
+                // 'agama.required' => 'Agama harus diisi',
+                // 'alamat.required' => 'Alamat harus diisi',
+                // 'nohp.required' => 'No HP harus diisi',
+                // 'goldar.required' => 'Goldar harus diisi',
+                // 'bahasa.required' => 'Bahasa harus diisi',
             ]
         );
         
-
-        Patient ::create(
-            [
-                'treatment_id' => $request->no_berobat,
-                'nama_pasien' => $request->nama,
-                'nik' => $request->nik,
-                'jenis_kelamin' => $request->jeniskelamin,
-                'ttl' => $request->ttl,
-                'pendidikan' => $request->pendidikan,
-                'pekerjaan' => $request->pekerjaan,
-                'ibu_istri' => $request->nama_as,
-                'ayah_suami' => $request->nama_ii,
-                'suku_bangsa' => $request->sukubangsa,
-                'agama' => $request->agama,
-                'alamat' => $request->alamat,
-                'no_hp' => $request->nohp,
-                'goldar' => $request->goldar,
-                'bahasa' => $request->bahasa,
-            ]
-        );
 
         if(empty($request->session()->get('patient'))) {
             $request->session()->put('patient', $request->all());
         } else {
             $request->session()->forget('patient');
             $request->session()->put('patient', $request->all());
-          
         }
  
         
@@ -266,7 +242,7 @@ class PatientController extends Controller
             'bahasa' => $session['bahasa'],
             'category_id' => $session['poli'],
             'antrean_id' => $session['antrean'],
-            // 'treatment_id' => $session['no_berobat'],
+            // 'treatment_id' => $session['noberobat'],
 
         ]);
 
@@ -283,7 +259,8 @@ class PatientController extends Controller
      */
     public function show(Patient $patient)
     {
-        //
+        $treatment = Treatment::all();
+        return view('pasien.show', compact('patient' ,'treatment'));
     }
 
     /**
@@ -387,7 +364,7 @@ class PatientController extends Controller
      */
     public function destroy(Patient $patient)
     {
-        
+        dd($patient);
         Patient::where('id', $patient->id)->delete();
         return redirect('master-data/pasien')->with('status', 'Data berhasil dihapus');
     }

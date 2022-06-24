@@ -18,6 +18,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>No Berobat</th>
                                     <th>Nama Pasien</th>
                                     <th>NIK</th>
                                     <th>Jenis Kelamin</th>
@@ -33,7 +34,7 @@
                                     <th>Goldar</th>
                                     <th>Bahasa</th>
                                     <!-- <th>Keluhan</th> -->
-                                    <th>No Berobat</th>
+                                  
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -41,6 +42,7 @@
                                 @foreach ($patient as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->treatment->no_berobat}}</td>
                                     <td>{{ $item->nama_pasien }}</td>
                                     <td>{{ $item->nik }}</td>
                                     <td>{{ $item->jenis_kelamin }}</td>
@@ -57,7 +59,6 @@
                                     <td>{{ $item->bahasa }}</td>
                                     <!-- <td>{{ $item->keluhan }}</td> -->
                             
-                                    <td>{{ $item->treatment->no_berobat}}</td>
                                     <td>
                                     <a href="{{url('/master-data/pasien/'.$item->id).'/edit'}}">
                                             <button type="button" class="btn btn-social-icon btn-inverse-success btn-rounded">
@@ -71,6 +72,11 @@
                                                 <i class="ti-trash"></i>
                                             </button>
                                         </form>
+                                        <a href="{{url('/master-data/pasien/'.$item->id)}}">
+                                            <button type="button" class="btn btn-social-icon btn-inverse-success btn-rounded">
+                                                Show
+                                            </button>
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach

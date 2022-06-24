@@ -29,7 +29,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleSelectGender">Poli</label>
-                            <select name="poli" class="form-control" id="exampleSelectGender">
+                            <select name="poli" class="form-control" id="poli">
                                 @foreach($category as $item)
                                 <option value="{{$item->id}}">{{$item->nama_kategori}}</option>
                                 @endforeach
@@ -37,10 +37,8 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleSelectGender">Antrean</label>
-                            <select name="antrean" class="form-control" id="exampleSelectGender">
-                                @foreach($antrean as $item)
-                                <option value="{{$item->id}}">{{$item->no_antrean}}</option>
-                                @endforeach
+                            <select name="antrean" class="form-control" id="antrean">
+                              
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary me-2">Simpan</button>
@@ -52,4 +50,31 @@
 
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    $('#poli').on('change', function() {
+        var id = $(this).val(); // mendapatkan nilai value
+        var url = '{{url('/antrean/')}}' + '/' + id;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json', // added data type
+            success: function(res) {
+                $('#antrean').empty();
+                $('#antrean').append('<option>Pilih Antrean</option>');
+                if (res) {
+                    $.each(res, function(key, value) {
+                        console.log(res);
+                        $('#antrean').append($("<option/>", {
+                            value: value['id'],
+                            text: value['no_antrean']
+                        }));
+                    });
+                }
+            }
+        });
+    });
+</script>
 @stop

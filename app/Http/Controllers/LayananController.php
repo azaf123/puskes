@@ -146,6 +146,7 @@ class LayananController extends Controller
      */
     public function destroy(Layanan $layanan)
     {
+        // dd($layanan);
         Layanan::destroy('id', $layanan->id);
         return redirect('/master-data/layanan')->with('status', ' Data berhasil dihapus');
     }
