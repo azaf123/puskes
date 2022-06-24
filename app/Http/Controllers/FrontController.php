@@ -51,7 +51,7 @@ class FrontController extends Controller
 
                 'noberobat' => 'required',
                 'nama' => 'required',
-                'nik' => 'required',
+                'nik' => 'required|unique:patients',
                 'jeniskelamin' => 'required',
                 'ttl' => 'required',
                 'pendidikan' => 'required',
@@ -70,6 +70,7 @@ class FrontController extends Controller
 
                 'nama.required' => 'Nama harus diisi',
                 'nik.required' => 'NIK harus diisi',
+                'nik.unique' => 'NIK sudah ada',
                 'jeniskelamin.required' => 'Jenis Kelamin harus diisi',
                 'ttl.required' => 'TTL harus diisi',
                 'pendidikan.required' => 'Pendidikan harus diisi',
@@ -121,7 +122,7 @@ class FrontController extends Controller
     }
     public function storependaftaranPasienLama(Request $request)
     {
-        // return $request;
+        return $request;
         $request->validate(
             [
 

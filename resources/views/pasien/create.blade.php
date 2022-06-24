@@ -19,7 +19,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputName1">No Berobat</label>
 
-                                    <select name="no_berobat" class="form-control" id="noberobat">
+                                    <select name="noberobat" class="form-control" id="noberobat">
                                         @foreach($treatment as $item)
                                         <option value="{{$item->id}}">{{$item->no_berobat}}</option>
                                         @endforeach
@@ -32,15 +32,100 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleSelectGender">Nama Lengkap Pasien</label>
-                                    <input id="nama" name="nama" type="text" class="form-control @error('nama') is-invalid @enderror" id="exampleInputName1" placeholder="Nama Lengkap">
+                                    <!-- <input id="nama" name="nama" type="text" class="form-control @error('nama') is-invalid @enderror" id="exampleInputName1" placeholder="Nama Lengkap">
                                     @error('nama')
                                     <div class="invalid-feedback">
                                         {{$message}}
                                     </div>
-                                    @enderror
+                                    @enderror -->
+                                    <select name="nama" class="form-control" id="nama">
+                                       
+                                    </select>
                                 </div>
                             </div>
+                          
+                        </div>
+                        <div class="row">
                             <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Jenis Kelamin</label>
+                                        <select class="form-control" name="jeniskelamin" id="jeniskelamin">
+                                          
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Tanggal Lahir</label>
+                                        <select class="form-control" name="ttl" id="ttl">
+                                          
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                        <button type="submit" class="btn btn-primary me-2">Simpan</button>
+                        <button class="btn btn-light">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    $('#noberobat').on('change', function() {
+        var id = $(this).val(); // mendapatkan nilai value
+        var url = '{{url('/pasien-treatment/')}}' + '/' + id;
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json', // added data type
+            success: function(res) {
+                console.log(res);
+                if (res) {
+                    $.each(res, function(key, value) {
+                        console.log(res);
+                        $('#nama').empty();
+                        $('#nama').append($("<option/>", {
+                            value: value['id'],
+                            text: value['nama_pasien']
+                        }));
+                        $('#jeniskelamin').empty();
+                        $('#jeniskelamin').append($("<option/>", {
+                            value: value['id'],
+                            text: value['jenis_kelamin']
+                        }));
+                        $('#ttl').empty();
+                        $('#ttl').append($("<option/>", {
+                            value: value['id'],
+                            text: value['ttl']
+                        }));
+                        
+                        
+                    });
+
+                }
+            }
+        });
+        
+    });
+</script>
+
+@stop
+
+<!-- <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label for="exampleInputName1">NIK</label>
@@ -52,36 +137,10 @@
                                         @enderror
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-group">
-                                        <label for="exampleInputName1">Jenis Kelamin</label>
-                                        <select class="form-control" name="jeniskelamin" id="">
-                                            <option value="laki-laki">Laki Laki</option>
-                                            <option value="perempuan"> Perempuan</option>
-                                        </select>
+                            </div> -->
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-group">
-                                        <label for="exampleInputName1">Tanggal Lahir</label>
-                                        <input id="ttl" name="ttl" type="date" class="form-control @error('ttl') is-invalid @enderror" id="exampleInputName1" placeholder="Isi Pasien-nomor">
-                                        @error('ttl')
-                                        <div class="invalid-feedback">
-                                            {{$message}}
-                                        </div>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
+
+                            <!-- <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-group">
@@ -225,55 +284,4 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <button type="submit" class="btn btn-primary me-2">Simpan</button>
-                        <button class="btn btn-light">Batal</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script>
-    $('#noberobat').on('change', function() {
-        var id = $(this).val(); // mendapatkan nilai value
-        var url = '{{url(' / treatment / ')}}' + '/' + id;
-        $.ajax({
-            url: url,
-            type: 'GET',
-            dataType: 'json', // added data type
-            success: function(res) {
-                console.log(res);
-                if (res) {
-                    $.each(res, function(key, value) {
-                        $('#nama').val(value['nama_pasien']);
-                        $('#nik').val(value['nik']);
-                        $('#jeniskelamin').val(value['jenis_kelamin']);
-                        $('#ttl').val(value['ttl']);
-                        $('#alamat').val(value['alamat']);
-                        $('#nohp').val(value['no_hp']);
-                        $('#pendidikan').val(value['pendidikan']);
-                        $('#pekerjaan').val(value['pekerjaan']);
-                        $('#nama_as').val(value['ayah_suami']);
-                        $('#nama_ii').val(value['ibu_istri']);
-                        $('#sukubangsa').val(value['suku_bangsa']);
-                        $('#agama').val(value['agama']);
-                        $('#goldar').val(value['goldar']);
-                        $('#bahasa').val(value['bahasa']);
-                        $('#keluhan').val(value['keluhan']);
-                        $('#poli').val(value['category_id']);
-                        $('#antrean').val(value['antrean_id']);
-                    });
-
-                }
-            }
-        });
-    });
-</script>
-
-@stop
+                        </div> -->

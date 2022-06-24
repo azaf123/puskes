@@ -16,6 +16,7 @@ class Reservation extends Model
         'created_at',
         'updated_at',
         'treatment_id',
+        'keluhan',
     ];
 
     public function patient()

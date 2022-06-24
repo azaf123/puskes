@@ -29,12 +29,14 @@ class ReservationController extends Controller
      */
     public function create()
     {
-      
-        $category = Category::all();
-        $antrean = Antrean::all();
-        $patient = Patient::all();
-        $treatment = Treatment::all();
-        return view ('reservasi.create',compact('category','antrean','patient' ,'treatment'));
+      $session = session()->get('patient');
+    //   dd($session);
+    $patient = Patient::where('id', $session['nama'])->get();
+    $category = Category::all();
+    $antrean = Antrean::all();
+    $treatment = Treatment::where('id', $session['noberobat'])->get();
+    $antrean = Antrean::where('status', 'inaktif')->get();
+    return view ('reservasi.create',compact('category','antrean','patient' ,'treatment'));
         
     }
 
@@ -49,26 +51,37 @@ class ReservationController extends Controller
         // return $request;
         $request->validate(
             [
-                'nama'=>'required',
-                'poli'=>'required',
-                'antrean'=>'required',
+                'noberobat' => 'required',
+                'nama' => 'required',
+                'poli' => 'required',
+                'antrean' => 'required',
 
             ],
             [
-                'nama.required'=>'Nama harus diisi',
-                'poli.required'=>'Poli harus diisi',
-                'antrean.required'=>'Antrean harus diisi',
+                'noberobat' => 'Nama harus diisi',
+                'nama.required' => 'Nama harus diisi',
+                'poli.required' => 'Poli harus diisi',
+                'antrean.required' => 'Antrean harus diisi',
             ]
         );
 
              Reservation::create(
-            [
-                'patient_id'=>$request->nama,
-                'category_id'=>$request->poli,
-                'antrean_id'=>$request->antrean,               
+            [  'treatment_id' => $request->noberobat,
+            'patient_id' => $request->nama,
+            'category_id' => $request->poli,
+            'antrean_id' => $request->antrean,               
                 
             ]
         );
+        if (empty($request->session()->get('patient'))) {
+            $request->session()->put('patient', $request->all());
+        } else {
+            $request->session()->forget('patient');
+            $request->session()->put('patient', $request->all());
+        }
+        Antrean::where('id', $request->antrean)->update([
+            'status' => 'aktif',
+        ]);
 
         return redirect('master-data/reservation' )->with('success', 'Berhasil ditambahkan');
     }

@@ -48,6 +48,7 @@ Route::post('/reservasi-lama', [FrontController::class, 'reservasiStoreLama']);
 
 Route::get('/artikel', [FrontController::class, 'article']);
 Route::get('/galery', [FrontController::class, 'galery']);
+Route::get('/profil', [FrontController::class, 'profil']);
 
 Route::get('/pendaftaran-pasien-lama/create', [FrontController::class, 'pendaftaranPasienLama']);
 Route::post('/pendaftaran-pasien-lama', [FrontController::class, 'storependaftaranPasienLama']);

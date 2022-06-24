@@ -10,7 +10,6 @@ class Patient extends Model
     use HasFactory;
     protected $table = 'patients';
     protected $fillable = [
-
         'nama_pasien',
         'nik',
         'jenis_kelamin',
