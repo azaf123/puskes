@@ -19,14 +19,21 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Data Reservation</h4>
+                    <h4 class="card-title">Pendaftaran Pasien</h4>
                     <p class="card-description">
-                        Data Reservation
+                        Data Pendaftaran Pasien
                     </p>
+<<<<<<< HEAD
+                     <a href="{{url('master-data/pasienbaru/create/')}}" type="button"
+                    class="btn btn-inverse-primary btn-rounded btn-icon">Daftar Pasien Baru</a>
+                  <a href="{{url('master-data/pasien/create/')}}" type="button"
+                    class="btn btn-inverse-primary btn-rounded btn-icon">Daftar Pasien Lama</a>
+=======
                     <!-- <a href="{{url('master-data/reservation/create')}}" type="button" class="btn btn-inverse-primary btn-rounded btn-icon">Tambah Nomor
                         Reservasi</a> -->
+>>>>>>> 8e6a31a7ff5b310ec8057a83e7fc8acf8a579e6e
 
-                    <div class="table-responsive">
+                    <div class="table-responsive mt-3">
                         <table class="table table-striped" id="table1">
                             <thead>
                                 <tr>

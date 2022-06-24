@@ -98,7 +98,6 @@ class PatientController extends Controller
         } else {
             $request->session()->forget('patient');
             $request->session()->put('patient', $request->all());
-          
         }
  
         
@@ -244,7 +243,8 @@ class PatientController extends Controller
      */
     public function show(Patient $patient)
     {
-        return view('pasien.detail', compact('patient'));
+        $treatment = Treatment::all();
+        return view('pasien.show', compact('patient' ,'treatment'));
     }
 
     /**
@@ -348,7 +348,7 @@ class PatientController extends Controller
      */
     public function destroy(Patient $patient)
     {
-        
+        dd($patient);
         Patient::where('id', $patient->id)->delete();
         return redirect('master-data/pasien')->with('status', 'Data berhasil dihapus');
     }

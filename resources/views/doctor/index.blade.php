@@ -20,12 +20,9 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Data Dokter</h4>
-                    <p class="card-description">
-                        Data Dokter
-                    </p>
                     <a href="{{url('master-data/doctor/create')}}" type="button" class="btn btn-inverse-primary btn-rounded btn-icon">Tambah
                         Dokter</a>
-                    <div class="table-responsive">
+                    <div class="table-responsive mt-3">
                         <table class="table table-striped" id="table1">
                             <thead>
                                 <tr>
@@ -60,12 +57,21 @@
                                     <td>{{ (strlen($item->alamat)>10) ? substr($item -> alamat, 0,20) . '...': $item->alamat }}</td>
                                     <td>{{ $item->no_hp }}</td>
                                     <td>
+                                        {{-- ini untuk liat detail, karno kan alamatnyo idak full--}}
+                                        <a href="{{ url('/master-data/pasien/' . $item->id) }}">
+                                            <button type="submit"
+                                                class="btn btn-social-icon btn-inverse-info btn-rounded">
+                                                <i class="ti-eye" role="button"></i>
+                                            </button>
+                                        </a>
+                                        {{-- . --}}
                                         <a href="{{url('/master-data/doctor/'.$item->id).'/edit'}}">
                                             <button type="button" class="btn btn-social-icon btn-inverse-success btn-rounded">
                                                 <i class="ti-pencil-alt"></i>
                                             </button>
                                         </a>
-                                        <form method="POST" action="{{url('/master-data/doctor/' . $item->id)}}" enctype="multipart/form-data">
+                                        <form method="POST" action="{{url('/master-data/doctor/' . $item->id)}}" enctype="multipart/form-data"
+                                            class="d-inline">
                                             @csrf
                                             @method("DELETE")
                                             <button type="submit" class="btn btn-social-icon btn-inverse-danger btn-rounded">

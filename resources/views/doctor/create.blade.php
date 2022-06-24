@@ -15,8 +15,8 @@
                     <form action="{{url('/master-data/doctor')}}" method="POST" class="forms-sample" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleSelectGender">Nama Dokter</label>
-                            <input name="nama" type="text" class="form-control @error('nama') is-invalid @enderror" id="exampleInputName1" placeholder="nama">
+                            <label for="exampleInputName1">Nama Dokter</label>
+                            <input name="nama" type="text" class="form-control @error('nama') is-invalid @enderror" id="exampleInputName1" placeholder="Isi Nama">
                             @error('nama')
                             <div class="invalid-feedback">
                                 {{$message}}
@@ -26,7 +26,7 @@
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="exampleInputName1">Alamat</label>
-                                <input name="alamat" type="text" class="form-control @error('alamat') is-invalid @enderror" id="exampleInputName1" placeholder="deskripsi">
+                                <input name="alamat" type="text" class="form-control @error('alamat') is-invalid @enderror" id="exampleInputName1" placeholder="Isi Alamat">
                                 @error('alamat')
                                 <div class="invalid-feedback">
                                     {{$message}}

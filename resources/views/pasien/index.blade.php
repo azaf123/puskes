@@ -15,6 +15,7 @@
                             class="btn btn-inverse-primary btn-rounded btn-icon">Tambah Identitas Pasien</a>
                         <div class="table-responsive mt-3">
                             <table class="table table-striped" id="table1">
+
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -58,7 +59,7 @@
                                             <td>{{ $item->goldar }}</td>
                                             <td>{{ $item->bahasa }}</td>
                                             <td>
-                                                {{-- ini untuk liat detail, karno kan alamatnyo idak full --}}
+                                                {{-- ini untuk liat detail, karno kan alamatnyo idak full--}}
                                                 <a href="{{ url('/master-data/pasien/' . $item->id) }}">
                                                     <button type="submit"
                                                         class="btn btn-social-icon btn-inverse-info btn-rounded">
@@ -89,7 +90,6 @@
                                 </tbody>
                             </table>
                         </div>
-
                     </div>
                 </div>
             </div>

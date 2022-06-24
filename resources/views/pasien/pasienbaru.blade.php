@@ -64,7 +64,8 @@
                                                 <i class="ti-pencil-alt"></i>
                                             </button>
                                         </a>
-                                        <form method="POST" action="{{url('/master-data/pasienbaru/' . $item->id)}}" enctype="multipart/form-data">
+                                        <form method="POST" action="{{url('/master-data/pasienbaru/' . $item->id)}}" enctype="multipart/form-data"
+                                            class='d-inline'>
                                             @csrf
                                             @method("DELETE")
                                             <button type="submit" class="btn btn-social-icon btn-inverse-danger btn-rounded">
