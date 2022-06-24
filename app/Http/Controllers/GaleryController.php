@@ -14,7 +14,7 @@ class GaleryController extends Controller
      */
     public function index()
     {
-        $galery = Galery::all();
+        $galery = Galery::all()->sortByDesc('id');
         return view('galery.index',compact('galery'));
     }
 

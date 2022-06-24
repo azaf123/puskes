@@ -14,7 +14,7 @@ class HeaderController extends Controller
      */
     public function index()
     {
-        $header = Header::all();
+        $header = Header::all()->sortByDesc('id');
         return view('header.index', compact('header'));
     }
 

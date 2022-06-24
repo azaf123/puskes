@@ -14,7 +14,7 @@ class LayananController extends Controller
      */
     public function index()
     {
-        $layanan = Layanan::all();
+        $layanan = Layanan::all()->sortByDesc('id');
         return view('layanan.index', compact('layanan'));
     }
 

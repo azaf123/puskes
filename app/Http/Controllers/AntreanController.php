@@ -15,7 +15,7 @@ class AntreanController extends Controller
      */
     public function index()
     {
-        $antrean = Antrean::all();
+        $antrean = Antrean::all()->sortByDesc('id');
         return view('antrean.index', compact('antrean'));
     }
 
