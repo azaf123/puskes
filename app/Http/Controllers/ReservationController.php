@@ -61,6 +61,7 @@ class ReservationController extends Controller
         // return $request;
         $request->validate(
             [
+                'keluhan' => 'required',
                 'noberobat' => 'required',
                 'nama' => 'required',
                 'poli' => 'required',
@@ -68,6 +69,7 @@ class ReservationController extends Controller
 
             ],
             [
+                'keluhan.required' => 'Keluhan harus diisi',
                 'noberobat' => 'Nama harus diisi',
                 'nama.required' => 'Nama harus diisi',
                 'poli.required' => 'Poli harus diisi',
@@ -77,6 +79,7 @@ class ReservationController extends Controller
 
         Reservation::create(
             [
+                'keluhan' => $request->keluhan,
                 'treatment_id' => $request->noberobat,
                 'patient_id' => $request->nama,
                 'category_id' => $request->poli,
@@ -102,6 +105,7 @@ class ReservationController extends Controller
         $request->validate(
             [
                 
+                'keluhan' => 'required',
                 'nama' => 'required',
                 'poli' => 'required',
                 'antrean' => 'required',
@@ -109,6 +113,7 @@ class ReservationController extends Controller
             ],
             [
                
+                'keluhan.required' => 'Keluhan harus diisi',
                 'nama.required' => 'Nama harus diisi',
                 'poli.required' => 'Poli harus diisi',
                 'antrean.required' => 'Antrean harus diisi',
@@ -117,6 +122,7 @@ class ReservationController extends Controller
 
         Reservation::create(
             [
+                'keluhan' => $request->keluhan,
                 'treatment_id' => 3,
                 'patient_id' => $request->nama,
                 'category_id' => $request->poli,

@@ -36,6 +36,12 @@
                               
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label for="exampleSelectGender">Keluhan</label>
+                            <input name="keluhan" class="form-control" id="keluhan">
+                              
+                            </input>
+                        </div>
                         <button type="submit" class="btn btn-primary me-2">Simpan</button>
                         <button class="btn btn-light">Batal</button>
                     </form>
