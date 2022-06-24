@@ -8,9 +8,9 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Detail Layanan</h4>
-                    <p class="card-description">
+                    <h3 class="card-description">
                         {{$layanan->judul}}
-                    </p>
+                    </h3>
                     <div class="row">
                         <div class="col-6">
                             <img src="{{asset('img/'.$layanan->gambar)}}" alt="" width="500px" height="auto">
