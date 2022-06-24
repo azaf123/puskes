@@ -46,6 +46,14 @@
                    
                    </select>
             </div>
+            <div class="inputBox">
+            
+                <span><b>Keluhan</b> </span>
+                <input name="keluhan" class="form-control" id="keluhan">
+                   
+                   </input>
+            </div>
+      
       
             <div class="inputBox">
                 <span> 

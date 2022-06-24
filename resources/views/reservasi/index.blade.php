@@ -46,6 +46,9 @@
                                         No Antrean
                                     </th>
                                     <th>
+                                        Keluhan
+                                    </th>
+                                    <th>
                                         Aksi
                                     </th>
                                 </tr>
@@ -58,6 +61,7 @@
                                     <td>{{ $item->patient->nama_pasien }}</td>
                                     <td>{{ $item->category->nama_kategori }}</td>
                                     <td>{{ $item->antrean->no_antrean}}</td>
+                                    <td>{{ $item->keluhan}}</td>
                                     <td>
                                         <a href="{{url('/master-data/reservation/'.$item->id).'/edit'}}">
                                             <button type="button" class="btn btn-social-icon btn-inverse-success btn-rounded">
