@@ -27,7 +27,7 @@
                     <a href="{{url('master-data/antrean/create')}}" type="button" class="btn btn-inverse-primary btn-rounded btn-icon">Tambah Nomor
                         Antrian</a>
 
-                    <div class="table-responsive">
+                    <div class="table-responsive mt-3">
                         <table class="table table-striped" id="table1">
                             <thead>
                                 <tr>
@@ -61,7 +61,8 @@
                                                 <i class="ti-pencil-alt"></i>
                                             </button>
                                         </a>
-                                        <form method="POST" action="{{url('/master-data/antrean/' . $item->id)}}" enctype="multipart/form-data">
+                                        <form method="POST" action="{{url('/master-data/antrean/' . $item->id)}}" enctype="multipart/form-data"
+                                            class="d-inline">
                                             @csrf
                                             @method("DELETE")
                                             <button type="submit" class="btn btn-social-icon btn-inverse-danger btn-rounded">

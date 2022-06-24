@@ -15,6 +15,17 @@
                     <form action="{{url('/master-data/header')}}" method="POST" class="forms-sample" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
+                            <div class="form-group">
+                                <label for="exampleInputName1">Foto</label>
+                                <input name="foto" type="file" class="form-control @error('foto') is-invalid @enderror">
+                                @error('foto')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="exampleSelectGender">Judul</label>
                             <input name="judul" type="text" class="form-control @error('judul') is-invalid @enderror" id="exampleInputName1" placeholder="judul">
                             @error('judul')
@@ -34,17 +45,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="form-group">
-                                <label for="exampleInputName1">Foto</label>
-                                <input name="foto" type="file" class="form-control @error('foto') is-invalid @enderror">
-                                @error('foto')
-                                <div class="invalid-feedback">
-                                    {{$message}}
-                                </div>
-                                @enderror
-                            </div>
-                        </div>
+                        
                         <button type="submit" class="btn btn-primary me-2">Simpan</button>
                         <button class="btn btn-light">Batal</button>
                     </form>
