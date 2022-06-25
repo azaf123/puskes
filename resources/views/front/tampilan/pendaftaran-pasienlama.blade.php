@@ -18,8 +18,8 @@
                     <span><b>No RM</b></span>
                     <input list="answers" class="form-control @error('noberobat') is-invalid @enderror" id="answer">
                     <datalist id="answers">
-                        @foreach ($treatment as $item)
-                        <option data-value="{{$item->id}}">{{$item->no_berobat}}</option>
+                        @foreach ($patient as $item)
+                        <option data-value="{{$item->no_rm}}">{{$item->no_rm}}</option>
                         @endforeach
                     </datalist>
                     <input type="hidden" name="noberobat" id="answer-hidden">

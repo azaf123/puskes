@@ -16,7 +16,7 @@
         <div class="box">
         <div class="inputBox">
                     <span><b>No RM</b></span>
-                    <input hidden type="text" name="noberobat" value="3">
+                   
                     <input readonly list="datalistOptions" type="text" class="form-control @error('noberobat') is-invalid @enderror" placeholder="DIKOSONGKAN" id="noberobat">
                     <datalist id="datalistOptions">
                         @foreach ($treatment as $item)

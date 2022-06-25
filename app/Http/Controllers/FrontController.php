@@ -39,7 +39,8 @@ class FrontController extends Controller
     public function pendaftaranPasienLama()
     {
         $treatment = Treatment::where('id', '!=', '3')->get();
-        return view('front.tampilan.pendaftaran-pasienlama', compact('treatment'));
+        $patient = Patient::all();
+        return view('front.tampilan.pendaftaran-pasienlama', compact('treatment', 'patient'));
     }
 
 
@@ -49,7 +50,7 @@ class FrontController extends Controller
         $request->validate(
             [
 
-                'noberobat' => 'required',
+                
                 'nama' => 'required',
                 'nik' => 'required|unique:patients',
                 'jeniskelamin' => 'required',
@@ -67,9 +68,6 @@ class FrontController extends Controller
 
             ],
             [
-
-                'noberobat.required' => 'No. berobat harus diisi',
-     
                 'nama.required' => 'Nama harus diisi',
                 'nik.required' => 'NIK harus diisi',
                 'nik.unique' => 'NIK sudah ada',
@@ -90,7 +88,7 @@ class FrontController extends Controller
 
         Patient::create(
             [
-                'treatment_id' => $request->noberobat,
+                'no_rm' =>'Belum Ada',
                 'nama_pasien' => $request->nama,
                 'nik' => $request->nik,
                 'jenis_kelamin' => $request->jeniskelamin,
@@ -110,8 +108,6 @@ class FrontController extends Controller
         );
 
 
-
-
         if (empty($request->session()->get('patient'))) {
             $request->session()->put('patient', $request->all());
         } else {
@@ -127,7 +123,6 @@ class FrontController extends Controller
         // return $request;
         $request->validate(
             [
-
                 'noberobat' => 'required',
                 'nama' => 'required',
                 'jeniskelamin' => 'required',
@@ -197,7 +192,7 @@ class FrontController extends Controller
         $print = Reservation::create(
             [
                 'keluhan' => $request->keluhan,
-                'treatment_id' => $request->noberobat,
+                'no_rm' => $request->noberobat,
                 'patient_id' => $request->nama,
                 'category_id' => $request->poli,
                 'antrean_id' => $request->antrean,
@@ -240,7 +235,7 @@ class FrontController extends Controller
          $print = Reservation::create(
             [
                 'keluhan' => $request->keluhan,
-                'treatment_id' => $request->noberobat,
+                'no_rm' => $request->noberobat,
                 'patient_id' => $request->nama,
                 'category_id' => $request->poli,
                 'antrean_id' => $request->antrean,

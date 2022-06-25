@@ -20,11 +20,12 @@
                                 <div class="form-group">
                                     <label for="exampleInputName1">No RM</label>
 
-                                    <select name="noberobat" class="form-control" id="noberobat">
-                                        @foreach($treatment as $item)
-                                        <option value="{{$item->id}}">{{$item->no_berobat}}</option>
-                                        @endforeach
-                                    </select>
+                                    <input id="no_rm" name="no_rm" type="text" class="form-control @error('no_rm') is-invalid @enderror" id="exampleInputName1" placeholder="No RM" value="{{$patient->no_rm}}">
+                                    @error('no_rm')
+                                    <div class="invalid-feedback">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
 
                                 </div>
                             </div>

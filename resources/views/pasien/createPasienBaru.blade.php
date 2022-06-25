@@ -18,20 +18,9 @@
                             <div class="form-group">
                                 <div class="form-group">
                                     <label for="exampleInputName1">No Berobat</label>
+                                    <input type="text" name="no_rm" class="form-control" value="{{$norm}}">
 
-                                    <input readonly list="datalistOptions" type="text" class="form-control @error('noberobat') is-invalid @enderror" placeholder="DIKOSONGKAN" id="noberobat" name="noberobat">
-                                    <datalist id="datalistOptions">
-                                        @foreach ($treatment as $item)
-                                        <option data-value="{{$item->id}}">{{$item->no_berobat}}</option>
-                                        @endforeach
-
-                                    </datalist>
-                                    @error('noberobat')
-                                    <div class="invalid-feedback">
-                                        {{$message}}
-                                    </div>
-                                    @enderror
-
+                                    
                                 </div>
                             </div>
                         </div>

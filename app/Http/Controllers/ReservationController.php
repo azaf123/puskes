@@ -204,7 +204,7 @@ class ReservationController extends Controller
     public function treatmentToPasien($id)
     {
 
-        $patient = Patient::where('treatment_id', $id)->get();
+        $patient = Patient::where('no_rm', $id)->get();
 
         return response()->json($patient);
     }

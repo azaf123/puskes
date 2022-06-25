@@ -17,8 +17,8 @@
         <div class="inputBox">
                 <span><b> No RM</b></span>
                 <select name="noberobat" class="form-control" id="noberobat">
-                    @foreach($treatment as $item)
-                    <option value="{{$item->id}}">{{$item->no_berobat}}</option>
+                    @foreach($patient as $item)
+                    <option value="{{$item->no_rm}}">{{$item->no_rm}}</option>
                     @endforeach
                    </select>
             </div>

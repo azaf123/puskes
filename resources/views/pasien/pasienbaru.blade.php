@@ -41,7 +41,7 @@
                                 @foreach ($patient as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->treatment->no_berobat}}</td>
+                                    <td>{{ $item->no_rm}}</td>
                                     <td>{{ $item->nama_pasien }}</td>
                                     <td>{{ $item->nik }}</td>
                                     <td>{{ $item->jenis_kelamin }}</td>
