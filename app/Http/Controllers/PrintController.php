@@ -29,7 +29,7 @@ class PrintController extends Controller
 
     //   print reservation
 
-    public function printReservation($id)
+    public function printReservation()
     {
         
     

@@ -49,7 +49,7 @@ class FrontController extends Controller
         $request->validate(
             [
 
-                'noberobat' => 'required|number',
+                'noberobat' => 'required',
                 'nama' => 'required',
                 'nik' => 'required|unique:patients',
                 'jeniskelamin' => 'required',
@@ -69,7 +69,7 @@ class FrontController extends Controller
             [
 
                 'noberobat.required' => 'No. berobat harus diisi',
-                'noberobat.number' => 'No. berobat harus berupa angka',
+     
                 'nama.required' => 'Nama harus diisi',
                 'nik.required' => 'NIK harus diisi',
                 'nik.unique' => 'NIK sudah ada',
@@ -133,10 +133,8 @@ class FrontController extends Controller
                 'jeniskelamin' => 'required',
                 'ttl' => 'required',
 
-
             ],
             [
-
                 'noberobat.required' => 'No. Obat harus diisi',
                 'nama.required' => 'Nama harus diisi',
                 'nik.required' => 'NIK harus diisi',
@@ -196,7 +194,7 @@ class FrontController extends Controller
             ]
         );
 
-        Reservation::create(
+        $print = Reservation::create(
             [
                 'keluhan' => $request->keluhan,
                 'treatment_id' => $request->noberobat,
@@ -216,15 +214,11 @@ class FrontController extends Controller
             'status' => 'aktif',
         ]);
 
-        if (empty($request->session()->get('patient'))) {
-            $request->session()->put('patient', $request->all());
-        } else {
-            $request->session()->forget('patient');
-            $request->session()->put('patient', $request->all());
-        }
-        
-        return redirect('/print-reservation')->with('success', 'Berhasil ditambahkan');
+        $getdata = Reservation::where('id', $print->id)->first();
+        return view('print.print-pendaftaran', compact('getdata'));
+        // return redirect('/print-reservation')->with('success', 'Berhasil ditambahkan');
     }
+
     public function reservasiStore(Request $request)
     {
         $request->validate(
@@ -243,7 +237,7 @@ class FrontController extends Controller
             ]
         );
 
-        Reservation::create(
+         $print = Reservation::create(
             [
                 'keluhan' => $request->keluhan,
                 'treatment_id' => $request->noberobat,
@@ -263,9 +257,11 @@ class FrontController extends Controller
             $request->session()->forget('patient');
             $request->session()->put('patient', $request->all());
         }
+        $getdata = Reservation::where('id', $print->id)->first();
+        // dd($getdata);
         
-        
-        return redirect('/print-pendaftaran')->with('success', 'Berhasil ditambahkan');
+        return view('print.print-pendaftaran', compact('getdata'));
+        // return redirect('/print-pendaftaran')->with('success', 'Berhasil ditambahkan');
 
     }
 
