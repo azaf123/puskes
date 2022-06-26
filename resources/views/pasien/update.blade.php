@@ -19,13 +19,23 @@
                             <div class="form-group">
                                 <div class="form-group">
                                     <label for="exampleInputName1">No RM</label>
-
-                                    <input id="no_rm" name="no_rm" type="text" class="form-control @error('no_rm') is-invalid @enderror" id="exampleInputName1" placeholder="No RM" value="{{$patient->no_rm}}">
-                                    @error('no_rm')
+                                    @if(
+                                        $patient->no_rm == 'Belum Ada'
+                                    )
+                                    <input id="noberobat" name="noberobat" type="text" class="form-control @error('noberobat') is-invalid @enderror" id="exampleInputName1" placeholder="No RM" value="{{$norm}}">
+                                    @error('noberobat')
                                     <div class="invalid-feedback">
                                         {{$message}}
                                     </div>
                                     @enderror
+                                    @else
+                                    <input id="noberobat" name="noberobat" type="text" class="form-control @error('noberobat') is-invalid @enderror" id="exampleInputName1" placeholder="No RM" value="{{$patient->no_rm}}">
+                                    @error('noberobat')
+                                    <div class="invalid-feedback">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
+                                    @endif
 
                                 </div>
                             </div>

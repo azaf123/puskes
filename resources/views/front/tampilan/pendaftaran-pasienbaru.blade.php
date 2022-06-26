@@ -69,9 +69,9 @@
                 <select name="agama" class="form-control" id="exampleFormControlSelect1">
                     <option value="islam">islam</option>
                     <option value="kristen">kristen</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option value="budha">budha</option>
+                    <option value="hindu">hindu</option>
+                 
                 </select>
             </div>
             <div class="inputBox">

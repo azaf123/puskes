@@ -14,7 +14,7 @@
                         <form class="forms-sample">
                             <div class="form-group">
                                 <label for="form">No. RM</label>
-                                <h6>{{ $patient->treatment->no_berobat }}</h6>
+                                <h6>{{ $patient->no_rm }}</h6>
                             </div>
 
                             <div class="form-group">

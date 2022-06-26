@@ -25,7 +25,7 @@
                     </p>
                      <a href="{{url('master-data/pasienbaru/create/')}}" type="button"
                     class="btn btn-inverse-primary btn-rounded btn-icon">Daftar Pasien Baru</a>
-                  <a href="{{url('master-data/pasien/create/')}}" type="button"
+                  <a href="{{url('master-data/patient/create/')}}" type="button"
                     class="btn btn-inverse-primary btn-rounded btn-icon">Daftar Pasien Lama</a>
 
                     <div class="table-responsive mt-3">
@@ -62,7 +62,7 @@
                                 @foreach ($reservation as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->treatment->no_berobat}}</td>
+                                    <td>{{ $item->patient->no_rm}}</td>
                                     <td>{{ $item->patient->nama_pasien }}</td>
                                     <td>{{ $item->category->nama_kategori }}</td>
                                     <td>{{ $item->category->ruangan }}</td>

@@ -80,7 +80,7 @@ class ReservationController extends Controller
         Reservation::create(
             [
                 'keluhan' => $request->keluhan,
-                'treatment_id' => $request->noberobat,
+                'no_rm' => $request->noberobat,
                 'patient_id' => $request->nama,
                 'category_id' => $request->poli,
                 'antrean_id' => $request->antrean,
