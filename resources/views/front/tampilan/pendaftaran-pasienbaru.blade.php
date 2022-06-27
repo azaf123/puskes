@@ -16,7 +16,7 @@
         <div class="box">
         <div class="inputBox">
                     <span><b>No RM</b></span>
-                    <input hidden type="text" name="noberobat" value="3">
+                   
                     <input readonly list="datalistOptions" type="text" class="form-control @error('noberobat') is-invalid @enderror" placeholder="DIKOSONGKAN" id="noberobat">
                     <datalist id="datalistOptions">
                         @foreach ($treatment as $item)
@@ -69,9 +69,9 @@
                 <select name="agama" class="form-control" id="exampleFormControlSelect1">
                     <option value="islam">islam</option>
                     <option value="kristen">kristen</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option value="budha">budha</option>
+                    <option value="hindu">hindu</option>
+                 
                 </select>
             </div>
             <div class="inputBox">

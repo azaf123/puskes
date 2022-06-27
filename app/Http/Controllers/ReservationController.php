@@ -80,7 +80,7 @@ class ReservationController extends Controller
         Reservation::create(
             [
                 'keluhan' => $request->keluhan,
-                'treatment_id' => $request->noberobat,
+                'no_rm' => $request->noberobat,
                 'patient_id' => $request->nama,
                 'category_id' => $request->poli,
                 'antrean_id' => $request->antrean,
@@ -204,7 +204,7 @@ class ReservationController extends Controller
     public function treatmentToPasien($id)
     {
 
-        $patient = Patient::where('treatment_id', $id)->get();
+        $patient = Patient::where('no_rm', $id)->get();
 
         return response()->json($patient);
     }

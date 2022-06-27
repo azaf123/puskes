@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('keluhan_to_reservations', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('patients', function (Blueprint $table) {
+            $table->string('no_rm');
         });
     }
 
@@ -26,6 +25,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('keluhan_to_reservations');
+        Schema::table('patients', function (Blueprint $table) {
+            $table -> dropColumn('no_rm');
+   
+        });
     }
 };

@@ -10,6 +10,7 @@ class Patient extends Model
     use HasFactory;
     protected $table = 'patients';
     protected $fillable = [
+        'no_rm',
         'nama_pasien',
         'nik',
         'jenis_kelamin',
@@ -28,6 +29,7 @@ class Patient extends Model
         'category_id',
         'antrean_id',
         'treatment_id',
+
         'created_at',
         'updated_at',
     ];

@@ -6,6 +6,7 @@ use App\Models\Patient;
 use App\Models\Treatment;
 use App\Models\Antrean;
 use App\Models\Category;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class PatientController extends Controller
@@ -17,13 +18,13 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $patient = Patient::where('treatment_id', '!=', '3')->get()->sortBydesc('id');
+        $patient = Patient::where('no_rm', '!=', 'Belum Ada')->get()->sortBydesc('id');
         return view('pasien.index', compact('patient'));
     }
     public function pasienbaru()
     {
        
-        $patient = Patient::where('treatment_id', '3')->get()->sortByDesc('id');
+        $patient = Patient::where('no_rm','=', 'Belum Ada')->get()->sortByDesc('id');
 
         return view('pasien.pasienbaru', compact('patient'));
     }
@@ -35,20 +36,24 @@ class PatientController extends Controller
      */
     public function create()
     {
+        $norm = $this->getLastCode();
         $session = session()->get('patient');
         $category = Category::all();
         $treatment = Treatment::all();
         $antrean = Antrean::all();
-        return view('pasien.create', compact('category', 'treatment', 'antrean','session'));
+        $patient = Patient::all();
+        // dd($norm);
+        return view('pasien.create', compact('category', 'treatment', 'antrean','session', 'norm','patient'));
     }
 
     public function createPasienBaru()
     {
+        $norm = $this->getLastCode();
         $session = session()->get('patient');
         $category = Category::all();
         $treatment = Treatment::all();
         $antrean = Antrean::all();
-        return view('pasien.createPasienBaru', compact('category', 'treatment', 'antrean','session'));
+        return view('pasien.createPasienBaru', compact('category', 'treatment', 'antrean','session','norm'));
     }
 
     public function nextpasienbaru()
@@ -111,6 +116,7 @@ class PatientController extends Controller
         // return $request;
         $request->validate(
             [
+                'no_rm' => 'required',
 
                 'nama' => 'required',
                 'nik' => 'required',
@@ -130,6 +136,7 @@ class PatientController extends Controller
             ],
             [
 
+                'no_rm.required' => 'No. RM harus diisi',
                 'nama.required' => 'Nama harus diisi',
                 'nik.required' => 'NIK harus diisi',
                 'jeniskelamin.required' => 'Jenis Kelamin harus diisi',
@@ -149,6 +156,7 @@ class PatientController extends Controller
 
         Patient ::create(
             [
+                'no_rm' => $request->no_rm,
                 'nama_pasien' => $request->nama,
                 'nik' => $request->nik,
                 'jenis_kelamin' => $request->jeniskelamin,
@@ -182,6 +190,24 @@ class PatientController extends Controller
         return redirect('master-data/reservation-baru/create');
     }
 
+    public function getLastCode(){
+        
+        
+        $datas =  DB::select("SELECT MAX(RIGHT(no_rm, 4)) as lastcode FROM patients");
+        $kd = "";
+
+        if ($datas){
+            foreach ($datas as $k) {
+                $tmp = ((int)$k->lastcode)+1;
+                $kd = sprintf("%04s", $tmp);
+            }
+        } else {
+            
+            $kd = "0001";
+            
+        }
+        return "A". $kd;
+    }
     public function storenextpasienbaru(Request $request)
     {
 
@@ -256,10 +282,11 @@ class PatientController extends Controller
     public function edit(Patient $patient)
     {
     //    dd($patient);
+    $norm = $this->getLastCode();
         $category = Category::all();
         $treatment = Treatment::all();
         $antrean = Antrean::all();
-        return view('pasien.update', compact('patient', 'category', 'treatment', 'antrean'));
+        return view('pasien.update', compact('patient', 'category', 'treatment', 'antrean','norm'));
     }
 
     /**
@@ -315,7 +342,7 @@ class PatientController extends Controller
 
         Patient::where('id', $patient->id)->update(
             [
-                'treatment_id' => $request->noberobat,
+                'no_rm' => $request->noberobat,
                 'nama_pasien' => $request->nama,
                 'nik' => $request->nik,
                 'jenis_kelamin' => $request->jeniskelamin,
@@ -364,11 +391,6 @@ class PatientController extends Controller
         
     }
 
-    // public function destroyPasienBaru(Patient $patient)
-    // {
-    //     Patient::where('id', $patient->id)->delete();
-    //     return redirect('master-data/pasienbaru')->with('status', 'Data berhasil dihapus');
-    // }
 
     public function getDataPatient($id)
     {
