@@ -52,7 +52,7 @@ class FrontController extends Controller
 
                 
                 'nama' => 'required',
-                'nik' => 'required|unique:patients',
+                'nik' => 'required|unique:patients,nik',
                 'jeniskelamin' => 'required',
                 'ttl' => 'required',
                 'pendidikan' => 'required',

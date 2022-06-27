@@ -119,8 +119,8 @@ class PatientController extends Controller
                 'no_rm' => 'required',
 
 
-                'nama' => 'required|unique',
-                'nik' => 'required|unique',
+                'nama' => 'required',
+                'nik' => 'required|unique:patients,nik',
 
                 'jeniskelamin' => 'required',
                 'ttl' => 'required',
@@ -307,7 +307,7 @@ class PatientController extends Controller
             [
                 'noberobat' => 'required',
                 'nama' => 'required',
-                'nik' => 'required|unique:patients,nik,'.$patient->id,
+                'nik' => 'required|unique:patients,nik',
                 'jeniskelamin' => 'required',
                 'ttl' => 'required',
                 'pendidikan' => 'required',
@@ -387,7 +387,7 @@ class PatientController extends Controller
         // dd($patient);
         Patient::where('id', $patient->id)->delete();
             //    if treatment_id == 3 return pasienbaru
-            if ($patient->treatment_id == 3) {
+            if ($patient->no_rm == 'Belum Ada') {
                 return redirect('master-data/pasienbaru/');
             } else {
                 return redirect('master-data/patient/');
