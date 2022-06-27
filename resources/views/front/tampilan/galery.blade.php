@@ -8,8 +8,8 @@
 <section class="gallery" id="gallery">
 
    <div class="heading">
-      <span>our gallery</span>
-      <h3>our untold stories</h3>
+      <span>Galeri</span>
+      <h3>Update Kegiatan</h3>
    </div>
 
    <div class="gallery-container">

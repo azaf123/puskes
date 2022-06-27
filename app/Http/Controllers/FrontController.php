@@ -21,7 +21,7 @@ class FrontController extends Controller
     {
         $doctor = Doctor::all();
         $article = Article::all();
-        $galery = Galery::all();
+        $galery = Galery::limit(3)->get();
         $layanan = Layanan::all();
         $header = Header::all();
         return view('front.tampilan.index', compact('doctor', 'article', 'galery', 'layanan', 'header'));

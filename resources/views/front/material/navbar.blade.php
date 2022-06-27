@@ -1,7 +1,6 @@
 <section class="header">
 
-<a href="#" class="logo"> <img src="{{asset('front/images/logo-puskesmas-32976.png')}}" width="50px" alt=""> Puskesmas 5 Ilir
-   Palembang </a>
+<a href="#" class="logo"> <img src="{{asset('front/images/logonavbar.png')}}" width="200px" height="70px" alt=""> </a>
 
 <nav class="navbar">
    <a href="{{url('/')}}">home</a>
