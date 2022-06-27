@@ -118,8 +118,10 @@ class PatientController extends Controller
             [
                 'no_rm' => 'required',
 
-                'nama' => 'required',
-                'nik' => 'required',
+
+                'nama' => 'required|unique',
+                'nik' => 'required|unique',
+
                 'jeniskelamin' => 'required',
                 'ttl' => 'required',
                 'pendidikan' => 'required',
@@ -136,9 +138,11 @@ class PatientController extends Controller
             ],
             [
 
+
                 'no_rm.required' => 'No. RM harus diisi',
                 'nama.required' => 'Nama harus diisi',
                 'nik.required' => 'NIK harus diisi',
+                'nik.unique' => 'NIK sudah terdaftar',
                 'jeniskelamin.required' => 'Jenis Kelamin harus diisi',
                 'ttl.required' => 'TTL harus diisi',
                 'pendidikan.required' => 'Pendidikan harus diisi',
@@ -303,7 +307,7 @@ class PatientController extends Controller
             [
                 'noberobat' => 'required',
                 'nama' => 'required',
-                'nik' => 'required',
+                'nik' => 'required|unique:patients,nik,'.$patient->id,
                 'jeniskelamin' => 'required',
                 'ttl' => 'required',
                 'pendidikan' => 'required',
@@ -323,6 +327,7 @@ class PatientController extends Controller
                 'noberobat.required' => 'No. Obat harus diisi',
                 'nama.required' => 'Nama harus diisi',
                 'nik.required' => 'NIK harus diisi',
+                'nik.unique' => 'NIK sudah ada',
                 'jeniskelamin.required' => 'Jenis Kelamin harus diisi',
                 'ttl.required' => 'TTL harus diisi',
                 'pendidikan.required' => 'Pendidikan harus diisi',

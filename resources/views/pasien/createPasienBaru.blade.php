@@ -20,7 +20,7 @@
                                     <label for="exampleInputName1">No Berobat</label>
                                     <input type="text" name="no_rm" class="form-control" value="{{$norm}}">
 
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -161,8 +161,10 @@
                                     <div class="form-group">
                                         <label for="exampleInputName1">Agama</label>
                                         <select class="form-control" name="agama" id="">
-                                            <option value="islam">Islam</option>
-                                            <option value="kristen">Kristen</option>
+                                            <option value="islam">islam</option>
+                                            <option value="kristen">kristen</option>
+                                            <option value="budha">budha</option>
+                                            <option value="hindu">hindu</option>
                                         </select>
                                     </div>
                                 </div>
@@ -204,6 +206,8 @@
                                         <select class="form-control" name="goldar" id="">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
+                                            <option value="AB">AB</option>
+                                            <option value="O">O</option>
                                         </select>
 
                                     </div>
