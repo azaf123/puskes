@@ -26,64 +26,69 @@ use App\Http\Controllers\ReportController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/print',[PrintController::class,'index']);
-Route::get('/print/generatepdf',[PrintController::class,'generatepdf']);
-Route::get('/print-reservation',[PrintController::class,'printReservation']);
-
-Route::get('/print-pendaftaran/{reservation}',[PrintController::class,'printPendaftaran']);
-Route::get('/print-pendaftaran/generatepdf/{reservation}',[PrintController::class,'generatepdfPendaftaran']);
-
-Route::get('/antrean/{id}', [ReservationController::class, 'antreanToPoli']);
-Route::get('/treatment/{id}', [PatientController::class, 'getDataPatient']);
-Route::get('/pasien-treatment/{id}', [ReservationController::class, 'treatmentToPasien']);
-Route::get('/pasien-reservasi/{id}', [FrontController::class, 'pasienReservasi']);
+// frontend index
 Route::get('/', [FrontController::class, 'index']);
-Route::get('/pendaftaran', [FrontController::class, 'pendaftaran']);
-Route::get('/pendaftaran-pasien-baru/create', [FrontController::class, 'pendaftaranPasienBaru']);
-Route::post('/pendaftaran-pasien-baru', [FrontController::class, 'storependaftaranPasienBaru']);
-Route::get('/reservasi/create', [FrontController::class, 'reservasi']);
-Route::get('/reservasi-lama/create', [FrontController::class, 'reservasiLama']);
-Route::post('/reservasi', [FrontController::class, 'reservasiStore']);
-Route::post('/reservasi-lama', [FrontController::class, 'reservasiStoreLama']);
-
+// page
 Route::get('/artikel', [FrontController::class, 'article']);
 Route::get('/galery', [FrontController::class, 'galery']);
 Route::get('/profil', [FrontController::class, 'profil']);
+// frontend  proses
+// pendaftaran pilih
+Route::get('/pendaftaran', [FrontController::class, 'pendaftaran']);
 
+// pendaftaran baru
+Route::get('/pendaftaran-pasien-baru/create', [FrontController::class, 'pendaftaranPasienBaru']);
+Route::post('/pendaftaran-pasien-baru', [FrontController::class, 'storependaftaranPasienBaru']);
+// pendaftaran lama
 Route::get('/pendaftaran-pasien-lama/create', [FrontController::class, 'pendaftaranPasienLama']);
 Route::post('/pendaftaran-pasien-lama', [FrontController::class, 'storependaftaranPasienLama']);
+// pendaftaran reservasi baru
+Route::get('/reservasi/create', [FrontController::class, 'reservasi']);
+Route::post('/reservasi', [FrontController::class, 'reservasiStore']);
+// pendaftaran reservasi lama
+Route::get('/reservasi-lama/create', [FrontController::class, 'reservasiLama']);
+Route::post('/reservasi-lama', [FrontController::class, 'reservasiStoreLama']);
+// json otomatis
+Route::get('/antrean/{id}', [ReservationController::class, 'antreanToPoli']);
+// Route::get('/treatment/{id}', [PatientController::class, 'getDataPatient']);
+Route::get('/pasien-treatment/{id}', [ReservationController::class, 'treatmentToPasien']);
+Route::get('/pasien-reservasi/{id}', [FrontController::class, 'pasienReservasi']);
 
+
+
+// admin
 Route::prefix('master-data')->group(function () {
+// pasien lama
 Route::resource('patient', PatientController::class);
+// pasien baru
 Route::get('pasienbaru/', [PatientController::class, 'pasienbaru']);
 Route::get('pasienbaru/create', [PatientController::class, 'createPasienBaru']);
-Route::get('pasienbaru/createReservation', [PatientController::class, 'nextpasienbaru']);
 Route::post('pasienbaru/', [PatientController::class, 'storePasienBaru']);
-Route::post('pasienbaruReservation/', [PatientController::class, 'storenextpasienbaru']);
-Route::delete('pasienbaru/{pasienbaru}', [PatientController::class, 'destroyPasienBaru']);
 
-
+// category
 Route::resource('category', CategoryController::class);
-
-Route::resource('treatment', TreatmentController::class);
-
+// antrean
 Route::resource('antrean', AntreanController::class);
-
+// article
 Route::resource('article', ArticleController::class);
-
+// doctor
 Route::resource('doctor', DoctorController::class);
+// reservation
+// reservation lama
 Route::resource('reservation', ReservationController::class);
+// reservation baru
 Route::get('/reservation-baru/create' , [ReservationController::class, 'reservationBaru']);
 Route::post('/reservation-baru' , [ReservationController::class, 'storeBaru']);
+// galeriy
 Route::resource('galery', GaleryController::class);
+// header
 Route::resource('header', HeaderController::class);
+// layanan
 Route::resource('layanan', LayananController::class);
 
 
-
+// laporan
 Route::get('report/', [ReportController::class, 'index']);
-Route::get('cetakpertanggal/{tglawal}/{tglakhir}', [ReportController::class, 'cetakPertanggalWithoutFungsi']);
-Route::get('cetak-data/laporan', [ReportController::class, 'generatepdf']);
+Route::get('cetakpertanggal/{tglawal}/{tglakhir}', [ReportController::class, 'cetakPertanggal']);
 });
-Route::get('cetakpertanggal', [ReportController::class, 'cetakError']);
-Route::get('cetakpertanggal/{tglawal}/{tglakhir}/{fungsi}', [ReportController::class, 'cetakPertanggal']);
+

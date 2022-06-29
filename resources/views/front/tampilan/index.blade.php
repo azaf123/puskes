@@ -106,7 +106,7 @@
             <h3>INFO MAIL</h3>
         </div>
 
-        <div class="swiper artikel-slider" style="height: 450px;">
+        <div class="swiper artikel-slider" style="height: 550px;">
 
             <div class="swiper-wrapper">
 
@@ -376,20 +376,3 @@
 
 @stop
 
-<!-- <div class="swiper-slide slide" style="background-image: url('{{ asset('/front/images/home1.jpg') }}');">
-            <div class="content">
-               <h3>Jadwal Pelayanan</h3>
-               <span>Senin-Kamis: 08.30-14.00 </span>
-               <span>Jumat: 08.30-13.00 </span>
-               <span>Sabtu: 08.30-13.30 </span>
-               <a href="#" class="btn">get started</a>
-            </div>
-         </div>
-
-         <div class="swiper-slide slide" style="background: url('{{ asset('/front/images/home-slide-3.jpg') }}');">
-            <div class="content">
-               <span>outstanding artikel</span>
-               <h3>authentic kitchen</h3>
-               <a href="#" class="btn">get started</a>
-            </div>
-         </div> -->

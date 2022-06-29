@@ -3,19 +3,29 @@
 
 @section('content')
 <div class="content-wrapper">
-<div id="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Laporan Data Pendaftaran Pasien</h3>
-                <p class="text-subtitle text-muted">Puskesmas 5 Ilir Palembang</p>
+    <div class="col">
+        <!-- status  -->
+        @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+        @endif
+
+        </button>
+    </div>
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 order-md-1 order-last">
+                    <h3>Laporan Data Pendaftaran Pasien</h3>
+                    <p class="text-subtitle text-muted">Puskesmas 5 Ilir Palembang</p>
+
+                </div>
 
             </div>
-
         </div>
     </div>
-</div>
-<div id="main">
+    <div id="main">
 
         <section class="section">
             <div class="card">
@@ -23,7 +33,7 @@
                     Laporan Data Reservasi per Tanggal
                 </div>
                 <div class="card-body">
-              
+
                     <table class="table table-striped" id="table1">
                         <div class="row">
                             <div class="col-lg-3">
@@ -44,11 +54,11 @@
                                     </b>
                                     <br>
                                     <br>
-                                   
+
                                 </div>
                             </div>
                         </div>
-                       
+
                         <br>
                         <a href="" class="btn btn-primary" onclick="this.href='cetakpertanggal/'+ document.getElementById('tglawal').value + '/' + document.getElementById('tglakhir').value">Submit</a>
 
