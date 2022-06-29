@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TreatmentController;
 use App\Http\Controllers\AntreanController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\GaleryController;
@@ -26,6 +27,19 @@ use App\Http\Controllers\ReportController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// login dan register
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'loginStore']);
+Route::get('logout', [AuthController::class, 'logout']);
+Route::get('/register', [AuthController::class, 'registrasi']);
+Route::get('/register', [AuthController::class, 'registrasiStore']);
+
+// Route::group(['middleware' => ['auth']], function (){
+
+// });
+
+
 Route::get('/print',[PrintController::class,'index']);
 Route::get('/print/generatepdf',[PrintController::class,'generatepdf']);
 Route::get('/print-reservation',[PrintController::class,'printReservation']);

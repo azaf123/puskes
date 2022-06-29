@@ -2,7 +2,7 @@
 
 <a href="#" class="logo"> <img src="{{asset('front/images/logonavbar.png')}}" width="200px" height="70px" alt=""> </a>
 
-<nav class="navbar">
+<nav class="navbar"> 
    <a href="{{url('/')}}">home</a>
    <a href="#doctor">dokter</a>
    <a href="#layanan">layanan</a>
