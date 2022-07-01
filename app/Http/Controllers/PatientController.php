@@ -56,14 +56,6 @@ class PatientController extends Controller
         return view('pasien.createPasienBaru', compact('category', 'treatment', 'antrean','session','norm'));
     }
 
-    public function nextpasienbaru()
-    {
-        $session = session()->get('patient');
-        $category = Category::all();
-        $treatment = Treatment::all();
-        $antrean = Antrean::all();
-        return view('pasien.reservation', compact('category', 'treatment', 'antrean' ,'session'));
-    }
 
 
     /**
@@ -188,18 +180,12 @@ class PatientController extends Controller
           
         }
 
-
-
-
         return redirect('master-data/reservation-baru/create');
     }
 
     public function getLastCode(){
-        
-        
         $datas =  DB::select("SELECT MAX(RIGHT(no_rm, 4)) as lastcode FROM patients");
         $kd = "";
-
         if ($datas){
             foreach ($datas as $k) {
                 $tmp = ((int)$k->lastcode)+1;
@@ -212,59 +198,7 @@ class PatientController extends Controller
         }
         return "A". $kd;
     }
-    public function storenextpasienbaru(Request $request)
-    {
-
-        $request->validate(
-            [
-
-                'poli' => 'required',
-                'antrean' => 'required',
-
-            ],
-            [
-                'poli.required' => 'Poli harus diisi',
-                'antrean.required' => 'Antrean harus diisi',
-            ]
-
-
-        );
-
-        // session
-        $session = session()->get('patient');
-        $session['poli'] = $request->poli;
-        $session['antrean'] = $request->antrean;
-        session()->put('patient', $session);
-
-
-        // create pasien
-        // dd($session);
-        Patient ::create([
-           
-            'nama_pasien' => $session['nama'],
-            'nik' => $session['nik'],
-            'jenis_kelamin' => $session['jeniskelamin'],
-            'ttl' => $session['ttl'],
-            'pendidikan' => $session['pendidikan'],
-            'pekerjaan' => $session['pekerjaan'],
-            'ibu_istri' => $session['nama_as'],
-            'ayah_suami' => $session['nama_ii'],
-            'suku_bangsa' => $session['sukubangsa'],
-            'agama' => $session['agama'],
-            'alamat' => $session['alamat'],
-            'no_hp' => $session['nohp'],
-            'goldar' => $session['goldar'],
-            'bahasa' => $session['bahasa'],
-            'category_id' => $session['poli'],
-            'antrean_id' => $session['antrean'],
-            // 'treatment_id' => $session['noberobat'],
-
-        ]);
-
-
-
-        return redirect('master-data/pasienbaru/');
-    }
+  
 
     /**
      * Display the specified resource.

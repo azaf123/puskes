@@ -43,4 +43,4 @@
         let jquery_datatable = $("#table1").DataTable()
     </script>
     </script>
-    <!-- End custom js for this page-->
+    <!-- End custom js for this page--> 

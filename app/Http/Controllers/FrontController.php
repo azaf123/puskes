@@ -278,8 +278,6 @@ class FrontController extends Controller
 
     public function pasienReservasi($id)
     {
-
-
         $patient = Patient::where('treatment_id', $id)->get();
         return response()->json($patient);
     }

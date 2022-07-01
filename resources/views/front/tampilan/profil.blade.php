@@ -37,11 +37,7 @@
                </ul>
             </div>
             <h5 class="title">Motto</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio at, saepe accusamus dolorum,
-               quos
-               eos nesciunt amet exercitationem illum quis nostrum, repellat quaerat eum debitis fugit alias
-               magnam
-               omnis!
+            <p>Kesehatan Adalah Tanggung Jawab  Bersama
             </p>
          </div>
       </div>

@@ -40,7 +40,7 @@
         {{-- . --}}
 
 
-        {{-- <li class="nav-item sidebar-item @if (Request::segment(1) == 'pasien') active @endif">
+        {{-- <li class="nav-item sidebar-item @if (Request::segment(2) == 'pasien') active @endif">
       <a class="nav-link" href="{{url('/master-data/patient/')}}">
         <i class="menu-icon mdi mdi-file-document"></i>
         <span class="menu-title">Data Pasien Lama</span>
