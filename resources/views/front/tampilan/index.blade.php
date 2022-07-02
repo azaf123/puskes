@@ -106,7 +106,7 @@
 
         <div class="swiper artikel-slider">
 
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper"  style="height: 500px;" >
                 @foreach ($article as $item)
                     <div class="swiper-slide slide" data-name="artikel-{{ $item->id }}" style="height: 450px;">
                         <img src="{{ asset('img/' . $item->gambar) }}" width="100%" height="auto" alt="">

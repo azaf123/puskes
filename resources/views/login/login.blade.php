@@ -35,19 +35,27 @@
                             <h4>Puskesmas 5 Ilir Palembang</h4>
                             <h5>Hello! let's get started</h5>
                             <h6 class="fw-light">Sign in to continue.</h6>
-                            <form action="{{ url('/login') }}" class="pt-3" method="post">
+                            <form action="{{ url('/login_store') }}" class="pt-3" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <input type="email" name="email" class="form-control form-control-lg"
-                                        id="exampleInputEmail1" placeholder="Email">
+                                    <input type="email" class="form-control form-control-lg @error('email') is-invalid @enderror" id="email" name="email" placeholder="Isi Email">
+                                    @error('email')
+                                    <div class="invalid-feedback">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
-                                  <input type="password" name="password" class="form-control form-control-lg"
-                                      id="exampleInputPassword1" placeholder="Password">
-                              </div>
+                                    <input type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" id="password" name="password" placeholder="Password">
+                                    @error('password')
+                                    <div class="invalid-feedback">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
+                                </div>
+
                                 <div class="mt-3">
-                                    <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
-                                        href="../../index.html">SIGN IN</a>
+                                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
                                 </div>
                                 <div class="my-2 d-flex justify-content-between align-items-center">
                                     <div class="form-check">

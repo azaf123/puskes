@@ -28,14 +28,14 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/ 
+*/
 
 // login dan register
 Route::get('/login', [AuthController::class, 'login'])->name('login');
-Route::post('/login', [AuthController::class, 'loginStore']);
+Route::post('/login_store', [AuthController::class, 'loginStore']);
 Route::get('logout', [AuthController::class, 'logout']);
 Route::get('/register', [AuthController::class, 'registrasi']);
-Route::get('/register', [AuthController::class, 'registrasiStore']);
+Route::post('/register_store', [AuthController::class, 'registrasiStore']);
 
 // Route::group(['middleware' => ['auth']], function (){
 
@@ -70,6 +70,7 @@ Route::get('/pasien-reservasi/{id}', [FrontController::class, 'pasienReservasi']
 
 
 // Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'admin']], function () {
     // admin
     Route::prefix('master-data')->group(function () {
         // pasien lama
@@ -100,10 +101,9 @@ Route::get('/pasien-reservasi/{id}', [FrontController::class, 'pasienReservasi']
         // layanan
         Route::resource('layanan', LayananController::class);
 
-// laporan
-Route::get('report/', [ReportController::class, 'index']);
-Route::get('cetakpertanggal/{tglawal}/{tglakhir}', [ReportController::class, 'cetakPertanggal']);
-Route::get('print-identitas', [PrintController::class, 'print']);
+        // laporan
+        Route::get('report/', [ReportController::class, 'index']);
+        Route::get('cetakpertanggal/{tglawal}/{tglakhir}', [ReportController::class, 'cetakPertanggal']);
+        Route::get('print-identitas', [PrintController::class, 'print']);
+    });
 });
-
-   

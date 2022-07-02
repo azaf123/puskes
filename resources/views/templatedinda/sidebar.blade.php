@@ -118,5 +118,11 @@
                 <span class="menu-title">Laporan </span>
             </a>
         </li>
+        <!-- logout -->
+        <li class="nav-item sidebar-item">
+            <a class="nav-link" href="{{ url('/logout') }}">
+                <i class="menu-icon mdi mdi-logout"></i>
+                <span class="menu-title">Logout</span>
+            </a>
 
 </nav>

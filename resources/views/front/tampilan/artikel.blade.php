@@ -15,11 +15,7 @@
         padding: 30px;
    
     }
-    .customcard {
-    
-
-    }
-
+ 
     .customimg {
         width: 100%;
         height: 200px;
