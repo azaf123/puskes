@@ -36,9 +36,7 @@
         <div class="content">
             <h3 class="title">Selamat Datang di Website
                 Puskesmas 5 Ilir Palembang</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio at, saepe accusamus dolorum, quos eos
-                nesciunt amet exercitationem illum quis nostrum, repellat quaerat eum debitis fugit alias magnam omnis!</p>
-            <a href="#" class="btn">read more</a>
+            <p>Kesehatan Adalah Tanggung Jawab  Bersama.</p>
             <div class="icons-container">
                 <div class="icons">
                     <img src="{{ asset('front/images/aboutt.png') }}" alt="">
@@ -50,7 +48,7 @@
                 </div>
                 <div class="icons">
                     <img src="{{ asset('front/images/about3.png') }}" alt="">
-                    <h3>Expert Doctors</h3>
+                    <h3>Dokter dan Perawat Berpengalaman</h3>
                 </div>
 
             </div>
@@ -74,7 +72,7 @@
                     <div class="swiper-slide slide">
                         <div class="image">
                             <img src="{{ asset('img/' . $item->foto) }}" alt="">
-                            <span>burger</span>
+                            <span>{{ $item->spesialisasi }}</span>
                         </div>
                         <div class="content">
                             <div class="icon">
@@ -83,7 +81,7 @@
                             </div>
                             <a href="#" class="title">{{ $item->nama }}</a>
                             <p>Dokter{{ $item->spesialisasi }}</p>
-                            <a href="#" class="btn">Reservasi</a>
+                            <a href="#" class="btn">Daftar</a>
                         </div>
                     </div>
                 @endforeach
@@ -106,23 +104,18 @@
             <h3>INFO MAIL</h3>
         </div>
 
-        <div class="swiper artikel-slider" style="height: 550px;">
+        <div class="swiper artikel-slider">
 
             <div class="swiper-wrapper">
-
                 @foreach ($article as $item)
-                    <div class="swiper-slide slide" style="height: 450px;"
-                        data-name="artikel-{{ $item->id }}">
-                        <img src="{{ asset('img/' . $item->gambar) }}" width="350px" height="550px"
-                            style="object-fit: cover;" alt="">
+                    <div class="swiper-slide slide" data-name="artikel-{{ $item->id }}" style="height: 450px;">
+                        <img src="{{ asset('img/' . $item->gambar) }}" width="100%" height="auto" alt="">
                         <h3>{{ $item->judul }}</h3>
                         <button type="button" class="btn">Baca Yuk!</button>
                     </div>
                 @endforeach
             </div>
-
             <div class="swiper-pagination"></div>
-
         </div>
 
     </section>
@@ -137,7 +130,7 @@
 
         @foreach ($article as $item)
             <div class="artikel-preview" data-target="artikel-{{ $item->id }}">
-                <img src="{{ asset('img/' . $item->gambar) }}" width="450px" height="550px" style="object-fit: cover;"
+                <img src="{{ asset('img/' . $item->gambar) }}"  style="object-fit: cover;"
                     alt="">
                 <p>
                     {{ $item->konten }}

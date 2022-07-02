@@ -6,9 +6,9 @@
         <span class="icon-menu"></span>
       </button>
     </div>
-    <div>
+    <div> 
       <a class="navbar-brand brand-logo" href="index.html">
-        <img src="{{asset('dinda/images/logo.svg')}}" alt="logo" />
+        <img src="{{asset('front/images/logonavbar.png')}}" alt="logo" />
       </a>
       <a class="navbar-brand brand-logo-mini" href="index.html">
         <img src="{{asset('dinda/images/logo-mini.svg')}}" alt="logo" />

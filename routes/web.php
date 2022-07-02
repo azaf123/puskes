@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+
 // controller
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TreatmentController;
@@ -15,6 +16,8 @@ use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PrintController;
 use App\Http\Controllers\ReportController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +28,18 @@ use App\Http\Controllers\ReportController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+*/ 
+
+// login dan register
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'loginStore']);
+Route::get('logout', [AuthController::class, 'logout']);
+Route::get('/register', [AuthController::class, 'registrasi']);
+Route::get('/register', [AuthController::class, 'registrasiStore']);
+
+// Route::group(['middleware' => ['auth']], function (){
+
+// });
 // frontend index
 Route::get('/', [FrontController::class, 'index']);
 // page
@@ -55,37 +69,36 @@ Route::get('/pasien-treatment/{id}', [ReservationController::class, 'treatmentTo
 Route::get('/pasien-reservasi/{id}', [FrontController::class, 'pasienReservasi']);
 
 
+// Route::group(['middleware' => ['auth']], function () {
+    // admin
+    Route::prefix('master-data')->group(function () {
+        // pasien lama
+        Route::resource('patient', PatientController::class);
+        // pasien baru
+        Route::get('pasienbaru/', [PatientController::class, 'pasienbaru']);
+        Route::get('pasienbaru/create', [PatientController::class, 'createPasienBaru']);
+        Route::post('pasienbaru/', [PatientController::class, 'storePasienBaru']);
 
-// admin
-Route::prefix('master-data')->group(function () {
-// pasien lama
-Route::resource('patient', PatientController::class);
-// pasien baru
-Route::get('pasienbaru/', [PatientController::class, 'pasienbaru']);
-Route::get('pasienbaru/create', [PatientController::class, 'createPasienBaru']);
-Route::post('pasienbaru/', [PatientController::class, 'storePasienBaru']);
-
-// category
-Route::resource('category', CategoryController::class);
-// antrean
-Route::resource('antrean', AntreanController::class);
-// article
-Route::resource('article', ArticleController::class);
-// doctor
-Route::resource('doctor', DoctorController::class);
-// reservation
-// reservation lama
-Route::resource('reservation', ReservationController::class);
-// reservation baru
-Route::get('/reservation-baru/create' , [ReservationController::class, 'reservationBaru']);
-Route::post('/reservation-baru' , [ReservationController::class, 'storeBaru']);
-// galeriy
-Route::resource('galery', GaleryController::class);
-// header
-Route::resource('header', HeaderController::class);
-// layanan
-Route::resource('layanan', LayananController::class);
-
+        // category
+        Route::resource('category', CategoryController::class);
+        // antrean
+        Route::resource('antrean', AntreanController::class);
+        // article
+        Route::resource('article', ArticleController::class);
+        // doctor
+        Route::resource('doctor', DoctorController::class);
+        // reservation
+        // reservation lama
+        Route::resource('reservation', ReservationController::class);
+        // reservation baru
+        Route::get('/reservation-baru/create', [ReservationController::class, 'reservationBaru']);
+        Route::post('/reservation-baru', [ReservationController::class, 'storeBaru']);
+        // galeriy
+        Route::resource('galery', GaleryController::class);
+        // header
+        Route::resource('header', HeaderController::class);
+        // layanan
+        Route::resource('layanan', LayananController::class);
 
 // laporan
 Route::get('report/', [ReportController::class, 'index']);
@@ -93,3 +106,4 @@ Route::get('cetakpertanggal/{tglawal}/{tglakhir}', [ReportController::class, 'ce
 Route::get('print-identitas', [PrintController::class, 'print']);
 });
 
+   
