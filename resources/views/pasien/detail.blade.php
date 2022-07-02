@@ -75,6 +75,9 @@
                             </div>
                         
                         </form>
+                        <button class="btn btn-primary">
+                            <a href="{{url('/master-data/print-identitas')}}">Cetak</a>
+                        </button>
                     </div>
                 </div>
             </div>

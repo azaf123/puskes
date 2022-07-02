@@ -13,6 +13,13 @@ use PDF;
 
 class PrintController extends Controller
 {
+
+    public function print(Patient $patient)
+    {
+        $getdata = Patient::where('id', $patient->id)->get();
+        return view('print.identitas', compact('patient'));
+        
+    }
     public function index()
     {
         $reservation = Reservation::all();

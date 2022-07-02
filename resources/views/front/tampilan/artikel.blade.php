@@ -6,31 +6,56 @@
 @section('content')
 
 <!-- artikel section starts  -->
+<style>
+    .cardmaster{
+        width: 100%;
+        height: 500px;
+        border-radius: 10px;
+        border: 2px solid #ccc;
+        padding: 30px;
+   
+    }
+    .customcard {
+    
 
+    }
+
+    .customimg {
+        width: 100%;
+        height: 200px;
+
+
+
+    }
+</style>
 <section class="artikel" id="artikel">
 
     <div class="heading">
         <span>Artikel</span>
         <h3>INFO MAIL</h3>
     </div>
+
+
     <div class="row">
         @foreach ($article as $item)
-        <div class="col-lg-3">
-            <div class="card">
-                <img src="{{ asset('img/' . $item->gambar) }}" width="30px" height="auto" class="card-img-top" alt="">
-                <div class="card-body" data-name="artikel-{{ $item->id }}">
-                    <h5 class="card-title">{{ $item->judul }}</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                    <button type="button" class="btn">
-                        Go somewhere</button>
-                </div>
+        <div class="col-lg-4 cardmaster m-1 ">
+            <img class="customimg" src="{{ asset('img/' . $item->gambar) }}" width="350px" height="550px" style="object-fit: cover;" alt="">
+            <div class="slide customcard" style="height: 450px;" data-name="artikel-{{ $item->id }}">
+
+                <h3>{{ $item->judul }}</h3>
+                <button type="button" class="btn">Baca Yuk!</button>
             </div>
         </div>
 
         @endforeach
     </div>
+
+
+
+
+
+    </div>
+
 </section>
 
 <section class="artikel-preview-container">
@@ -48,17 +73,7 @@
 
 </section>
 
-{{-- <div class="swiper artikel-slider" style="height: 450px;">
-            <div class="swiper-wrapper">
-                @foreach ($article as $item)
-                    <div class="swiper-slide slide" >
-                        <img src= alt="">
-                        <h3>{{ $item->judul }}</h3>
-<button type="button" class="btn">Baca Yuk!</button>
-</div>
-@endforeach
-</div>
-</div> --}}
+
 
 
 

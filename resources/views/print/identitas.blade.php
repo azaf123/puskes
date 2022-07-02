@@ -1,6 +1,6 @@
 @extends('templatedinda.header')
 <div class="container">
-    <h1>Pendaftaran</h1>
+    <h1>Identitas</h1>
     <br>
     <br>
     
@@ -17,16 +17,17 @@
   </thead>
 
   <tbody>
-  
+    <tr>
 
-     
-      <td>{{ $getdata->patient->nama_pasien}}</td>
-      <td>{{ $getdata->category->nama_kategori}}</td>
-      <td>{{ $getdata->antrean->no_antrean}}</td>
-
+      <td>{{$patient->nama_pasien}}</td>
+      
     </tr>
 
 
   </tbody>
 </table>
 </div>
+<button onclick="windows.print()">
+Cetak
+</button>
+

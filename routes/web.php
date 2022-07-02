@@ -90,5 +90,6 @@ Route::resource('layanan', LayananController::class);
 // laporan
 Route::get('report/', [ReportController::class, 'index']);
 Route::get('cetakpertanggal/{tglawal}/{tglakhir}', [ReportController::class, 'cetakPertanggal']);
+Route::get('print-identitas', [PrintController::class, 'print']);
 });
 
