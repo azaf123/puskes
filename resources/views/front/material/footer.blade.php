@@ -1,6 +1,6 @@
 <!-- footer section starts  -->
 
-<section class="footer">
+<section class="footer" id="footer">
 
    <div class="icons-container">
 
