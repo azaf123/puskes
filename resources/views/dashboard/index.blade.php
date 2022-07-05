@@ -13,23 +13,41 @@
                   <div class=" d-flex align-items-center justify-content-between">
                     <div>
                       <p class="statistics-title">Pendaftaran Pasien</p>
-                      <h3 class="rate-percentage">5</h3>
+                      <h3 class="rate-percentage">{{
+                        $reservation
+                        }}</h3>
                     </div>
                     <div>
                       <p class="statistics-title">Pasien Lama</p>
-                      <h3 class="rate-percentage">4</h3>
+                      <h3 class="rate-percentage">
+                        {{
+                          $patientLama
+                        }}
+                      </h3>
                     </div>
                     <div>
                       <p class="statistics-title">Pasien Baru</p>
-                      <h3 class="rate-percentage">3</h3>
+                      <h3 class="rate-percentage">
+                      {{
+                          $patientBaru
+                        }}
+                      </h3>
                     </div>
                     <div>
                       <p class="statistics-title">Artikel</p>
-                      <h3 class="rate-percentage">3</h3>
+                      <h3 class="rate-percentage">
+                        {{
+                          $article
+                        }}
+                      </h3>
                     </div>
                     <div>
                       <p class="statistics-title">Galeri</p>
-                      <h3 class="rate-percentage">3</h3>
+                      <h3 class="rate-percentage">
+                        {{
+                          $galery
+                        }}
+                      </h3>
                     </div>
                   </div>
                 </div>

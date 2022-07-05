@@ -4,7 +4,7 @@
         
 
         <li class="nav-item @if (Request::segment(1) == 'home') active @endif">
-            <a class="nav-link" href="{{ url('/master-data/') }}">
+            <a class="nav-link" href="{{ url('/master-data/dashboard') }}">
                 <i class="mdi mdi-grid-large menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
