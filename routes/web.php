@@ -13,6 +13,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\HeaderController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PrintController;
 use App\Http\Controllers\ReportController;
@@ -70,9 +71,10 @@ Route::get('/pasien-reservasi/{id}', [FrontController::class, 'pasienReservasi']
 
 
 // Route::group(['middleware' => ['auth']], function () {
-Route::group(['middleware' => ['auth', 'admin']], function () {
+// Route::group(['middleware' => ['auth', 'admin']], function () {
     // admin
     Route::prefix('master-data')->group(function () {
+        Route::get('/', [HomeController::class, 'index']);
         // pasien lama
         Route::resource('patient', PatientController::class);
         // pasien baru
@@ -106,4 +108,4 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
         Route::get('cetakpertanggal/{tglawal}/{tglakhir}', [ReportController::class, 'cetakPertanggal']);
         Route::get('print-identitas', [PrintController::class, 'print']);
     });
-});
+// });

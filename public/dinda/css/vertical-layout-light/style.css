@@ -20723,9 +20723,9 @@ code {
   line-height: 18px;
 }
 
-.home-tab .statistics-details {
-  margin-bottom: 48px;
-}
+/* .home-tab .statistics-details {
+  margin-bottom: 1 px;
+} */
 
 .home-tab .statistics-details .statistics-title {
   font-style: normal;

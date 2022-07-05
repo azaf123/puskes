@@ -1,15 +1,17 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link" href="index.html">
+
+        
+
+        <li class="nav-item @if (Request::segment(1) == 'home') active @endif">
+            <a class="nav-link" href="{{ url('/master-data/') }}">
                 <i class="mdi mdi-grid-large menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
-
-
         <li class="nav-item nav-category">Pasien</li>
         {{-- pendaftaran --}}
+        
         <li class="nav-item sidebar-item @if (Request::segment(1) == 'reservasi') active @endif">
             <a class="nav-link" href="{{ url('/master-data/reservation/') }}">
                 <i class="menu-icon mdi mdi-file-document"></i>

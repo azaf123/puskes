@@ -11,7 +11,6 @@
         @include('templatedinda.navbar')
     </div>
     <div class="container-fluid page-body-wrapper">
-        @include('templatedinda.setting')
         @include('templatedinda.sidebar')
         @yield('content')
     </div>
