@@ -74,7 +74,7 @@ Route::get('/pasien-reservasi/{id}', [FrontController::class, 'pasienReservasi']
 // Route::group(['middleware' => ['auth', 'admin']], function () {
     // admin
     Route::prefix('master-data')->group(function () {
-        Route::get('/', [HomeController::class, 'index']);
+        Route::get('/dashboard', [HomeController::class, 'index']);
         // pasien lama
         Route::resource('patient', PatientController::class);
         // pasien baru

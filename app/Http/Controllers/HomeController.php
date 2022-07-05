@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Patient;
+use App\Models\Article;
+use App\Models\Galery;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +17,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard/index');
+        $reservation = Reservation::all()->count();
+        $patientBaru = Patient::where('no_rm', 'Belum Ada')->count();
+        $patientLama = Patient::where('no_rm', '!=', 'Belum Ada')->count();
+        $article = Article::all()->count();
+        $galery = Galery::all()->count();
+
+        return view('dashboard/index', compact('patientLama','patientBaru', 'article', 'galery', 'reservation', 'patientLama'));
     }
 
     /**
