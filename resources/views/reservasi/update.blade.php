@@ -16,25 +16,43 @@
                         @csrf
                         @method('PATCH')
                         <div class="form-group">
-                            <label for="exampleSelectGender">Reservasiklinik</label>
-                            <select class="form-control" id="exampleSelectGender" name="Reservasi">
-                                <option value="Umum">Umum</option>
-                                <option value="Gigi">Gigi dan Mulut</option>
-                                <option value="Anak">Anak</option>
-                                <option value="ibu dan anak">Ibu dan Anak</option>
+                        <label for="">No RM</label>
+                        <input type="text" class="form-control" name="noberobat" value="{{
+                            $reservation->id
+                       }}" hidden>
+                    </input>
+                    <input type="text" class="form-control" value="{{$reservation->patient->no_rm }}" readonly>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="exampleSelectGender">Nama Pasien</label>
+                         
+                            <input type="text" class="form-control" name="nama" value="{{
+                        $reservation->patient_id
+                       }}" hidden>
+                       <input type="text" class="form-control" value="{{
+                        $reservation->patient->nama_pasien
+                       }}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleSelectGender">Poli</label>
+                            <select name="poli" class="form-control" id="poli">
+                                @foreach($category as $item)
+                                <option value="{{$item->id}}">{{$item->nama_kategori}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleSelectGender">Antrean</label>
+                            <select name="antrean" class="form-control" id="antrean">
 
                             </select>
                         </div>
                         <div class="form-group">
-                            <div class="form-group">
-                                <label for="exampleInputName1">Ruangan</label>
-                                <input name="ruangan" type="text" class="form-control @error('ruangan') is-invalid @enderror" id="exampleInputName1" placeholder="Isi Reservasi-nomor" value="{{$reservation->ruangan}}">
-                                @error('ruangan')
-                                <div class="invalid-feedback">
-                                    {{$message}}
-                                </div>
-                                @enderror
-                            </div>
+                            <label for="exampleSelectGender">Keluhan</label>
+                            <input name="keluhan" class="form-control" id="keluhan" value="{{$reservation->keluhan}}">
+
+                            </input>
                         </div>
                         <button type="submit" class="btn btn-primary me-2">Simpan</button>
                         <button class="btn btn-light">Batal</button>
@@ -44,5 +62,33 @@
         </div>
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+    $('#poli').on('change', function() {
+        var id = $(this).val(); // mendapatkan nilai value
+        var url = '{{url('/antrean/')}}' + '/' + id;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json', // added data type
+            success: function(res) {
+                $('#antrean').empty();
+                $('#antrean').append('<option>Pilih Antrean</option>');
+                if (res) {
+                    $.each(res, function(key, value) {
+                        console.log(res);
+                        $('#antrean').append($("<option/>", {
+                            value: value['id'],
+                            text: value['no_antrean']
+                        }));
+                    });
+                }
+            }
+        });
+    });
+</script>
 </div>
+
 @stop

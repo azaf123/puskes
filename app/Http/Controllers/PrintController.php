@@ -14,11 +14,30 @@ use PDF;
 class PrintController extends Controller
 {
 
-    public function print(Patient $patient)
+    public function print($id)
     {
-        $getdata = Patient::where('id', $patient->id)->get();
-        return view('print.identitas', compact('patient'));
-        
+        $patient = Patient::find($id);
+        $reservation = Reservation::where('patient_id', $id)->get();
+     
+        return view('print.identitas', compact('patient', 'reservation'));       
+    }
+    public function printReservasi($id)
+    {
+     $reservation = Reservation::find($id);
+        return view('print.reservasi', compact('reservation'));
+    }
+    public function generatepdfPatient($id)
+    {
+        $patient = Patient::find($id);
+        $pdf = PDF::loadView('print.identitas', compact('patient'));
+        return $pdf->download('identitas-pasien.pdf');
+      
+    }
+    public function generatepdfReservasi($id)
+    {
+        $reservation = Reservation::find($id);
+        $pdf = PDF::loadView('print.reservasi', compact( 'reservation'));
+        return $pdf->download('reservasi-pasien.pdf');
     }
     public function index()
     {
@@ -26,21 +45,10 @@ class PrintController extends Controller
         return view('print.index');
     }
 
-    public function generatepdf()
-    {
-
-        $data = Reservation::all();
-        $pdf = PDF::loadView('print.index', compact('data'));
-        return $pdf->download('pendaftaran.pdf');
-    }
 
     //   print reservation
 
-    public function printReservation()
-    {
-        
-    
-    }
+   
 
     public function printPendaftaran(Reservation $reservation)
     {

@@ -159,8 +159,8 @@ class PatientController extends Controller
                 'ttl' => $request->ttl,
                 'pendidikan' => $request->pendidikan,
                 'pekerjaan' => $request->pekerjaan,
-                'ibu_istri' => $request->nama_as,
-                'ayah_suami' => $request->nama_ii,
+                'ibu_istri' => $request->nama_ii,
+                'ayah_suami' => $request->nama_as,
                 'suku_bangsa' => $request->sukubangsa,
                 'agama' => $request->agama,
                 'alamat' => $request->alamat,
@@ -208,8 +208,7 @@ class PatientController extends Controller
      */
     public function show(Patient $patient)
     {
-        return view('pasien.detail', compact('patient'));
-        
+        return view('pasien.detail', compact('patient'));   
     }
    
 

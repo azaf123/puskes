@@ -151,7 +151,8 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation)
     {
-        //
+        $patient = Patient::all();
+        return view('reservasi.detail', compact('reservation', 'patient'));
     }
 
     /**
@@ -162,7 +163,9 @@ class ReservationController extends Controller
      */
     public function edit(Reservation $reservation)
     {
-       return view('reservasi.update', compact('reservation'));
+        $patient = Patient::all();
+        $category = Category::all();
+       return view('reservasi.update', compact('reservation', 'patient', 'category'));
 
     }
 
@@ -196,13 +199,18 @@ class ReservationController extends Controller
         Reservation::where('id', $reservation->id)->update(
             [
                 'keluhan' => $request->keluhan,
-                'no_rm' => $request->noberobat,
                 'patient_id' => $request->nama,
                 'category_id' => $request->poli,
                 'antrean_id' => $request->antrean,
 
             ]
         );
+        Antrean::where('id', $request->antrean)->update([
+            'status' => 'aktif',
+        ]);
+        Antrean ::where('id', $reservation->antrean_id)->update([
+            'status' => 'inaktif',
+        ]);
         return redirect('master-data/reservation')->with('success', 'Berhasil diubah');
         
     }

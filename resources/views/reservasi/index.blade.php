@@ -69,6 +69,12 @@
                                             <td>{{ $item->antrean->no_antrean }}</td>
                                             <td>{{ $item->keluhan }}</td>
                                             <td>
+                                            <a href="{{ url('/master-data/reservation/' . $item->id) }}">
+                                                    <button type="submit"
+                                                        class="btn btn-social-icon btn-inverse-info btn-rounded">
+                                                        <i class="ti-eye" role="button"></i>
+                                                    </button>
+                                                </a>
                                                 <a href="{{ url('/master-data/reservation/' . $item->id) . '/edit' }}">
                                                     <button type="button"
                                                         class="btn btn-social-icon btn-inverse-success btn-rounded">
