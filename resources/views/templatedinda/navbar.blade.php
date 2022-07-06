@@ -18,9 +18,9 @@
         <ul class="navbar-nav">
             <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
                 <h1 class="welcome-text">Hallo, 
-                    <span class="text-black fw-bold"> {{ 
-                        Auth::user()->name 
-                     }} </span>
+                    <span class="text-black fw-bold"> 
+                        {{ Auth::user()->name }} 
+                    </span>
                 </h1>
                 <h3 class="welcome-sub-text"> "As we advance in life, we learn the limits of our abilities." (Henry
                     Ford) </h3>

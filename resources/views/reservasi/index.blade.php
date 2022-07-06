@@ -2,7 +2,7 @@
 @section('title', 'Data Reservation')
 
 @section('content')
-    <div class="content-wrapper">
+    <div class="content-wrapper" style="width:50% ;">
         <div class="row">
             <div class="col">
                 <!-- status  -->
@@ -39,7 +39,7 @@
                                             No RM
                                         </th>
                                         <th>
-                                            Nama Pasien
+                                            Nama Lengkap
                                         </th>
                                         <th>
                                             Poli
@@ -48,7 +48,7 @@
                                             Ruangan
                                         </th>
                                         <th>
-                                            No Antrean
+                                            No Antrian
                                         </th>
                                         <th>
                                             Keluhan
@@ -67,9 +67,11 @@
                                             <td>{{ $item->category->nama_kategori }}</td>
                                             <td>{{ $item->category->ruangan }}</td>
                                             <td>{{ $item->antrean->no_antrean }}</td>
-                                            <td>{{ $item->keluhan }}</td>
+                                            <td>{{ strlen( $item->keluhan) > 10 ? substr( $item->keluhan, 0, 20) . '...' :  $item->keluhan }}
+                                            </td>
                                             <td>
-                                            <a href="{{ url('/master-data/reservation/' . $item->id) }}">
+                                                {{-- ini untuk liat detail, karno kan alamatnyo idak full--}}
+                                                <a href="{{ url('/master-data/reservation/' . $item->id) }}">
                                                     <button type="submit"
                                                         class="btn btn-social-icon btn-inverse-info btn-rounded">
                                                         <i class="ti-eye" role="button"></i>
@@ -102,4 +104,4 @@
             </div>
         </div>
     </div>
- @stop
+@stop

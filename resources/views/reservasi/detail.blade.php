@@ -1,5 +1,5 @@
 @extends('templatedinda.master')
-@section('title', 'Pendaftaran Pasien')
+@section('title', 'Detail Pendaftaran Pasien')
 
 @section('content')
     <div class="content-wrapper">

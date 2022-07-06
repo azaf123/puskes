@@ -71,7 +71,7 @@ Route::get('/pasien-reservasi/{id}', [FrontController::class, 'pasienReservasi']
 
 
 // Route::group(['middleware' => ['auth']], function () {
-// Route::group(['middleware' => ['auth', 'admin']], function () {
+Route::group(['middleware' => ['auth', 'admin']], function () {
     // admin
     Route::prefix('master-data')->group(function () {
         Route::get('/dashboard', [HomeController::class, 'index']);
@@ -111,4 +111,4 @@ Route::get('/pasien-reservasi/{id}', [FrontController::class, 'pasienReservasi']
         Route::get('print-reservasi/{id}', [PrintController::class, 'printReservasi']);
         Route::get('print-reservasi/{id}/generate', [PrintController::class, 'generatepdfReservasi']);
     });
-// });
+});
