@@ -13,6 +13,7 @@ use App\Models\Galery;
 use App\Models\Treatment;
 use App\Models\Layanan;
 use App\Models\Header;
+use DateTime;
 use Illuminate\Support\Facades\Redis;
 
 class FrontController extends Controller
@@ -210,7 +211,14 @@ class FrontController extends Controller
         ]);
 
         $getdata = Reservation::where('id', $print->id)->first();
-        return view('print.print-pendaftaran', compact('getdata'));
+        // for tommorow date
+        $date = date('Y-m-d', strtotime('+1 day'));
+        $getdata->update([
+            'created_at' => $date,
+        ]);
+        
+        
+        return view('print.print-pendaftaran', compact('getdata', 'date'));
         // return redirect('/print-reservation')->with('success', 'Berhasil ditambahkan');
     }
 

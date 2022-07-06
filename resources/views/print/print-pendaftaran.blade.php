@@ -17,9 +17,9 @@
         background: #ffffff none repeat scroll 0 0;
         border-bottom: 12px solid #333333;
         border-top: 12px solid #9f181c;
-        margin-top: 50px;
         margin-bottom: 50px;
-        padding: 40px 30px !important;
+        width: 600px;
+        padding: 20px 10px !important;
         position: relative;
         box-shadow: 0 1px 21px #acacac;
         color: #333333;
@@ -110,11 +110,9 @@
     }
 
 
-    .bungkus {}
+  
 </style>
-<br>
-<br>
-<br>
+
 <div class="container">
     <div class="bungkus">
         <div class="col-lg-12">
@@ -152,6 +150,9 @@
                                 <p><b>Jenis Kelamin :</b> {{ $getdata->patient->jenis_kelamin }}</p>
                                 <p><b>Tanggal Lahir :</b> {{ $getdata->patient->ttl }}</p>
                                 <p><b>No HP :</b> {{ $getdata->patient->no_hp }}</p>
+                                <p><b>Tanggal Berobat : </b> {{
+                                   substr($getdata->created_at, 0,10)}}</p>
+                                </p>
                             </div>
                         </div>
 
@@ -181,6 +182,7 @@
                                 <tr>
                                     <td class="col-md-7">Keluhan</td>
                                     <td class="col-md-10"><i class="fa fa-inr"></i>{{ $getdata->keluhan }}</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
