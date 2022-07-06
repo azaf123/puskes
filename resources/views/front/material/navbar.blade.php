@@ -4,13 +4,13 @@
 
 <nav class="navbar"> 
    <a href="{{url('/')}}">home</a>
+   <a href="{{url('/profil')}}">profil</a>
    <a href="{{url('/')}}#doctor">dokter</a>
    <a href="{{url('/')}}#layanan">layanan</a>
-   <a href="{{url('/profil')}}">profil</a>
+   <a href="{{url('/pendaftaran')}}">pendaftaran</a>
    <a href="{{url('/artikel')}}">artikel</a>
    <a href="{{url('/galery')}}">gallery</a>
-   <a href="{{url('/pendaftaran')}}">pendaftaran</a>
-   <a href="{{url('/')}}#footer">hubungi kami</a>
+   <a href="{{url('/')}}#footer">Informasi kontak</a>
 </nav>
 
 <div id="layanan-btn" class="fas fa-bars"></div>

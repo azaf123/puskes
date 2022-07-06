@@ -1,15 +1,27 @@
 @extends('templatedinda.master')
-@section('title', 'Nomor Antrian')
+@section('title', 'Identitas Pasien Lama')
 
 @section('content')
     <div class="content-wrapper" style="width:50% ;">
         <div class="row">
+            <div class="col">
+                <!-- status  -->
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
+                </button>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Identitas Pasien</h4>
+                        <h4 class="card-title">Identitas Pasien Lama</h4>
                         <p class="card-description">
-                            Tambah Identitas Pasien
+                            Data Identitas Pasien Lama
                         </p>
                         <a href="{{ url('master-data/patient/create') }}" type="button"
                             class="btn btn-inverse-primary btn-rounded btn-icon">Tambah Identitas Pasien</a>
