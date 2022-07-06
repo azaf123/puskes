@@ -26,13 +26,8 @@
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="exampleInputName1">Alamat</label>
-                                <textarea name="alamat" id="" cols="30" rows="10"></textarea>
-                                <input name="alamat" type="text" class="form-control @error('alamat') is-invalid @enderror" id="exampleInputName1" placeholder="Isi Alamat">
-                                @error('alamat')
-                                <div class="invalid-feedback">
-                                    {{$message}}
-                                </div>
-                                @enderror
+                                <textarea class="form-control" placeholder="isi alamat" name="alamat" id="" cols="30" rows="10"></textarea>
+                               
                             </div>
                         </div>
                         <div class="form-group">
