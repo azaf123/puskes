@@ -151,7 +151,7 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation)
     {
-        return view('reservasi.detail', compact('antrean', 'patient', 'treatment', 'reservation'));
+        return view('reservasi.detail', compact( 'reservation'));
     }
 
     /**
