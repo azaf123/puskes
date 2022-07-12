@@ -8,7 +8,7 @@
         <div class="col-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Tambah Poli</h4>
+                    <h4 class="card-title">Edit Poli</h4>
                     <p class="card-description">
                         Isi Poli(cth: umum-01)
                     </p>
@@ -17,18 +17,7 @@
                         @method('PATCH')
                         <div class="form-group">
                             <label for="exampleSelectGender">No Antrean</label>
-                            <select class="form-control" id="exampleSelectGender" name="noantrean">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
+                          <input type="number" name="noantrean" class="form-control" value="{{$antrean->no_antrean}}">
                         </div>
                         <div class="form-group">
                             <div class="form-group">

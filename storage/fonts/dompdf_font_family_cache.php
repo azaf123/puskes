@@ -79,19 +79,19 @@ return array (
     'normal' => $rootDir . '/lib/fonts/DejaVuSerif',
   ),
   'feather' => array(
-    'normal' => $fontDir . '/feather_normal_125d8d209eac5fc0ecf96fd15824de31',
+    'normal' => $fontDir . '/feather_normal_d8a73e4563f206df3103cb7eb4413a73',
   ),
   'material design icons' => array(
-    'normal' => $fontDir . '/material_design_icons_normal_60dfe3aa50b7e544f0ccec232102396d',
+    'normal' => $fontDir . '/material_design_icons_normal_daa8c2ccec528992aa91c8d99774db6f',
   ),
   'themify' => array(
-    'normal' => $fontDir . '/themify_normal_02fb50031216ac9ef863042edab6fe7c',
+    'normal' => $fontDir . '/themify_normal_d29519fc1fa3f19986e7a2703c839e6d',
   ),
   'typicons' => array(
-    'normal' => $fontDir . '/typicons_normal_fc1eaee97df641c2784e9f98173c21bc',
+    'normal' => $fontDir . '/typicons_normal_1dc50f4ca0d80e6f1dad3001a4a888ad',
   ),
   'simple-line-icons' => array(
-    'normal' => $fontDir . '/simple_line_icons_normal_7efdff7ca477ec2c506ca74cf7d44c69',
+    'normal' => $fontDir . '/simple_line_icons_normal_32769f8aa70aaea7780d662f3d65704d',
   ),
 );
 }; ?>

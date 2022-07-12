@@ -106,6 +106,9 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
         // laporan
         Route::get('report/', [ReportController::class, 'index']);
         Route::get('cetakpertanggal/{tglawal}/{tglakhir}', [ReportController::class, 'cetakPertanggal']);
-        Route::get('print-identitas', [PrintController::class, 'print']);
+        Route::get('print-identitas/{id}', [PrintController::class, 'print']);
+        Route::get('print-identitas/{id}/generate', [PrintController::class, 'generatepdfPatient']);
+        Route::get('print-reservasi/{id}', [PrintController::class, 'printReservasi']);
+        Route::get('print-reservasi/{id}/generate', [PrintController::class, 'generatepdfReservasi']);
     });
 });

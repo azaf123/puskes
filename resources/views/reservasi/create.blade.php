@@ -14,6 +14,7 @@
                     </p>
                     <form action="{{url('/master-data/reservation')}}" method="POST" class="forms-sample">
                         @csrf
+                        <label for="">No RM</label>
                         <select name="noberobat" class="form-control" id="noberobat">
                             @foreach($patient as $item)
                             <option value="{{$item->no_rm}}">{{$item->no_rm}}</option>

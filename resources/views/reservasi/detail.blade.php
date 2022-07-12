@@ -14,33 +14,32 @@
                         <form class="forms-sample">
                             <div class="form-group">
                                 <label for="form">No. RM</label>
-                                <h6>{{ $patient->no_rm }}</h6>
+                                <h6>{{ $reservation->patient->no_rm }}</h6>
                             </div>
 
                             <div class="form-group">
                                 <label for="form">Nama Lengkap Pasien</label>
-                                <h5>{{ $patient->nama_pasien }}</h5>
+                                <h5>{{ $reservation->patient->nama_pasien }}</h5>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword4">Poli</label>
-                                {{-- <h5>{{ $category->nama_kategori }}</h5> --}}
+                                <h5>{{ $reservation->category->nama_kategori}}</h5>
                             </div>
                             <div class="form-group">
-                                <label for="exampleSelectGender">Ruangan</label>
-                                {{-- <h5>{{ $category->ruangan }}</h5> --}}
+                                <label>Ruangan</label>
+                                <h5>{{ $reservation->category->ruangan }}</h5>
                             </div>
                             <div class="form-group">
-                                <label>  No Antrian</label>
-                                <h5>{{ $antrean->no_antrean  }}</h5>
+                                <label>No Antrean</label>
+                                <h5>{{ $reservation->antrean->no_antrean }}</h5>
                             </div>
                             <div class="form-group">
                                 <label>Keluhan</label>
                                 <h5>{{ $reservation->keluhan }}</h5>
                             </div>
+                           
+                            <a class="btn btn-primary"  href="{{url('/master-data/print-reservasi/'. $reservation->id)}}">Cetak</a>
                         </form>
-                        <button class="btn btn-primary">
-                            <a href="{{url('/master-data/print-identitas')}}">Cetak</a>
-                        </button>
                     </div>
                 </div>
             </div>
