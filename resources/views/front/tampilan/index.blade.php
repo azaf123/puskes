@@ -158,7 +158,7 @@
                         <div class="box">
                             <div class="info">
                                 <h3>Ruang Pendaftaran</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
 
                         </div>
@@ -167,28 +167,26 @@
                                 <h3>Ruang Rekam Medik</h3>
                                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
                             </div>
-                            <div class="price">$49.99</div>
+                            <div class="price">bla</div>
                         </div>
                         <div class="box">
                             <div class="info">
                                 <h3>Ruang Pemeriksaan Umum</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
                             </div>
-                            <div class="price">$49.99</div>
                         </div>
                         <div class="box">
                             <div class="info">
                                 <h3>Ruang Tindakan</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                         <div class="box">
                             <div class="info">
                                 <h3>Ruang Pemeriksaan Gigi dan Mulut</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
 
                     </div>
@@ -200,37 +198,37 @@
                         <div class="box">
                             <div class="info">
                                 <h3>Ruang MTBS</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                         <div class="box">
                             <div class="info">
                                 <h3>Ruang Pelayanan Ibu dan Anak(KIA) / KB</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                         <div class="box">
                             <div class="info">
                                 <h3>Ruang Laboratorium</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                         <div class="box">
                             <div class="info">
                                 <h3>Ruang Farmasi</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                         <div class="box">
                             <div class="info">
                                 <h3>Ruang Promkes</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                     </div>
                 </div>
@@ -242,23 +240,23 @@
                         <div class="box">
                             <div class="info">
                                 <h3>Upaya Promkes</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                         <div class="box">
                             <div class="info">
                                 <h3>Upaya Kesling</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                         <div class="box">
                             <div class="info">
                                 <h3>Upaya Pelayanan Gizi</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                         <div class="box">
                             <div class="info">
@@ -270,9 +268,9 @@
                         <div class="box">
                             <div class="info">
                                 <h3>Upaya Pencegahan dan Pengendalian Penyakit</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                     </div>
                 </div>
@@ -284,51 +282,51 @@
                         <div class="box">
                             <div class="info">
                                 <h3>Pelayanan Kesehatan Jiwa</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                         <div class="box">
                             <div class="info">
                                 <h3>Pelayanan Kesehatan Gigi dan Mulut</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                         <div class="box">
                             <div class="info">
                                 <h3>Pelayanan Kesehatan Tradisional</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                         <div class="box">
                             <div class="info">
                                 <h3>Pelayanan Kesehatan Olahraga</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                         <div class="box">
                             <div class="info">
                                 <h3>Pelayanan Kesehatan Indra</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                         <div class="box">
                             <div class="info">
                                 <h3>Pelayanan Kesehatan Lansia</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                         <div class="box">
                             <div class="info">
                                 <h3>Pelayanan Kesehatan Kerja</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">$49.99</div>
+                            {{-- <div class="price">$49.99</div> --}}
                         </div>
                     </div>
                 </div>

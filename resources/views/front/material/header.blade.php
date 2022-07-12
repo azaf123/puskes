@@ -14,6 +14,7 @@
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="{{asset('front/css/style.css')}}">
+   <link rel="shortcut icon" href="{{ asset('front/images/logo-puskesmas-32976.png') }}" />
 
 
 

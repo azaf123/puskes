@@ -5,7 +5,7 @@
 
         <li class="nav-item @if (Request::segment(1) == 'home') active @endif">
             <a class="nav-link" href="{{ url('/master-data/dashboard') }}">
-                <i class="mdi mdi-grid-large menu-icon"></i>
+                <i class="menu-icon mdi mdi-home"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
@@ -14,7 +14,7 @@
         
         <li class="nav-item sidebar-item @if (Request::segment(1) == 'reservasi') active @endif">
             <a class="nav-link" href="{{ url('/master-data/reservation/') }}">
-                <i class="menu-icon mdi mdi-file-document"></i>
+                <i class="menu-icon mdi mdi-heart-pulse"></i>
                 <span class="menu-title">Pendaftaran Pasien</span>
             </a>
         </li>
@@ -24,7 +24,7 @@
         <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
                 aria-controls="ui-basic">
-                <i class="menu-icon mdi mdi-floor-plan"></i>
+                <i class="menu-icon mdi mdi-account-star"></i>
                 <span class="menu-title">Identitas Pasien </span>
                 <i class="menu-arrow"></i>
             </a>
@@ -57,15 +57,22 @@
         <li class="nav-item nav-category">Poli</li>
         <li class="nav-item sidebar-item @if (Request::segment(2) == 'poli') active @endif">
             <a class="nav-link" href="{{ url('/master-data/category/') }}">
-                <i class="menu-icon mdi mdi-file-document"></i>
+                <i class="menu-icon mdi mdi-book-plus"></i>
                 <span class="menu-title">Data Poli</span>
             </a>
         </li>
         <li class="nav-item nav-category">Antrian</li>
         <li class="nav-item sidebar-item @if (Request::segment(2) == 'antrean') active @endif">
           <a class="nav-link" href="{{ url('/master-data/antrean/') }}">
-              <i class="menu-icon mdi mdi-file-document"></i>
+              <i class="menu-icon mdi mdi-book-variant"></i>
               <span class="menu-title">Nomor Antrian</span>
+          </a>
+      </li>
+      <li class="nav-item nav-category">User</li>
+        <li class="nav-item sidebar-item @if (Request::segment(2) == 'user') active @endif">
+          <a class="nav-link" href="{{ url('/master-data/user/') }}">
+              <i class="menu-icon mdi mdi-account-key"></i>
+              <span class="menu-title">Data User</span>
           </a>
       </li>
 
@@ -81,19 +88,19 @@
         <li class="nav-item nav-category">Landing Page</li>
         <li class="nav-item sidebar-item @if (Request::segment(2) == 'dokter') active @endif">
             <a class="nav-link" href="{{ url('/master-data/doctor/') }}">
-                <i class="menu-icon mdi mdi-file-document"></i>
+                <i class="menu-icon mdi mdi-heart-box-outline"></i>
                 <span class="menu-title">Dokter</span>
             </a>
         </li>
         <li class="nav-item sidebar-item @if (Request::segment(2) == 'artikel') active @endif">
             <a class="nav-link" href="{{ url('/master-data/article/') }}">
-                <i class="menu-icon mdi mdi-file-document"></i>
+                <i class="menu-icon mdi mdi-file-multiple"></i>
                 <span class="menu-title">Data Artikel</span>
             </a>
         </li>
         <li class="nav-item sidebar-item @if (Request::segment(2) == 'galery') active @endif">
             <a class="nav-link" href="{{ url('/master-data/galery/') }}">
-                <i class="menu-icon mdi mdi-file-document"></i>
+                <i class="menu-icon mdi mdi-file-image"></i>
                 <span class="menu-title">Data Galeri</span>
             </a>
         </li>
@@ -105,7 +112,7 @@
         </li>
         <li class="nav-item sidebar-item @if (Request::segment(2) == 'layanan') active @endif">
             <a class="nav-link" href="{{ url('/master-data/layanan/') }}">
-                <i class="menu-icon mdi mdi-file-document"></i>
+                <i class="menu-icon mdi mdi-heart-box"></i>
                 <span class="menu-title">Data Layanan</span>
             </a>
         </li>
@@ -116,7 +123,7 @@
         <li class="nav-item nav-category">Laporan</li>
         <li class="nav-item sidebar-item @if (Request::segment(2) == 'report') active @endif">
             <a class="nav-link" href="{{ url('/master-data/report/') }}">
-                <i class="menu-icon mdi mdi-file-document"></i>
+                <i class="menu-icon mdi mdi-printer"></i>
                 <span class="menu-title">Laporan </span>
             </a>
         </li>

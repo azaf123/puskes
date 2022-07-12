@@ -9,7 +9,7 @@
    <a href="{{url('/')}}#layanan">layanan</a>
    <a href="{{url('/pendaftaran')}}">pendaftaran</a>
    <a href="{{url('/artikel')}}">artikel</a>
-   <a href="{{url('/galery')}}">gallery</a>
+   <a href="{{url('/galery')}}">galeri</a>
    <a href="{{url('/')}}#footer">Informasi kontak</a>
 </nav>
 

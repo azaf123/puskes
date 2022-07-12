@@ -90,7 +90,7 @@ class AuthController extends Controller
 
         Auth::attempt($user);
         if (Auth::check()) {
-            return redirect('/master-data/patient');
+            return redirect('/master-data/dashboard');
         } else {
             return redirect('/login');
         }

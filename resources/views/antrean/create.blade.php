@@ -16,7 +16,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="exampleSelectGender">No Antrean</label>
-                            <input type="number" class="form-control" name="noantrean" >
+                            <input type="text" class="form-control" name="noantrean" >
                         </div>
                         <div class="form-group">
                             <div class="form-group">
