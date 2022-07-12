@@ -105,11 +105,11 @@ class PatientController extends Controller
         // return $request;
         $request->validate(
             [
-                'no_rm' => 'required',
+                'noberobat' => 'required',
                 'nama' => 'required',
-                'nik' => 'required|numeric|unique:patients,nik',
+                'nik' => 'required|numeric',
                 'jeniskelamin' => 'required',
-                'tempatlahirrr' => 'required',
+                'tempatlahirr' => 'required',
                 'ttl' => 'required',
                 'pendidikan' => 'required',
                 'pekerjaan' => 'required',
@@ -118,24 +118,22 @@ class PatientController extends Controller
                 'sukubangsa' => 'required',
                 'agama' => 'required',
                 'alamat' => 'required',
-                'nohp' => 'required|numeric|',
+                'nohp' => 'required|numeric',
                 'goldar' => 'required',
                 'bahasa' => 'required',
 
             ],
             [
-
-
-                'no_rm.required' => 'No. RM harus diisi',
+                'noberobat.required' => 'No. Obat harus diisi',
                 'nama.required' => 'Nama harus diisi',
                 'nik.required' => 'NIK harus diisi',
-                'nik.unique' => 'NIK sudah terdaftar',
+                'nik.unique' => 'NIK sudah ada',
                 'jeniskelamin.required' => 'Jenis Kelamin harus diisi',
                 'tempatlahirr.required' => 'Tempat Lahir harus diisi',
                 'ttl.required' => 'TTL harus diisi',
                 'pendidikan.required' => 'Pendidikan harus diisi',
                 'pekerjaan.required' => 'Pekerjaan harus diisi',
-                'nama_as.required' => 'Nama Ayah/Suami harus diisi',
+                'nama_as.required' => 'Nama AS harus diisi',
                 'nama_ii.required' => 'Nama II harus diisi',
                 'sukubangsa.required' => 'Suku Bangsa harus diisi',
                 'agama.required' => 'Agama harus diisi',
@@ -148,7 +146,7 @@ class PatientController extends Controller
 
         Patient ::create(
             [
-                'no_rm' => $request->no_rm,
+                'no_rm' => $request->noberobat,
                 'nama_pasien' => $request->nama,
                 'nik' => $request->nik,
                 'jenis_kelamin' => $request->jeniskelamin,
@@ -239,7 +237,7 @@ class PatientController extends Controller
             [
                 'noberobat' => 'required',
                 'nama' => 'required',
-                'nik' => 'required|numeric|unique:patients,nik',
+                'nik' => 'required|numeric',
                 'jeniskelamin' => 'required',
                 'tempatlahirr' => 'required',
                 'ttl' => 'required',
@@ -250,7 +248,7 @@ class PatientController extends Controller
                 'sukubangsa' => 'required',
                 'agama' => 'required',
                 'alamat' => 'required',
-                'nohp' => 'required|numeric|min:10|max:20',
+                'nohp' => 'required|numeric',
                 'goldar' => 'required',
                 'bahasa' => 'required',
             ],
