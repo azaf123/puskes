@@ -40,7 +40,7 @@
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label for="exampleInputName1">NIK</label>
-                                        <input name="nik" type="text" class="form-control @error('nik') is-invalid @enderror" id="exampleInputName1" placeholder="NIK">
+                                        <input type="number" name="nik" type="text" class="form-control @error('nik') is-invalid @enderror" id="exampleInputName1" placeholder="NIK">
                                         @error('nik')
                                         <div class="invalid-feedback">
                                             {{$message}}
@@ -188,7 +188,7 @@
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label for="exampleInputName1">No HP</label>
-                                        <input name="nohp" type="text" class="form-control @error('nohp') is-invalid @enderror" id="exampleInputName1" placeholder="Isi Pasien-nomor">
+                                        <input type="number" name="nohp" type="text" class="form-control @error('nohp') is-invalid @enderror" id="exampleInputName1" placeholder="Isi Pasien-nomor">
                                         @error('nohp')
                                         <div class="invalid-feedback">
                                             {{$message}}

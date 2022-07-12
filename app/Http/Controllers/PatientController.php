@@ -73,14 +73,11 @@ class PatientController extends Controller
                 'nama' => 'required',
                 'jeniskelamin' => 'required',
                 'ttl' => 'required',
-               
-
 
             ],
             [
                 'noberobat.required' => 'No. Obat harus diisi',
                 'nama.required' => 'Nama harus diisi',
-               
                 'jeniskelamin.required' => 'Jenis Kelamin harus diisi',
                 'ttl.required' => 'TTL harus diisi',
 
@@ -109,11 +106,8 @@ class PatientController extends Controller
         $request->validate(
             [
                 'no_rm' => 'required',
-
-
                 'nama' => 'required',
-                'nik' => 'required|unique:patients,nik',
-
+                'nik' => 'required|numeric|min:16|max:16|unique:patients,nik',
                 'jeniskelamin' => 'required',
                 'ttl' => 'required',
                 'pendidikan' => 'required',
@@ -123,7 +117,7 @@ class PatientController extends Controller
                 'sukubangsa' => 'required',
                 'agama' => 'required',
                 'alamat' => 'required',
-                'nohp' => 'required',
+                'nohp' => 'required|numeric|min:10|max:20',
                 'goldar' => 'required',
                 'bahasa' => 'required',
 
@@ -139,7 +133,7 @@ class PatientController extends Controller
                 'ttl.required' => 'TTL harus diisi',
                 'pendidikan.required' => 'Pendidikan harus diisi',
                 'pekerjaan.required' => 'Pekerjaan harus diisi',
-                'nama_as.required' => 'Nama AS harus diisi',
+                'nama_as.required' => 'Nama Ayah/Suami harus diisi',
                 'nama_ii.required' => 'Nama II harus diisi',
                 'sukubangsa.required' => 'Suku Bangsa harus diisi',
                 'agama.required' => 'Agama harus diisi',
@@ -182,7 +176,7 @@ class PatientController extends Controller
 
         return redirect('master-data/reservation-baru/create');
     }
-
+// nomor rm
     public function getLastCode(){
         $datas =  DB::select("SELECT MAX(RIGHT(no_rm, 4)) as lastcode FROM patients");
         $kd = "";
@@ -243,7 +237,7 @@ class PatientController extends Controller
             [
                 'noberobat' => 'required',
                 'nama' => 'required',
-                'nik' => 'required|unique:patients,nik',
+                'nik' => 'required|numeric|min:16|max:16|unique:patients,nik',
                 'jeniskelamin' => 'required',
                 'ttl' => 'required',
                 'pendidikan' => 'required',
@@ -253,7 +247,7 @@ class PatientController extends Controller
                 'sukubangsa' => 'required',
                 'agama' => 'required',
                 'alamat' => 'required',
-                'nohp' => 'required',
+                'nohp' => 'required|numeric|min:10|max:20',
                 'goldar' => 'required',
                 'bahasa' => 'required',
               
