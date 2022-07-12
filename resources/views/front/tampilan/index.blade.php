@@ -80,7 +80,7 @@
                                 <a href="#"> <i class="fas fa-clock"></i> 09.00-11.00 </a>
                             </div>
                             <a href="#" class="title">{{ $item->nama }}</a>
-                            <p>Dokter{{ $item->spesialisasi }}</p>
+                            <p>{{ $item->spesialisasi }}</p>
                             <a href="#" class="btn">Daftar</a>
                         </div>
                     </div>
@@ -165,9 +165,9 @@
                         <div class="box">
                             <div class="info">
                                 <h3>Ruang Rekam Medik</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p>
+                                {{-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores.</p> --}}
                             </div>
-                            <div class="price">bla</div>
+                            {{-- <div class="price">bla</div> --}}
                         </div>
                         <div class="box">
                             <div class="info">
@@ -344,8 +344,8 @@
     <section class="gallery" id="gallery">
 
         <div class="heading">
-            <span>our gallery</span>
-            <h3>our untold stories</h3>
+            <h3>Galeri Kami</h3>
+            <span>Di Puskesmas 5 Ilir Palembang</span>
         </div>
 
         <div class="gallery-container">

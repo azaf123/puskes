@@ -31,6 +31,10 @@
                             <h5>{{ $patient->jenis_kelamin }}</h5>
                         </div>
                         <div class="form-group">
+                            <label>Tempat Lahir</label>
+                            <h5>{{ $patient->tempatlahirr }}</h5>
+                        </div>
+                        <div class="form-group">
                             <label>Tanggal Lahir</label>
                             <h5>{{ $patient->ttl }}</h5>
                         </div>

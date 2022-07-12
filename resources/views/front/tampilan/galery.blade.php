@@ -8,8 +8,8 @@
 <section class="gallery" id="gallery">
 
    <div class="heading">
-      <span>Galeri</span>
-      <h3>Update Kegiatan</h3>
+      <h3>Galeri Kami</h3>
+      <span>Di Puskesmas 5 Ilir Palembang</span>
    </div>
 
    <div class="gallery-container">

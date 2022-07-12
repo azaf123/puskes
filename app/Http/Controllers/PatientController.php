@@ -96,7 +96,7 @@ class PatientController extends Controller
         }
  
         
-        return redirect('master-data/reservation/create');
+        return redirect('master-data/reservation/create')->with('status', 'Data berhasil Ditambahkan');
     }
 
     public function storePasienBaru(Request $request)
@@ -107,8 +107,9 @@ class PatientController extends Controller
             [
                 'no_rm' => 'required',
                 'nama' => 'required',
-                'nik' => 'required|numeric|min:16|max:16|unique:patients,nik',
+                'nik' => 'required|numeric|unique:patients,nik',
                 'jeniskelamin' => 'required',
+                'tempatlahirrr' => 'required',
                 'ttl' => 'required',
                 'pendidikan' => 'required',
                 'pekerjaan' => 'required',
@@ -117,7 +118,7 @@ class PatientController extends Controller
                 'sukubangsa' => 'required',
                 'agama' => 'required',
                 'alamat' => 'required',
-                'nohp' => 'required|numeric|min:10|max:20',
+                'nohp' => 'required|numeric|',
                 'goldar' => 'required',
                 'bahasa' => 'required',
 
@@ -130,6 +131,7 @@ class PatientController extends Controller
                 'nik.required' => 'NIK harus diisi',
                 'nik.unique' => 'NIK sudah terdaftar',
                 'jeniskelamin.required' => 'Jenis Kelamin harus diisi',
+                'tempatlahirr.required' => 'Tempat Lahir harus diisi',
                 'ttl.required' => 'TTL harus diisi',
                 'pendidikan.required' => 'Pendidikan harus diisi',
                 'pekerjaan.required' => 'Pekerjaan harus diisi',
@@ -150,6 +152,7 @@ class PatientController extends Controller
                 'nama_pasien' => $request->nama,
                 'nik' => $request->nik,
                 'jenis_kelamin' => $request->jeniskelamin,
+                'tempatlahirr' => $request->tempatlahirr,
                 'ttl' => $request->ttl,
                 'pendidikan' => $request->pendidikan,
                 'pekerjaan' => $request->pekerjaan,
@@ -174,7 +177,7 @@ class PatientController extends Controller
           
         }
 
-        return redirect('master-data/reservation-baru/create');
+        return redirect('master-data/reservation-baru/create')->with('status', 'Data berhasil Ditambahkan');
     }
 // nomor rm
     public function getLastCode(){
@@ -236,8 +239,9 @@ class PatientController extends Controller
             [
                 'noberobat' => 'required',
                 'nama' => 'required',
-                'nik' => 'required|numeric|min:16|max:16|unique:patients,nik',
+                'nik' => 'required|numeric|unique:patients,nik',
                 'jeniskelamin' => 'required',
+                'tempatlahirr' => 'required',
                 'ttl' => 'required',
                 'pendidikan' => 'required',
                 'pekerjaan' => 'required',
@@ -249,8 +253,6 @@ class PatientController extends Controller
                 'nohp' => 'required|numeric|min:10|max:20',
                 'goldar' => 'required',
                 'bahasa' => 'required',
-              
-              
             ],
             [
                 'noberobat.required' => 'No. Obat harus diisi',
@@ -258,6 +260,7 @@ class PatientController extends Controller
                 'nik.required' => 'NIK harus diisi',
                 'nik.unique' => 'NIK sudah ada',
                 'jeniskelamin.required' => 'Jenis Kelamin harus diisi',
+                'tempatlahirr.required' => 'Tempat Lahir harus diisi',
                 'ttl.required' => 'TTL harus diisi',
                 'pendidikan.required' => 'Pendidikan harus diisi',
                 'pekerjaan.required' => 'Pekerjaan harus diisi',
@@ -269,8 +272,6 @@ class PatientController extends Controller
                 'nohp.required' => 'No HP harus diisi',
                 'goldar.required' => 'Goldar harus diisi',
                 'bahasa.required' => 'Bahasa harus diisi',
-               
-
             ]
         );
 
@@ -280,6 +281,7 @@ class PatientController extends Controller
                 'nama_pasien' => $request->nama,
                 'nik' => $request->nik,
                 'jenis_kelamin' => $request->jeniskelamin,
+                'tempatlahirr' => $request->tempatlahirr,
                 'ttl' => $request->ttl,
                 'pendidikan' => $request->pendidikan,
                 'pekerjaan' => $request->pekerjaan,
@@ -291,7 +293,6 @@ class PatientController extends Controller
                 'no_hp' => $request->nohp,
                 'goldar' => $request->goldar,
                 'bahasa' => $request->bahasa,
-               
             ]
         );
 

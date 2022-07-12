@@ -68,7 +68,7 @@ class GaleryController extends Controller
      */
     public function show(Galery $galery)
     {
-        //
+        return view('galery.detail', compact('galery'));
     }
 
     /**
@@ -123,6 +123,7 @@ class GaleryController extends Controller
      */
     public function destroy(Galery $galery)
     {
-        //
+        Galery::destroy('id', $galery->id);
+        return redirect('/master-data/galery')->with('status', ' Data berhasil dihapus');
     }
 }

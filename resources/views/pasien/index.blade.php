@@ -23,7 +23,7 @@
                         <p class="card-description">
                             Data Identitas Pasien Lama
                         </p>
-                        <a href="{{ url('master-data/patient/create') }}" type="button"
+                        <a href="{{ url('master-data/pasienbaru/create') }}" type="button"
                             class="btn btn-inverse-primary btn-rounded btn-icon">Tambah Identitas Pasien</a>
                         <div class="table-responsive mt-3">
                             <table class="table table-striped" id="table1">
@@ -35,7 +35,8 @@
                                         <th>Nama Pasien</th>
                                         <th>NIK</th>
                                         <th>Jenis Kelamin</th>
-                                        <th>TTL</th>
+                                        <th>Tempat Lahir</th>
+                                        <th>Tanggal Lahir </th>
                                         <th>Pendidikan</th>
                                         <th>Pekerjaan</th>
                                         <th>Ibu Istri</th>
@@ -55,14 +56,18 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{$item->no_rm}}</td>
-                                            <td>{{ $item->nama_pasien }}</td>
+                                            <td>{{ strlen($item->nama_pasien) > 10 ? substr($item->nama_pasien, 0, 20) . '...' :  $item->nama_pasien }}
+                                            </td>
                                             <td>{{ $item->nik }}</td>
                                             <td>{{ $item->jenis_kelamin }}</td>
+                                            <td>{{ $item->tempatlahirr }}</td>
                                             <td>{{ $item->ttl }}</td>
                                             <td>{{ $item->pendidikan }}</td>
                                             <td>{{ $item->pekerjaan }}</td>
-                                            <td>{{ $item->ibu_istri }}</td>
-                                            <td>{{ $item->ayah_suami }}</td>
+                                            <td>{{ strlen($item->ibu_istri) > 10 ? substr($item->ibu_istri, 0, 20) . '...' :  $item->ibu_istri }}
+                                            </td>
+                                            <td>{{ strlen($item->ayah_suami) > 10 ? substr($item->ayah_suami, 0, 20) . '...' :  $item->ayah_suami }}
+                                            </td>
                                             <td>{{ $item->suku_bangsa }}</td>
                                             <td>{{ $item->agama }}</td>
                                             <td>{{ strlen($item->alamat) > 10 ? substr($item->alamat, 0, 20) . '...' : $item->alamat }}

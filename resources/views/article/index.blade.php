@@ -57,23 +57,24 @@
                                     <td>{{ $item->judul }}</td>
                                     <td>{{ (strlen($item->konten)>10) ? substr($item -> konten, 0,20) . '...': $item->konten }}</td>
                                     <td>
+                                        <a href="{{ url('/master-data/article/' . $item->id) }}">
+                                            <button type="submit"
+                                                class="btn btn-social-icon btn-inverse-info btn-rounded">
+                                                <i class="ti-eye" role="button"></i>
+                                            </button>
+                                        </a>
                                     <a href="{{url('/master-data/article/'.$item->id).'/edit'}}">
                                             <button type="button" class="btn btn-social-icon btn-inverse-success btn-rounded">
                                                 <i class="ti-pencil-alt"></i>
                                             </button>
                                         </a>
-                                        <form method="POST" action="{{url('/master-data/article/' . $item->id)}}" enctype="multipart/form-data">
+                                        <form method="POST" action="{{url('/master-data/article/' . $item->id)}}" enctype="multipart/form-data" class="d-inline">
                                             @csrf
                                             @method("DELETE")
                                             <button type="submit" class="btn btn-social-icon btn-inverse-danger btn-rounded">
                                                 <i class="ti-trash"></i>
                                             </button>
                                         </form>
-                                        <a href="{{url('/master-data/article/'.$item->id)}}">
-                                            <button type="button" class="btn btn-social-icon btn-inverse-success btn-rounded">
-                                                Show
-                                            </button>
-                                        </a>
                                         
                                     </td>
                                 </tr>

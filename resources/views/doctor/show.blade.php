@@ -18,11 +18,7 @@
                             <p>Spesialisasi : {{$doctor->spesialisasi}}</p>
                             <p>Alamat : {{$doctor->alamat}}</p>
                             <p>No HP : {{$doctor->no_hp}}</p>
-                           
-                    
                         </div>
-                    
-                  
                     </div>
                 </div>
             </div>
