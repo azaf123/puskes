@@ -59,6 +59,11 @@
                                                 <i class="ti-trash"></i>
                                             </button>
                                         </form>
+                                        <a href="{{url('/master-data/user/'.$item->id).'/edit'}}">
+                                            <button type="button" class="btn btn-social-icon btn-inverse-success btn-rounded">
+                                                <i class="ti-pencil-alt"></i>
+                                            </button>
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach

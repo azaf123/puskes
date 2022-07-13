@@ -55,9 +55,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('user.update', compact('user'));
     }
 
     /**
@@ -67,9 +67,36 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $request->validate(
+            [
+                'bagian' => 'required',
+                'name' => 'required|min:5|max:30',
+                'email' => 'required|email',
+             
+
+            ],
+            [
+                'bagian.required' => 'Bagian harus diisi',
+                'name.required' => 'Nama harus diisi',
+                'name.min' => 'Nama minimal 5 karakter',
+                'name.max' => 'Nama maksimal 30 karakter',
+                'email.required' => 'Email harus diisi',
+                'email.email' => 'Email tidak valid',
+               ]
+
+        );
+
+        User::where('id', $user->id)->update(
+            [
+                'bagian' => $request->bagian,
+                'name' => $request->name,
+                'level' => 'admin',
+             ]
+        );
+        return redirect('master-data/user')->with('status', 'Data berhasil diubah');
+        
     }
 
     /**
@@ -78,12 +105,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($user)
+    public function destroy(User $user)
     {
         // dd($user);
-        $user = User::where('id', $user->id)
+        User::where('id', $user->id)
         ->delete();
         // User::destroy('id', $user->id);
-        return redirect('/masterdata/user')->with('status', 'Berhasil Dihapus');
+        return redirect('/master-data/user')->with('status', 'Berhasil Dihapus');
     }
 }

@@ -38,44 +38,87 @@
 
                         </datalist>
                         @error('noberobat')
+   <div class="invalid-feedback">
+                              <h5 style="font-size: 15px; color:red;">
+                              {{ $message }}
+                              </h5>  
+                              <br>
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="inputBox form-control">
+                        <span><b> Nama Lengkap Pasien</b></span>
+                        <input class="@error('nama') is-invalid @enderror" name="nama" type="text" placeholder="Masukkan nama lengkap">
+                        @error('nama')
                             <div class="invalid-feedback">
-                                {{ $message }}
+                              <h5 style="font-size: 15px; color:red;">
+                              {{ $message }}
+                              </h5>  
+                              <br>
                             </div>
                         @enderror
                     </div>
                     <div class="inputBox">
-                        <span><b> Nama Lengkap Pasien</b></span>
-                        <input name="nama" type="text" placeholder="Masukkan nama lengkap">
-                    </div>
-                    <div class="inputBox">
                         <span><b>Nomor KTP</b> </span>
-                        <input name="nik" type="number" placeholder="Masukkan Nomor KTP yang belum terdaftar">
+                        <input class="@error('nik') is-invalid @enderror" name="nik" type="number" placeholder="Masukkan Nomor KTP yang belum terdaftar">
+                        @error('nik')
+   <div class="invalid-feedback">
+                              <h5 style="font-size: 15px; color:red;">
+                              {{ $message }}
+                              </h5>  
+                              <br>
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="inputBox">
                         <span><b>Jenis Kelamin</b> </span>
-                        <select name="jeniskelamin" class="form-control" id="exampleFormControlSelect1" >
+                        <select class="@error('jeniskelamin') is-invalid @enderror" name="jeniskelamin" class="form-control" id="exampleFormControlSelect1" >
                             <option value="laki-laki">Laki-Laki</option>
                             <option value="perempuan">Perempuan</option>
                         </select>
                     </div>
                     <div class="inputBox">
                         <span><b> No HP</b></span>
-                        <input name="nohp" type="number" placeholder="Masukkan No HP">
+                        <input class="@error('nohp') is-invalid @enderror" name="nohp" type="number" placeholder="Masukkan No HP">
+                        @error('nohp')
+   <div class="invalid-feedback">
+                              <h5 style="font-size: 15px; color:red;">
+                              {{ $message }}
+                              </h5>  
+                              <br>
+                            </div>
+                        @enderror
                     </div>
                     <div class="inputBox">
                         <span>
                             <b> Tempat Lahir</b></span>
-                        <input name="tempatlahirr" type="text" placeholder="Masukkan Tempat Lahir ">
+                        <input class="@error('tempatlahirr') is-invalid @enderror" name="tempatlahirr" type="text" placeholder="Masukkan Tempat Lahir ">
+                        @error('tempatlahir')
+   <div class="invalid-feedback">
+                              <h5 style="font-size: 15px; color:red;">
+                              {{ $message }}
+                              </h5>  
+                              <br>
+                            </div>
+                        @enderror
                     </div>
                     <div class="inputBox">
                         <span>
                             <b> Tanggal Lahir</b></span>
-                        <input name="ttl" type="date">
+                        <input class="@error('ttl') is-invalid @enderror" name="ttl" type="date">
+                        @error('ttl')
+   <div class="invalid-feedback">
+                              <h5 style="font-size: 15px; color:red;">
+                              {{ $message }}
+                              </h5>  
+                              <br>
+                            </div>
+                        @enderror
                     </div>
                     <div class="inputBox">
                         <span><b>Golongan Darah</b> </span>
-                        <select name="goldar" class="form-control" id="exampleFormControlSelect1"
+                        <select class="@error('goldar') is-invalid @enderror" name="goldar" class="form-control" id="exampleFormControlSelect1">
                             <option value="A">A</option>
                             <option value="B">B</option>
                             <option value="AB">AB</option>
@@ -85,12 +128,20 @@
                     
                     <div class="inputBox">
                         <span><b> Pekerjaan</b></span>
-                        <input name="pekerjaan" type="text" placeholder="Masukkan Pekerjaan">
+                        <input class="@error('pekerjaan') is-invalid @enderror" name="pekerjaan" type="text" placeholder="Masukkan Pekerjaan">
+                        @error('pekerjaan')
+   <div class="invalid-feedback">
+                              <h5 style="font-size: 15px; color:red;">
+                              {{ $message }}
+                              </h5>  
+                              <br>
+                            </div>
+                        @enderror
                     </div>
                     
                     <div class="inputBox">
                         <span><b>Pendidikan</b> </span>
-                        <select name="pendidikan" class="form-control" id="exampleFormControlSelect1">
+                        <select class="@error('pendidikan') is-invalid @enderror" name="pendidikan" class="form-control" id="exampleFormControlSelect1">
                             <option value="SD">SD</option>
                             <option value="SMP">SMP</option>
                             <option value="SMA">SMA</option>
@@ -110,7 +161,7 @@
                 <div class="box">
                     <div class="inputBox">
                         <span><b>Agama</b> </span>
-                        <select name="agama" class="form-control" id="exampleFormControlSelect1">
+                        <select class="@error('agama') is-invalid @enderror" name="agama" class="form-control" id="exampleFormControlSelect1">
                             <option value="islam">Islam</option>
                             <option value="protestan">Protestan</option>
                             <option value="katolik">Katolik</option>
@@ -124,25 +175,65 @@
 
                     <div class="inputBox">
                         <span><b>Nama Ibu/Istri</b></span>
-                        <input name="nama_ii" type="text" placeholder="Masukkan Nama Ibu/Istri">
+                        <input class="@error('nama_ii') is-invalid @enderror" name="nama_ii" type="text" placeholder="Masukkan Nama Ibu/Istri">
+                        @error('nama_ii')
+   <div class="invalid-feedback">
+                              <h5 style="font-size: 15px; color:red;">
+                              {{ $message }}
+                              </h5>  
+                              <br>
+                            </div>
+                        @enderror
                     </div>
                     <div class="inputBox">
                         <span><b>Nama Ayah/Suami</b></span>
-                        <input name="nama_as" type="text" placeholder="Nama Ayah/Suami">
+                        <input class="@error('nama_as') is-invalid @enderror" name="nama_as" type="text" placeholder="Nama Ayah/Suami">
+                        @error('nama_as')
+   <div class="invalid-feedback">
+                              <h5 style="font-size: 15px; color:red;">
+                              {{ $message }}
+                              </h5>  
+                              <br>
+                            </div>
+                        @enderror
                     </div>
                     <div class="inputBox">
                         <span><b>Bahasa</b></span>
-                        <input name="bahasa" type="text" placeholder="Masukkan Bahasa">
+                        <input class="@error('bahas') is-invalid @enderror" name="bahasa" type="text" placeholder="Masukkan Bahasa">
+                        @error('bahasa')
+   <div class="invalid-feedback">
+                              <h5 style="font-size: 15px; color:red;">
+                              {{ $message }}
+                              </h5>  
+                              <br>
+                            </div>
+                        @enderror
                     </div>
                     
                     
                     <div class="inputBox">
                         <span><b> Suku Bangsa</b></span>
-                        <input name="sukubangsa" type="text" placeholder="Masukkan  Suku Bangsa">
+                        <input class="@error('sukubangsa') is-invalid @enderror" name="sukubangsa" type="text" placeholder="Masukkan  Suku Bangsa">
+                        @error('sukubangsa')
+   <div class="invalid-feedback">
+                              <h5 style="font-size: 15px; color:red;">
+                              {{ $message }}
+                              </h5>  
+                              <br>
+                            </div>
+                        @enderror
                     </div>
                     <div class="inputBox">
                         <span><b> Alamat Rumah</b></span>
-                        <textarea name="alamat" placeholder="Masukkan Alamat Rumah" id="" cols="30" rows="10"></textarea>
+                        <textarea class="@error('alamat') is-invalid @enderror" name="alamat" placeholder="Masukkan Alamat Rumah" id="" cols="30" rows="10"></textarea>
+                        @error('alamat')
+   <div class="invalid-feedback">
+                              <h5 style="font-size: 15px; color:red;">
+                              {{ $message }}
+                              </h5>  
+                              <br>
+                            </div>
+                        @enderror
                     </div>
                     <div class="inputBox">
                         <span>

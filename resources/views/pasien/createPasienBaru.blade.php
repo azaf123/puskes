@@ -19,7 +19,7 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label for="exampleInputName1">No Berobat</label>
-                                            <input id="noberobat" name="noberobat" type="text"
+                                            <input value="{{$norm}}" id="noberobat" name="noberobat" type="text"
                                                 class="form-control @error('noberobat') is-invalid @enderror"
                                                 id="exampleInputName1" placeholder="No RM">
                                             @error('noberobat')
