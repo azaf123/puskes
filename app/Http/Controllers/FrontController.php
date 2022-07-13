@@ -262,6 +262,10 @@ class FrontController extends Controller
         }
         $getdata = Reservation::where('id', $print->id)->first();
         // dd($getdata);
+        $date = date('Y-m-d', strtotime('+1 day'));
+        $getdata->update([
+            'created_at' => $date,
+        ]);
         
         return view('print.print-pendaftaran', compact('getdata'));
         // return redirect('/print-pendaftaran')->with('success', 'Berhasil ditambahkan');
