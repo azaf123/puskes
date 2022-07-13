@@ -49,11 +49,11 @@
     }
 
     .receipt-main thead {
-        background: #414143 none repeat scroll 0 0;
+        background: #ffffff none repeat scroll 0 0;
     }
 
     .receipt-main thead th {
-        color: #ffffff;
+        color: #000000;
     }
 
     .receipt-right h5 {
@@ -120,7 +120,7 @@
                 <div class="receipt-main col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
                     <div class="row">
                         <div class="receipt-header">
-                            <div class="col-xs-6 col-sm-6 col-md-10">
+                            <div class="col">
                                 <div class="receipt-left">
                                     <img class="img-responsive" alt="iamgurdeeposahan"
                                         src="{{ asset('dinda/logo.png') }}"
@@ -136,16 +136,21 @@
                     <br>
                     <br>
                     <div class="row">
-                        <div class="col-xs-4 col-sm-4 col-md-4">
+                        <div class="col">
                             <div class="receipt-left">
-                                <h5>No Antrian</h5>
-                                <h3>{{ $getdata->antrean->no_antrean }}</h3>
+                                <h6>No Antrian</h6>
+                                <h6>{{ $getdata->antrean->no_antrean }}</h6>
+                                <br>
+                                <h6>Tanggal Berobat</h6>
+                                <h6>{{
+                                    substr($getdata->created_at, 0,10)}}</h6>
                             </div>
                         </div>
 
-                        <div class="col-xs-8 col-sm-8 col-md-8">
+                        <div class="col">
                             <div class="receipt-right">
                                 <br>
+                                
                                 <h5>{{ $getdata->patient->nama_pasien }}</h5>
                                 <p><b>Jenis Kelamin :</b> {{ $getdata->patient->jenis_kelamin }}</p>
                                 <p><b>Tanggal Lahir :</b> {{ $getdata->patient->ttl }}</p>
@@ -172,16 +177,16 @@
                                 <tr>
                                     <td class="col-md-7">Poli</td>
                                     <td class="col-md-3"><i
-                                            class="fa fa-inr"></i>{{ $getdata->category->nama_kategori }}</td>
+                                            class="fa fa-inr"></i><b>{{ $getdata->category->nama_kategori }} </b> </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-7">Ruangan</td>
-                                    <td class="col-md-3"><i class="fa fa-inr"></i>{{ $getdata->category->ruangan }}
+                                    <td class="col-md-3"><i class="fa fa-inr"></i><b> {{ $getdata->category->ruangan }}</b>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-7">Keluhan</td>
-                                    <td class="col-md-10"><i class="fa fa-inr"></i>{{ $getdata->keluhan }}</td>
+                                    <td class="col-md-10"><i class="fa fa-inr"></i><b> {{ $getdata->keluhan }} </b></td>
                                 </tr>
                             </tbody>
                         </table>

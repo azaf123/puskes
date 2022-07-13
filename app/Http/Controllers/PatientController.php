@@ -107,7 +107,7 @@ class PatientController extends Controller
             [
                 'noberobat' => 'required',
                 'nama' => 'required',
-                'nik' => 'required|numeric',
+                'nik' => 'required|numeric|unique:patients,nik',
                 'jeniskelamin' => 'required',
                 'tempatlahirr' => 'required',
                 'ttl' => 'required',
@@ -124,7 +124,7 @@ class PatientController extends Controller
 
             ],
             [
-                'noberobat.required' => 'No. Obat harus diisi',
+                'noberobat.required' => 'No.RM harus diisi',
                 'nama.required' => 'Nama harus diisi',
                 'nik.required' => 'NIK harus diisi',
                 'nik.unique' => 'NIK sudah ada',

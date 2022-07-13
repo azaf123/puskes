@@ -78,9 +78,9 @@
                             </div>
                         </div>
                     
+                        <a href="{{ url('/master-data/patient') }}"><button type="button" style="width: 10%" class="btn btn-light" >Batal</button></a>
 
                         <button type="submit" class="btn btn-primary me-2">Simpan</button>
-                        <button class="btn btn-light">Batal</button>
                     </form>
                 </div>
             </div>

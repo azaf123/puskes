@@ -128,14 +128,14 @@
                                         <div class="form-group">
                                             <div class="form-group">
                                                 <label for="exampleInputName1">Pekerjaan</label>
-                                                <select class="form-control" name="agama" id="">
-                                                    <option value="islam">Islam</option>
-                                                    <option value="protestan">Protestan</option>
-                                                    <option value="katolik">Katolik</option>
-                                                    <option value="buddha">Buddha</option>
-                                                    <option value="hindu">Hindu</option>
-                                                    <option value="khonghucu">Khonghucu</option>
-                                                </select>
+                                                <input name="pekerjaan" type="text"
+                                                    class="form-control @error('pekerjaan') is-invalid @enderror"
+                                                    id="exampleInputName1" placeholder="Nama Ayah/Suami">
+                                                @error('pekerjaan')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -269,8 +269,8 @@
                                 </div>
 
 
-                                <button type="submit" class="btn btn-primary me-2">Simpan</button>
-                                <button class="btn btn-light">Batal</button>
+                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                <a href="{{ url('/master-data/pasienbaru') }}"><button type="button" style="width: 100%" class="btn btn-light" >Batal</button></a>
                         </form>
                     </div>
                 </div>

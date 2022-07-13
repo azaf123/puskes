@@ -60,14 +60,6 @@
                         </select>
                     </div>
                     <div class="inputBox">
-                        <span><b> Suku Bangsa</b></span>
-                        <input name="sukubangsa" type="text" placeholder="Masukkan  Suku Bangsa">
-                    </div>
-                    <div class="inputBox">
-                        <span><b> Pekerjaan</b></span>
-                        <input name="pekerjaan" type="text" placeholder="Masukkan Pekerjaan">
-                    </div>
-                    <div class="inputBox">
                         <span><b> No HP</b></span>
                         <input name="nohp" type="number" placeholder="Masukkan No HP">
                     </div>
@@ -82,36 +74,20 @@
                         <input name="ttl" type="date">
                     </div>
                     <div class="inputBox">
-                        <span><b>Agama</b> </span>
-                        <select name="agama" class="form-control" id="exampleFormControlSelect1">
-                            <option value="islam">Islam</option>
-                            <option value="protestan">Protestan</option>
-                            <option value="katolik">Katolik</option>
-                            <option value="buddha">Buddha</option>
-                            <option value="hindu">Hindu</option>
-                            <option value="khonghucu">Khonghucu</option>
-
-                        </select>
-                    </div>
-                    <div class="inputBox">
-                        <span><b> Alamat</b></span>
-                        <textarea name="alamat" placeholder="Masukkan your address" id="" cols="30" rows="10"></textarea>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <div class="inputBox">
                         <span><b>Golongan Darah</b> </span>
                         <select name="goldar" class="form-control" id="exampleFormControlSelect1"
-                            placeholder="Masukkan your name">
                             <option value="A">A</option>
                             <option value="B">B</option>
                             <option value="AB">AB</option>
                             <option value="O">O</option>
-
-
                         </select>
                     </div>
+                    
+                    <div class="inputBox">
+                        <span><b> Pekerjaan</b></span>
+                        <input name="pekerjaan" type="text" placeholder="Masukkan Pekerjaan">
+                    </div>
+                    
                     <div class="inputBox">
                         <span><b>Pendidikan</b> </span>
                         <select name="pendidikan" class="form-control" id="exampleFormControlSelect1">
@@ -128,18 +104,45 @@
 
                         </select>
                     </div>
+                   
+                </div>
+
+                <div class="box">
+                    <div class="inputBox">
+                        <span><b>Agama</b> </span>
+                        <select name="agama" class="form-control" id="exampleFormControlSelect1">
+                            <option value="islam">Islam</option>
+                            <option value="protestan">Protestan</option>
+                            <option value="katolik">Katolik</option>
+                            <option value="buddha">Buddha</option>
+                            <option value="hindu">Hindu</option>
+                            <option value="khonghucu">Khonghucu</option>
+
+                        </select>
+                    </div>
+                    
 
                     <div class="inputBox">
                         <span><b>Nama Ibu/Istri</b></span>
-                        <input name="nama_ii" type="text" placeholder="Masukkan your name">
+                        <input name="nama_ii" type="text" placeholder="Masukkan Nama Ibu/Istri">
                     </div>
                     <div class="inputBox">
                         <span><b>Nama Ayah/Suami</b></span>
-                        <input name="nama_as" type="text" placeholder="Masukkan your name">
+                        <input name="nama_as" type="text" placeholder="Nama Ayah/Suami">
                     </div>
                     <div class="inputBox">
                         <span><b>Bahasa</b></span>
-                        <input name="bahasa" type="text" placeholder="Masukkan your name">
+                        <input name="bahasa" type="text" placeholder="Masukkan Bahasa">
+                    </div>
+                    
+                    
+                    <div class="inputBox">
+                        <span><b> Suku Bangsa</b></span>
+                        <input name="sukubangsa" type="text" placeholder="Masukkan  Suku Bangsa">
+                    </div>
+                    <div class="inputBox">
+                        <span><b> Alamat Rumah</b></span>
+                        <textarea name="alamat" placeholder="Masukkan Alamat Rumah" id="" cols="30" rows="10"></textarea>
                     </div>
                     <div class="inputBox">
                         <span>
@@ -150,7 +153,7 @@
                     </div>
                 </div>
             </div>
-            <input type="submit" value="Simpan" class="btn">
+            <input  type="submit" value="Simpan" class="btn">
         </form>
 
     </section>

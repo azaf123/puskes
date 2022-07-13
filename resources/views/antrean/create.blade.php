@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Tambah Antrean</h4>
                     <p class="card-description">
-                        Isi Antrean(cth: umum-01)
+                        Isi Antrean(format: no.antrian-Hari/tanggal)
                     </p>
                     <form action="{{url('/master-data/antrean')}}" method="POST" class="forms-sample">
                         @csrf

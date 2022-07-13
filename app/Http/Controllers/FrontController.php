@@ -55,6 +55,7 @@ class FrontController extends Controller
                 'nama' => 'required',
                 'nik' => 'required|unique:patients,nik',
                 'jeniskelamin' => 'required',
+                'tempatlahirr' => 'required',
                 'ttl' => 'required',
                 'pendidikan' => 'required',
                 'pekerjaan' => 'required',
@@ -73,6 +74,7 @@ class FrontController extends Controller
                 'nik.required' => 'NIK harus diisi',
                 'nik.unique' => 'NIK sudah ada',
                 'jeniskelamin.required' => 'Jenis Kelamin harus diisi',
+                'tempatlahirr.required' => 'TTL harus diisi',
                 'ttl.required' => 'TTL harus diisi',
                 'pendidikan.required' => 'Pendidikan harus diisi',
                 'pekerjaan.required' => 'Pekerjaan harus diisi',
@@ -93,6 +95,7 @@ class FrontController extends Controller
                 'nama_pasien' => $request->nama,
                 'nik' => $request->nik,
                 'jenis_kelamin' => $request->jeniskelamin,
+                'tempatlahirr' => $request->jeniskelamin,
                 'ttl' => $request->ttl,
                 'pendidikan' => $request->pendidikan,
                 'pekerjaan' => $request->pekerjaan,
@@ -212,7 +215,7 @@ class FrontController extends Controller
 
         $getdata = Reservation::where('id', $print->id)->first();
         // for tommorow date
-        $date = date('Y-m-d', strtotime('+1 day'));
+        $date = date('d-m-Y', strtotime('+1 day'));
         $getdata->update([
             'created_at' => $date,
         ]);

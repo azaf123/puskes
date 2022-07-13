@@ -80,8 +80,10 @@ class UserController extends Controller
      */
     public function destroy($user)
     {
-        dd($user);
-        User::destroy('id', $user->id);
+        // dd($user);
+        $user = User::where('id', $user->id)
+        ->delete();
+        // User::destroy('id', $user->id);
         return redirect('/masterdata/user')->with('status', 'Berhasil Dihapus');
     }
 }
