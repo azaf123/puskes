@@ -6,11 +6,11 @@
             </button>
         </div>
         <div>
-            <a class="navbar-brand brand-logo" href="index.html">
+            <a class="navbar-brand brand-logo" href="{{ url('/master-data/dashboard') }}">
                 <img src="{{ asset('front/images/logonavbar.png') }}" alt="logo" />
             </a>
-            <a class="navbar-brand brand-logo-mini" href="index.html">
-                <img src="{{ asset('front/images/logo.jpg') }}" alt="logo" />
+            <a class="navbar-brand brand-logo-mini" href="{{ url('/master-data/dashboard') }}">
+                <img src="{{ asset('front/images/logo-puskesmas-32976.png') }}" alt="logo" />
             </a>
         </div>
     </div>

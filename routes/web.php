@@ -17,6 +17,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PrintController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -35,8 +36,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login_store', [AuthController::class, 'loginStore']);
 Route::get('logout', [AuthController::class, 'logout']);
-Route::get('/register', [AuthController::class, 'registrasi']);
 Route::post('/register_store', [AuthController::class, 'registrasiStore']);
+
 
 // Route::group(['middleware' => ['auth']], function (){
 
@@ -74,6 +75,9 @@ Route::get('/pasien-reservasi/{id}', [FrontController::class, 'pasienReservasi']
 Route::group(['middleware' => ['auth', 'admin']], function () {
     // admin
     Route::prefix('master-data')->group(function () {
+        // tambah user/register
+        Route::get('/register', [AuthController::class, 'registrasi']);
+
         Route::get('/dashboard', [HomeController::class, 'index']);
         // pasien lama
         Route::resource('patient', PatientController::class);
@@ -102,6 +106,8 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
         Route::resource('header', HeaderController::class);
         // layanan
         Route::resource('layanan', LayananController::class);
+        //users
+        Route::resource('user', UserController::class);
 
         // laporan
         Route::get('report/', [ReportController::class, 'index']);

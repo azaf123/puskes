@@ -17,13 +17,12 @@
                         @method('PATCH')
                         <div class="form-group">
                             <label for="exampleSelectGender">Poliklinik</label>
-                            <select class="form-control" id="exampleSelectGender" name="poli">
-                                <option value="Umum">Umum</option>
-                                <option value="Gigi">Gigi dan Mulut</option>
-                                <option value="Anak">Anak</option>
-                                <option value="ibu dan anak">Ibu dan Anak</option>
-
-                            </select>
+                            <input name="poli" type="text" class="form-control @error('poli') is-invalid @enderror" id="exampleInputName1" placeholder="Isi Poli" value="{{$category->nama_kategori}}">
+                                @error('poli')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
                         </div>
                         <div class="form-group">
                             <div class="form-group">

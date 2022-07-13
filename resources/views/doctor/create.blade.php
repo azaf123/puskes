@@ -44,7 +44,7 @@
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="exampleInputName1">No HP</label>
-                                <input name="nohp" type="text" class="form-control @error('nohp') is-invalid @enderror" id="exampleInputName1" placeholder="deskripsi">
+                                <input name="nohp" type="number" class="form-control @error('nohp') is-invalid @enderror" id="exampleInputName1" placeholder="Masukkan Nomor HP">
                                 @error('nohp')
                                 <div class="invalid-feedback">
                                     {{$message}}

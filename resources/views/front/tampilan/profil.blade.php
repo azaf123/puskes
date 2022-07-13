@@ -22,18 +22,17 @@
          <div class="content">
             <div class="col-md-6">
                <h5 class="title">Visi</h5>
-               <ul class="list">
-                  <li>Merumuskan dan menyusun kebijakan di bidang pengelolaan pendapatan daerah</li>
-               </ul>
+                   <p>Tercapainya Wilayah Kerja yang sehat secara optimal dengan bertumpu pada pelayanan prima dan pemberdayaan masyarakat
+                  </p> 
+               
             </div>
             <div class="col-md-6">
                <h3 class="title">Misi</h3>
                <ul class="list">
-                  <li>Merumuskan dan menyusun kebijakan di bidang pengelolaan pendapatan daerah</li>
-                  <li>Meningkatkan kualitas sumber daya aparatur bidang pendapatan daerah seusai dengan
-                     prinsip-prinsip penyelenggaraan pemerintahn yang baik (Good Governance)</li>
-                  <li>Menjalin jejaring kerja (Networking) dan koordinasi secara sinergis di bidang pendapatan
-                     daerah.</li>
+                  <li>Memelihara dan meningkatkan upaya pelayanan prima</li>
+                  <li>Meningkatkan profesionalisme provider</li>
+                  <li>Meningkatkan kemitraan dan pemberdayaan masyarakat</li>
+                  <li>Menurunkan angka kesakitan dan resiko kematian</li>
                </ul>
             </div>
             <h5 class="title">Motto</h5>

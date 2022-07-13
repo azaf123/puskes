@@ -14,6 +14,7 @@ class Patient extends Model
         'nama_pasien',
         'nik',
         'jenis_kelamin',
+        'tempatlahirr',
         'ttl',
         'pendidikan',
         'pekerjaan',

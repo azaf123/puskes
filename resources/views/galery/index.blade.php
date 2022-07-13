@@ -43,6 +43,12 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td><img src="{{asset('img/'.$item->gambar)}}" alt=""></td>
                                  <td>
+                                    <a href="{{ url('/master-data/galery/' . $item->id) }}">
+                                        <button type="submit"
+                                            class="btn btn-social-icon btn-inverse-info btn-rounded">
+                                            <i class="ti-eye" role="button"></i>
+                                        </button>
+                                    </a>
                                         <a href="{{url('/master-data/galery/'.$item->id).'/edit'}}">
                                             <button type="button" class="btn btn-social-icon btn-inverse-success btn-rounded">
                                                 <i class="ti-pencil-alt"></i>

@@ -18,7 +18,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="{{asset('dinda/css/vertical-layout-light/style.css')}}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{asset('dinda/images/favicon.png')}}" />
+    <link rel="shortcut icon" href="{{ asset('front/images/logo-puskesmas-32976.png') }}" />
     <link rel="stylesheet" href="{{asset('assets/vendors/jquery-datatables/jquery.dataTables.bootstrap5.min.css')}}">
     <style>
         table.dataTable td {
